@@ -82,7 +82,7 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://conworkshop.com/view_language.php?l=ARJ',
           label: 'Conworkshop',
           position: 'right',
         },
