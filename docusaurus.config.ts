@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Arusian Academy',
   tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  favicon: 'https://conworkshop.com/static/flag/ARJ-cd25782814914ef07162048aeac51e8cc80529b8.png',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
