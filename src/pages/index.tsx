@@ -34,7 +34,8 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title={`Welcome to ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="
+Arusian is a personal language. I created the language in 2009 and it has only ever grown and evolved since then.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
