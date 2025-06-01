@@ -30,13 +30,14 @@
 }
 
 @font-face {
-  font-family: 'gatregular';
-  src: url('https://arusianacademy.vercel.app/public/gat-webfont.woff2') format('woff2'),
-       url('https://arusianacademy.vercel.app//public/gat-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Buwagat';
+    src: url('/fonts/Buwagat.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 .semlek {
-  font-family: 'gatregular';
+  font-family: 'Buwagat';
 }

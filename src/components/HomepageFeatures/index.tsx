@@ -1,4 +1,4 @@
-import type {ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
@@ -11,38 +11,38 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'The Language of Science and Nature',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Arusian is a personal language. I created the language in 2009 and it has only ever grown and evolved since then.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Usage',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        I use the language to describe ideas or concepts that do not exist my native languages, write secret notes and messages, and I write poetry and literature in it as well; along with the artwork I do.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Where is Arusian spoken?',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Arusian is mostly spoken in Arusia (of course!), 
+        a fictional country in Mred, and also as a second language in Dietsland. 
+        In real life, it is spoken fluently by its creator and some of his friends 
+        have some knowledge of it.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, Svg, description }: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">

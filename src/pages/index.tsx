@@ -14,11 +14,11 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
+        <FontRenderer rtl text="tec sa aruja, dem" translit="Tek sa Arujei-dem" size="92px" color="#fff" weight="900"/>
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <FontRenderer text="arujei dem" size="32px"/>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"

@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Arusian Academy',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'The Language of Nature',
   favicon: 'https://conworkshop.com/static/flag/ARJ-cd25782814914ef07162048aeac51e8cc80529b8.png',
 
   // Set the production url of your site here
@@ -104,17 +104,9 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
               label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
+              href: 'https://discord.gg/NH5K3Vc2',
+            }
           ],
         },
         {
@@ -131,7 +123,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Arusian Academy. Made with love by AndrewNation.`,
     },
     prism: {
       theme: prismThemes.github,
