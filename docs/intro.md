@@ -2,46 +2,24 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Learn Arusian
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Here are some resources to help you learn more about Arusian and discover about it.
 
-## Getting Started
 
-Get started by **creating a new site**.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+- [**Dictionary:**](https://drive.google.com/file/d/1iFXsJk3T8Iv0tfnZeulWPTPvYY-3B8X1/view?usp=sharing) an Arusian to English dictionary, with translations of its roots and some compound words and inflected roots (especially verbs).
 
-### What you'll need
+## Arusian Alphabet
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+![Arusian Alphabet](https://conworkshop.com/gallery/0a1b17a1bc917a9374ee7d10cb8c6111.png)
 
-## Generate a new site
+## Books
 
-Generate a new Docusaurus site using the **classic template**.
+- [Intro to Fendelian - 3rd Edition](https://drive.google.com/file/d/1MbuLpWyqwXibVfssW2cd02cuXqQAhd4t/view): it is a good quickstart for learning about Arusian grammar and syntax
 
-The classic template will automatically be added to your project after you run the command:
+- [A Língua Aru - Análise Linguística de uma Conlang](https://drive.google.com/file/d/1jD0snTAu23Q4mgRs5z9dwZ35liywJ2YV/view?usp=sharing): it is a book, originally written in Portuguese, that describes Arusian in all its levels (phonology, morphology, syntax, pragmatics, semantics and sociolinguistics). If you speak Portuguese and have some understanding of linguistics, it would be nice to read it.
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+- [La Langue Arusienne: Une Descrition Linguistique d'une Langue Artificielle](https://drive.google.com/file/d/1djo2C1x7ucZ2sB-dGsrqBzjU5-xkqPL1/view?usp=sharing): it is the same book as the one above, translated from Portuguese into French. If you speak French, you should check it out! It is aimed at a public that has some understanding of linguistics, but things should be easy to understand and follow.
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+- [Arusian in 91 Rules](https://docs.google.com/presentation/d/148_jUG8BNLtpWn8iLe7g8btJjmpmKG5rAe33e_Tv03U/edit): it is a slideshow that showcases most of Arusian sentence structures and ways to express meaning with easy-to-follow glossing and examples.
