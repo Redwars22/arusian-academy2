@@ -1,0 +1,237 @@
+import { useState, useEffect } from "react";
+import { letters } from "../src/data/letters";
+import {FontRenderer} from "../src/components/FontRenderer";
+
+export const SemlekGame = () => {
+    const [currentLetter, setCurrentLetter] = useState({
+        fontCode: "",
+        answer: "",
+        points: 0
+    });
+    const [progress, setProgress] = useState(1);
+    const [lives, setLives] = useState(3);
+    const [points, setPoints] = useState(0);
+    const [answer, setAnswer] = useState("");
+
+    const _letters = [...letters.consonants, ...letters.vowels];
+
+    const getRandomLetter = () => {
+        return _letters[Math.round(Math.random() * _letters.length)];
+    }
+
+    const loadLetter = () => {
+        const letter = getRandomLetter();
+
+        setCurrentLetter({
+            fontCode: letter.arukey,
+            answer: letter.translit,
+            points: Math.round(Math.random() * 360)
+        })
+
+        setAnswer("")
+    }
+
+    const advance = () => {
+        if (answer.toLowerCase() === currentLetter.answer.toLowerCase()) {
+            setPoints(points + Math.round(Math.random() * 100));
+
+            loadLetter();
+            setProgress(progress + 1);
+        } else {
+            setLives(lives - 1);
+        }
+    }
+
+    const restart = () => {
+        setProgress(0);
+        setLives(3);
+        loadLetter();
+    }
+
+    const resetLives = () => {
+        setLives(3);
+        setProgress(0);
+        setPoints(0);
+        loadLetter();
+    }
+
+    useEffect(() => {
+        loadLetter();
+    }, [])
+
+    // Inline style objects for components
+    const cardStyle = {
+        backgroundColor: '#ffffff',
+        borderRadius: '12px',
+        boxShadow: '0 8px 24px rgba(0, 0, 0, 0.1)',
+        maxWidth: '500px',
+        width: '90%',
+        margin: '20px auto',
+        overflow: 'hidden',
+        fontFamily: 'Inter, sans-serif' // Apply font here for the card content
+    };
+
+    const cardHeaderStyle = {
+        backgroundColor: '#4CAF50',
+        color: 'white',
+        padding: '15px 20px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+        borderTopLeftRadius: '12px',
+        borderTopRightRadius: '12px'
+    };
+
+    const progressContainerStyle = {
+        flexGrow: 1,
+        height: '10px',
+        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+        borderRadius: '5px',
+        overflow: 'hidden',
+        marginRight: '15px'
+    };
+
+    const progressBarFillStyle = {
+        height: '100%',
+        backgroundColor: '#FFEB3B',
+        borderRadius: '5px',
+        // Transition cannot be inline, handled by CSS (will be lost)
+    };
+
+    const scoreTextStyle = {
+        fontWeight: 'bold',
+        fontSize: '1.1em',
+        verticalAlign: 'middle', // Apply to all spans for consistency
+    };
+
+    const pointsTextStyle = {
+        color: '#FFEB3B',
+        ...scoreTextStyle
+    };
+
+    const livesTextStyle = {
+        color: '#FF5252',
+        ...scoreTextStyle
+    };
+
+    const cardBodyStyle = {
+        padding: '30px 20px',
+        textAlign: 'center'
+    };
+
+    const h2Style = {
+        color: '#333',
+        marginBottom: '25px',
+        fontSize: '1.8em',
+        fontWeight: 700
+    };
+
+    const fontRendererContainerStyle = {
+        marginBottom: '30px',
+        minHeight: '100px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    };
+
+    const inputButtonContainerStyle = {
+        display: 'flex',
+        gap: '10px',
+        marginTop: '20px'
+    };
+
+    const inputStyle = {
+        flexGrow: 1,
+        padding: '12px 15px',
+        border: '2px solid #ddd',
+        borderRadius: '8px',
+        fontSize: '1.1em',
+        outline: 'none',
+        // Transition and focus styles cannot be inline (will be lost)
+    };
+
+    const buttonStyle = {
+        padding: '12px 25px',
+        border: 'none',
+        borderRadius: '8px',
+        fontSize: '1.1em',
+        cursor: 'pointer',
+        // Transition and hover styles cannot be inline (will be lost)
+        fontWeight: 600,
+        textTransform: 'uppercase'
+    };
+
+    const successButtonStyle = {
+        backgroundColor: '#4CAF50',
+        color: 'white',
+        ...buttonStyle
+    };
+
+    const iconStyle = {
+        verticalAlign: 'middle',
+        marginLeft: '5px'
+    };
+
+    const trophyIconStyle = {
+        fontSize: '100px',
+        color: '#FFEB3B',
+        marginBottom: '20px',
+        verticalAlign: 'middle' // Ensure consistency
+    };
+
+
+    return (
+        <div style={cardStyle}>
+            <div style={cardHeaderStyle}>
+                <div style={progressContainerStyle} role="progressbar">
+                    <div style={{...progressBarFillStyle, width: `${progress * 10}%`}}></div>
+                </div>
+                <div style={{
+                    marginLeft: "auto"
+                }}>
+                    <span style={pointsTextStyle}>{points} <i className="bi bi-coin" style={iconStyle}></i></span>
+                    <span> • </span>
+                    <span style={livesTextStyle}>{lives} <i className="bi bi-heart" style={iconStyle}></i></span>
+                </div>
+            </div>
+            {(lives > 0 && progress < 10 ) && (
+                <div style={cardBodyStyle}>
+                    <h2 style={h2Style}>What sound does it make?</h2>
+                    <div style={fontRendererContainerStyle}>
+                        <FontRenderer size={"120px"} weight="900" color="rgb(42, 58, 154)" text={currentLetter.fontCode} />
+                    </div>
+                    <div style={inputButtonContainerStyle}>
+                        <input
+                            type="text"
+                            style={inputStyle}
+                            placeholder="Your answer"
+                            value={answer}
+                            onChange={(e) => setAnswer(e?.target?.value)}
+                        />
+                        <button style={successButtonStyle} onClick={() => advance()}>CONTINUE</button>
+                    </div>
+                </div>
+            )}
+            {lives === 0 && (
+                <div style={cardBodyStyle}>
+                    <h2 style={h2Style}>You ran out of hearts!</h2>
+                    <button style={successButtonStyle} onClick={() => resetLives()}>TRY AGAIN</button>
+                </div>
+            )}
+            {progress >= 10 && (
+                <div style={cardBodyStyle}>
+                    <i className="bi bi-trophy" style={trophyIconStyle}></i>
+                    <h2 style={h2Style}>You won the game!</h2>
+                    <button style={successButtonStyle} onClick={() => restart()}>RESTART</button>
+                </div>
+            )}
+        </div>
+    );
+}
+
+# Play the Semlek Game!
+
+Welcome to the Semlek game! Test your knowledge of the Arusian alphabet by guessing the sound each letter makes. Good luck!
+
+<SemlekGame />
