@@ -1,0 +1,92 @@
+---
+sidebar_position: 4
+---
+
+# Semlek to Latin Converter
+
+import React, { useState } from "react";
+import { FontRenderer } from "../src/components/FontRenderer";
+
+export const SemlekLatinConverter = () => {
+  const [text, setText] = useState("");
+
+  // Estilos adaptados ao tema do site (roxo principal, azul para destaque)
+  const cardStyle = {
+    backgroundColor: "var(--ifm-background-color, #fff)",
+    borderRadius: "12px",
+    boxShadow: "0 8px 24px rgba(0, 0, 0, 0.08)",
+    maxWidth: "500px",
+    width: "100%",
+    margin: "32px auto",
+    overflow: "hidden",
+    fontFamily: "var(--ifm-font-family-base, Inter, sans-serif)",
+    border: "1px solid var(--ifm-color-emphasis-200, #eaeaea)",
+  };
+
+  const cardHeaderStyle = {
+    backgroundColor: "var(--ifm-color-primary, #794cbd)", // Roxo principal
+    color: "var(--ifm-font-color-base-inverse, #fff)",
+    padding: "16px 24px",
+    borderTopLeftRadius: "12px",
+    borderTopRightRadius: "12px",
+    borderBottom: "1px solid var(--ifm-color-emphasis-200, #eaeaea)",
+    textAlign: "center",
+  };
+
+  const cardBodyStyle = {
+    padding: "30px 20px",
+    textAlign: "center",
+  };
+
+  const textareaStyle = {
+    width: "100%",
+    padding: "12px 15px",
+    border: "2px solid var(--ifm-color-emphasis-200, #ddd)",
+    borderRadius: "8px",
+    fontSize: "1.1em",
+    outline: "none",
+    marginBottom: "25px",
+    fontFamily: "inherit",
+    resize: "vertical",
+    minHeight: "60px",
+    background: "var(--ifm-background-color, #fff)",
+    color: "var(--ifm-font-color-base, #222)",
+  };
+
+  return (
+    <div style={cardStyle}>
+      <div style={cardHeaderStyle}>
+        <h1 style={{ margin: 0, fontSize: "1.3em" }}>
+          Latin Script to Semlek Converter (BETA)
+        </h1>
+      </div>
+      <div style={cardBodyStyle}>
+        <textarea
+          style={textareaStyle}
+          cols={20}
+          rows={3}
+          value={text}
+          onChange={(e) => setText(e?.target?.value)}
+          placeholder="Type it in Latin here to get the Semlek output..."
+        />
+        <div style={{ marginBottom: "35px" }}>
+          <FontRenderer
+            size={"30px"}
+            color="var(--ifm-color-primary, #794cbd)"
+            text={text ? text.split("").reverse().join("") : "hello"}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+<FontRenderer
+    text=". tei delr konvertr sem u sa vr semlek uei tr latin u pus ."
+    rtl
+    size="33px"
+    color="var(--ifm-color-primary, #794cbd)"
+    translit="Tei delr konvertr sem u sa vr semlek wei tr latin u pus"
+/>
+
+<SemlekLatinConverter />
