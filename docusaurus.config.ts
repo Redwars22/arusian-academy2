@@ -5,12 +5,12 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Arusian Academy',
+  title: 'Arusian Academy (BETA)',
   tagline: 'The Language of Nature',
   favicon: 'https://conworkshop.com/static/flag/ARJ-cd25782814914ef07162048aeac51e8cc80529b8.png',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://thearusianlanguage.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -92,10 +92,10 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Arusian',
           items: [
             {
-              label: 'Tutorial',
+              label: 'Learn Arusian',
               to: '/docs/intro',
             },
           ],
@@ -117,8 +117,8 @@ const config: Config = {
               to: '/blog',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Conworkshop',
+              href: 'https://conworkshop.com/view_language.php?l=ARJ',
             },
           ],
         },
