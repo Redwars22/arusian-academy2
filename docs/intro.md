@@ -10,6 +10,8 @@ Here are some resources to help you learn more about Arusian and discover about 
 
 - [**Dictionary:**](https://drive.google.com/file/d/1iFXsJk3T8Iv0tfnZeulWPTPvYY-3B8X1/view?usp=sharing) an Arusian to English dictionary, with translations of its roots and some compound words and inflected roots (especially verbs).
 
+- [**Kemkemjuwa:**](https://kemkemjuwa.miraheze.org/wiki/Category:Juwa-ket_Arujeis) read articles in romanized (Roma-sem) Arusian in this Wikipedia-like website. 
+
 ## Arusian Alphabet
 
 ![Arusian Alphabet](https://conworkshop.com/gallery/0a1b17a1bc917a9374ee7d10cb8c6111.png)
