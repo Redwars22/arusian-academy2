@@ -6,7 +6,7 @@ Here you can find the translation of some recurrent linguistics terms in Arusian
 
 **Animate:** bai-vreyek
 
-**Comment:** puwau-sem
+**Comment:** puwau-det
 
 **Dative:** edrei-vreyek
 
