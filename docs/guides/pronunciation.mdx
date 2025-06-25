@@ -6,17 +6,17 @@ sidebar_position: 4
 
 Coming soon!
 
-import { FontRenderer } from "../../src/components/FontRenderer";
+import { FontRenderer } from "../../src/components/FontRenderer"
 
-export const RenderSemlek = (code) => {
-    return <FontRenderer size={"48px"} weight="900" color="var(--ifm-color-primary, #794cbd)" text={code} />
+export function RenderSemlek(props) {
+  return <FontRenderer size="48px" weight="900" color="var(--ifm-color-primary, #794cbd)" text={props.code} />
 }
 
 ## Vowels
 
 | Roma-sem | Semlek | IPA | English Equivalent |
 |---|---|---|---|
-| a | <RenderSemlek code="a"/> | [a] | |
+| a | <RenderSemlek code="a" /> | [a] | |
 | e | <FontRenderer size={"48px"} weight="900" color="var(--ifm-color-primary, #794cbd)" text={"e"} /> | [a] | |
 | ei | <FontRenderer size={"48px"} weight="900" color="var(--ifm-color-primary, #794cbd)" text={",a"} /> | [a] | |
 | i | <FontRenderer size={"48px"} weight="900" color="var(--ifm-color-primary, #794cbd)" text={",e"} /> | [a] | |
@@ -29,24 +29,24 @@ export const RenderSemlek = (code) => {
 
 | Roma-sem | Semlek | IPA | English Equivalent |
 |---|---|---|---|
-| r | <RenderSemlek code="r"/> | [a] | |
-| m | <RenderSemlek code="m"/> | [a] | |
-| n | <RenderSemlek code="n"/> | [a] | |
-| p | <RenderSemlek code="p"/> | [a] | |
-| b | <RenderSemlek code="b"/> | [a] | |
-| f | <RenderSemlek code="f"/> | [a] | |
-| v | <RenderSemlek code="v"/> | [a] | |
-| s | <RenderSemlek code="s"/> | [a] | |
-| j | <RenderSemlek code="j"/> | [a] | |
-| c | <RenderSemlek code="c"/> | [a] | |
-| l | <RenderSemlek code="l"/> | [a] | |
-| d | <RenderSemlek code="d"/> | [a] | |
-| t | <RenderSemlek code="t"/> | [a] | |
-| k | <RenderSemlek code="k"/> | [a] | |
-| g | <RenderSemlek code="g"/> | [a] | |
-| gz | <RenderSemlek code="x"/> | [a] | |
-| t | <RenderSemlek code="-t"/> | [a] | |
-| c | <RenderSemlek code=",c"/> | [a] | |
-| z | <RenderSemlek code="-z"/> | [a] | |
-| z | <RenderSemlek code=",z"/> | [a] | |
-| s | <RenderSemlek code="-s"/> | [a] | |
+| r | <RenderSemlek code="r" /> | [a] | |
+| m | <RenderSemlek code="m" /> | [a] | |
+| n | <RenderSemlek code="n" /> | [a] | |
+| p | <RenderSemlek code="p" /> | [a] | |
+| b | <RenderSemlek code="b" /> | [a] | |
+| f | <RenderSemlek code="f" /> | [a] | |
+| v | <RenderSemlek code="v" /> | [a] | |
+| s | <RenderSemlek code="s" /> | [a] | |
+| j | <RenderSemlek code="j" /> | [a] | |
+| c | <RenderSemlek code="c" /> | [a] | |
+| l | <RenderSemlek code="l" /> | [a] | |
+| d | <RenderSemlek code="d" /> | [a] | |
+| t | <RenderSemlek code="t" /> | [a] | |
+| k | <RenderSemlek code="k" /> | [a] | |
+| g | <RenderSemlek code="g" /> | [a] | |
+| gz | <RenderSemlek code="x" /> | [a] | |
+| t | <RenderSemlek code="-t" /> | [a] | |
+| c | <RenderSemlek code=",c" /> | [a] | |
+| z | <RenderSemlek code="-z" /> | [a] | |
+| z | <RenderSemlek code=",z" /> | [a] | |
+| s | <RenderSemlek code="-s" /> | [a] | |
