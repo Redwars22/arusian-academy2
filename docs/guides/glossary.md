@@ -1,3 +1,5 @@
+# Glossary
+
 Here you can find the translation of some recurrent linguistics terms in Arusian:
 
 **Accusative:** kouwei-vreyek
