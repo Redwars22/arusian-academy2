@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Learn Arusian
+# 🎓 Learn Arusian
 
 Here are some resources to help you learn more about Arusian and discover about it.
 
