@@ -1,0 +1,298 @@
+# Semlek Keyboard
+
+Here you can get the font code for the Semlek letters!
+
+import React, { useState } from 'react';
+import { FontRenderer } from "../../src/components/FontRenderer";
+
+export const semlekCharacters = {
+  'a': 'a',
+  'e': 'e',
+  'ei': ',a',
+  'i': ',e',
+  'o': 'o',
+  'u': 'u',
+  'r_vowel': 'r',
+  'r_vowel_alt': ',r',
+  'r_consonant': 'r',
+  'semlek_point': '.',
+  'm': 'm',
+  'n': 'n',
+  'p': 'P',
+  'b': 'b',
+  'f': 'F',
+  'v': 'v',
+  's': 's',
+  'j': 'j',
+  'c_sh': 'J',
+  'l': 'l',
+  'd': 'd',
+  't': 't',
+  'k': 'k',
+  'g': 'g',
+  'gz': 'x',
+  'c_ch': ',k',
+  'z': '-j',
+};
+
+export const semlekKeyboardLayout = [
+  ['e', 'r_consonant', 't', 'u', 'i', 'o', 'p'],
+  ['a', 's', 'd', 'f', 'g', 'j', 'k', 'l', 'semlek_point'],
+  ['z', 'gz', 'c_sh', 'v', 'b', 'n', 'm']
+];
+
+export const semlekShiftMap = {
+  'r_consonant': 'r_vowel_alt',
+  'a': 'ei',
+  'k': 'c_ch'
+};
+
+
+export function Keyboard() {
+  const [inputValue, setInputValue] = useState('');
+  const [isShiftActive, setIsShiftActive] = useState(false);
+  const [isCapsActive, setIsCapsActive] = useState(false);
+  const [activeKey, setActiveKey] = useState(null);
+
+  const keyboardLayout = semlekKeyboardLayout;
+  const shiftMap = semlekShiftMap;
+
+  const handleKeyPress = (key) => {
+    let charToAdd = key; // This will be the actual code inserted into the textarea
+
+    // Determine the Semlek code to insert based on Shift/Caps Lock
+    let semlekCodeToInsert = semlekCharacters[key]; // Default: unshifted Semlek code
+
+    if (isShiftActive) {
+        // If there's a specific shift mapping for this key, use it
+        const shiftedKeyName = shiftMap[key]; // e.g., 'r_vowel_alt'
+        if (shiftedKeyName) {
+            semlekCodeToInsert = semlekCharacters[shiftedKeyName]; // Get the actual code for the shifted key
+        } else if (semlekCodeToInsert) {
+            // If no specific shift mapping but it's a Semlek char, try to uppercase (though Semlek might not have uppercase)
+            semlekCodeToInsert = semlekCodeToInsert.toUpperCase();
+        } else {
+            // For non-Semlek chars (like numbers/symbols), use shiftMap or default uppercase
+            charToAdd = shiftMap[key] || key.toUpperCase();
+        }
+        setIsShiftActive(false); // Deactivate Shift after use
+    } else if (isCapsActive) {
+        semlekCodeToInsert = semlekCodeToInsert ? semlekCodeToInsert.toUpperCase() : key.toUpperCase();
+    } else {
+        semlekCodeToInsert = semlekCodeToInsert || key.toLowerCase();
+    }
+    
+    // If semlekCodeToInsert was found, use it, otherwise fallback to charToAdd (for non-Semlek symbols/numbers)
+    setInputValue((prev) => prev + (semlekCodeToInsert || charToAdd)); 
+    
+    setActiveKey(key);
+    setTimeout(() => setActiveKey(null), 150);
+  };
+
+  const handleSpecialKey = (key) => {
+    switch (key) {
+      case 'Backspace':
+        setInputValue((prev) => prev.slice(0, -1));
+        break;
+      case 'Space':
+        setInputValue((prev) => prev + ' ');
+        break;
+      case 'Enter':
+        setInputValue((prev) => prev + '\n');
+        break;
+      case 'Shift':
+        setIsShiftActive((prev) => !prev);
+        break;
+      case 'Caps Lock':
+        setIsCapsActive((prev) => !prev);
+        setIsShiftActive(false);
+        break;
+      case 'Tab':
+        setInputValue((prev) => prev + '\t');
+        break;
+      default:
+        break;
+    }
+    setActiveKey(key);
+    setTimeout(() => setActiveKey(null), 150);
+  };
+
+  const getButtonStyles = (key) => {
+    const baseStyles = {
+      padding: '12px',
+      margin: '4px',
+      borderRadius: '8px',
+      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+      transition: 'all 0.2s ease-in-out',
+      cursor: 'pointer',
+      userSelect: 'none',
+      color: 'white',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    };
+
+    let background = '#374151';
+
+    if (key === 'Shift' || key === 'Caps Lock') {
+      if ((key === 'Shift' && isShiftActive) || (key === 'Caps Lock' && isCapsActive)) {
+        background = '#3b82f6'; // Active blue
+      } else {
+        background = '#4b5563'; // Gray for special keys
+      }
+    } else if (['Backspace', 'Enter', 'Space', 'Tab'].includes(key)) {
+      background = '#4b5563'; // Gray for special keys
+    } else {
+      background = '#1f2937'; // Darker gray for regular keys
+      if ((isShiftActive && !shiftMap[key]) || isCapsActive) {
+        baseStyles.fontWeight = 'bold';
+        baseStyles.color = '#fcd34d'; // Yellow highlight
+      }
+    }
+
+    if (activeKey === key) {
+      baseStyles.transform = 'scale(0.95)';
+      background = '#6b7280'; // Gray for active state
+    }
+
+    return {
+      ...baseStyles,
+      backgroundColor: background,
+    };
+  };
+
+  const Key = ({ value }) => {
+    const isSpecial = ['Backspace', 'Space', 'Enter', 'Shift', 'Caps Lock', 'Tab'].includes(value);
+
+    let displayContent;
+    if (isSpecial) {
+      displayContent = value === 'Space' ? 'Space' : (value === 'Shift' ? (isShiftActive ? 'SHIFT' : 'Shift') : (value === 'Caps Lock' ? (isCapsActive ? 'CAPS' : 'Caps Lock') : value));
+    } else {
+      let semlekCodeForDisplay = semlekCharacters[value]; 
+      if (isShiftActive && shiftMap[value]) {
+          const shiftedKeyName = shiftMap[value]; // e.g., 'r_vowel_alt'
+          semlekCodeForDisplay = semlekCharacters[shiftedKeyName]; // Get the Semlek code for the shifted key
+      } else if (isCapsActive) {
+          // If Caps Lock, try to get uppercase (if Semlek characters support it, otherwise it's just visual for standard chars)
+          semlekCodeForDisplay = semlekCodeForDisplay ? semlekCodeForDisplay.toUpperCase() : value.toUpperCase();
+      }
+
+      if (semlekCodeForDisplay) {
+        displayContent = <FontRenderer text={semlekCodeForDisplay} size="24px" weight="900" color="var(--white-text)" />;
+      } else {
+        displayContent = isShiftActive && shiftMap[value] ? shiftMap[value] : value.toLowerCase();
+      }
+    }
+
+    const keySpecificStyles = {};
+    if (value === 'Space') {
+      keySpecificStyles.flexGrow = '1';
+      keySpecificStyles.paddingLeft = '32px';
+      keySpecificStyles.paddingRight = '32px';
+    } else if (isSpecial) {
+      keySpecificStyles.paddingLeft = '24px';
+      keySpecificStyles.paddingRight = '24px';
+    } else {
+      keySpecificStyles.width = '48px';
+      keySpecificStyles.height = '48px';
+    }
+
+    return (
+      <button
+        onClick={() => (isSpecial ? handleSpecialKey(value) : handleKeyPress(value))}
+        style={{
+          ...getButtonStyles(value),
+          ...keySpecificStyles,
+          fontFamily: 'Inter, sans-serif'
+        }}
+      >
+        {displayContent}
+      </button>
+    );
+  };
+
+  return (
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '16px',
+    }}>
+      <div style={{
+        backgroundColor: '#1f2937',
+        padding: '10px',
+        borderRadius: '12px',
+        boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        width: '100%',
+        maxWidth: '960px',
+        border: '1px solid #374151',
+      }}>
+      <div style={{
+        marginLeft: 'auto'
+      }}>
+        <FontRenderer text={inputValue.length > 0 ? inputValue : 'mar,a semr vreiek pus'} rtl size="24px" weight="900" color="var(--white-text)"/>
+        </div>
+        <textarea
+          style={{
+            width: '100%',
+            padding: '16px',
+            marginBottom: '24px',
+            borderRadius: '8px',
+            backgroundColor: '#374151',
+            color: 'white',
+            fontSize: '18px',
+            outline: 'none',
+            boxShadow: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+            resize: 'none',
+            border: '1px solid #4b5563',
+            fontFamily: 'Inter, sans-serif',
+            boxSizing: 'border-box',
+          }}
+          rows="5"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="Type in Semlek using the keyboard to get the font code"
+        ></textarea>
+
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}>
+          {keyboardLayout.map((row, rowIndex) => (
+            <div key={rowIndex} style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexWrap: 'wrap',
+            }}>
+              {/* Tab key can be placed anywhere, currently at the start of first row */}
+              {rowIndex === 0 && (
+                <Key value="Tab" />
+              )}
+              {row.map((key) => (
+                <Key key={key} value={key} />
+              ))}
+              {/* Backspace key can be placed anywhere, currently at the end of first row */}
+              {rowIndex === 0 && (
+                <Key value="Backspace" />
+              )}
+            </div>
+          ))}
+
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            marginTop: '8px',
+          }}>
+            <Key value="Shift" />
+            <Key value="Space" />
+            <Key value="Enter" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+<Keyboard/>

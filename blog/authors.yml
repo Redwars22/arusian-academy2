@@ -1,18 +1,10 @@
 andrewnation:
   name: Andrew Nation
   title: Software Engineering Student and Polyglot
-  url: https://github.com/yangshun
+  url: https://andrewnationdev.vercel.app/
   page: true
-  socials:
-    x: yangshunz
-    github: yangshun
 
 juweya:
   name: Juweya
   title: Astrophysics Graduate
   url: https://sebastienlorber.com
-  socials:
-    x: sebastienlorber
-    linkedin: sebastienlorber
-    github: slorber
-    newsletter: https://thisweekinreact.com
