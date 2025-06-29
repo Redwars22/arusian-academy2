@@ -2,9 +2,13 @@ andrewnation:
   name: Andrew Nation
   title: Software Engineering Student and Polyglot
   url: https://andrewnationdev.vercel.app/
+  image_url: https://avatars.githubusercontent.com/u/26885598?v=4
   page: true
+  socials:
+    github: https://github.com/Redwars22
 
 juweya:
   name: Juweya
   title: Astrophysics Graduate
-  url: https://sebastienlorber.com
+  url: https://conworkshop.com/view_language.php?l=ARJ
+  image_url: https://avatars.githubusercontent.com/u/218424436?v=4
