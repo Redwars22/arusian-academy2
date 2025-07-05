@@ -2,28 +2,30 @@
 
 Here you can find the translation of some recurrent linguistics terms in Arusian:
 
-**Accusative:** kouwei-vreyek
+**Accusative:** Kouwei-vreyek
 
-**Animate:** bai-vreyek
+**Animate:** Bai-vreyek
 
-**Comment:** puwau-det
+**Comment:** Puwau-det
 
-**Dative:** edrei-vreyek
+**Dative:** Edrei-vreyek
 
-**Genitive:** kamrei-vreyek
+**Etymology:** Tekrei-vreg
 
-**Grammar:** po-dem
+**Genitive:** Kamrei-vreyek
 
-**Inanimate:** vej-bai-vreyek
+**Grammar:** Po-dem
 
-**Linguistics:** dem-tek
+**Inanimate:** Vej-bai-vreyek
 
-**Morphology:** kra-tep
+**Linguistics:** Dem-tek
 
-**Nominative:** kouwa-vreyek
+**Morphology:** Kra-tep
 
-**Noun:** dei-vreyek
+**Nominative:** Kouwa-vreyek
 
-**Syntax:** kra-dem
+**Noun:** Dei-vreyek
 
-**Topic:** puwau
+**Syntax:** Kra-dem
+
+**Topic:** Puwau
