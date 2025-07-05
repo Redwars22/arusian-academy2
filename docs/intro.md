@@ -27,5 +27,3 @@ Here are some resources to help you learn more about Arusian and discover about 
 ## Articles
 
 - [El Arusiano: Rastros del Blackfoot y del Sprachbund de la Costa Noroeste](https://drive.google.com/file/d/1Gp5H1-QWww9LjOi6EiXVXzKQvCg_uMYB/view?usp=sharing): This article, originally written in Spanish, investigates the typological characteristics of Arusian, an artificial language created by Joseph Trerotola, exploring potential influences from the Blackfoot language and the Northwest Coast Linguistic Area. 
-  
-- [Southern Asian Languages and Arusian: Typological Similarities (SOON)](https://abc): This article aims to investigate the typological characteristics of Arusian that are similar to Southern Asian Languages like Cantonese, Thai, and Vietnamese. It focuses on four main topics: adpositions, topic-comment syntax, relative clauses and word building.
