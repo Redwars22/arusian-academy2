@@ -12,32 +12,34 @@ You will learn how to great people and ask/reply to common questions!
 import { FontRenderer } from "../../src/components/FontRenderer"
 
 export function RenderSemlek(props) {
-  return <FontRenderer size="30px" weight="200" rtl color="var(--ifm-color-primary, #794cbd)" text={props.phrase} />
+  return <FontRenderer size="22px" weight="900" rtl color="var(--ifm-color-primary, #794cbd)" text={props.phrase} />
 }
 
 export function Audio(props){
     return <>
-            <audio controls>
-                <source src={props.file} type="audio/mpeg"/>
-            </audio>
+            <div>
+              <audio controls style={{width: '100px'}}>
+                  <source src={props.file} type="audio/mpeg"/>
+              </audio>
+            </div>
             <span>[{props.ipa}]</span>
         </>
 }
 
-|Arusian (Semlek)|Arusian (Roma-Sem)|Pronunciation|Translation|
-|---|---|---|---|
-| <RenderSemlek phrase={". . su s,u . ."}/> | Suzu! | <Audio ipa="suzu" file=""/> | Hello/Goodbye (person A) |
-| <RenderSemlek phrase={". . so so . ."}/> | Soso! | <Audio ipa="soso" file=""/> | Hello/Goodbye (person B) |
-| <RenderSemlek phrase={". Pua, ta, ."}/> | Puwei-tei? | <Audio ipa="puwe͡i te͡i" file=""/> | How are you? |
-| <RenderSemlek phrase={". Pua, ta, Pa, ."}/> | Puwei-tei-pei? | <Audio ipa="puwe͡i te͡i pe͡i" file=""/> | How are you guys? |
-| <RenderSemlek phrase={". Nepa ta, ba,s ."}/> | Nepa-tei-beis? | <Audio ipa="nɛpa te͡i be͡is" file=""/> | Are you okay? Are you fine? |
-| <RenderSemlek phrase={". lu ba,s ."}/> | Lu beis! | <Audio ipa="lu be͡is" file=""/> | I'm fine |
-| <RenderSemlek phrase={". . ta, edras . ."}/> | Tei edras! | <Audio ipa="te͡i ʔɛdɜʁas" file=""/> | Thank you |
-| <RenderSemlek phrase={". ta, sa lu ka,elr ."}/> | Tei sa lu keyelr | <Audio ipa="te͡i sa lu kejɛlɜ" file=""/> | I'm sorry |
-| <RenderSemlek phrase={". Pua, ta, kouas ."}/> | Puwei-tei kouwas? | <Audio ipa="puwe͡i te͡i ko͡uwas" file=""/> | What are you doing? |
-| <RenderSemlek phrase={". ta, sa aec rmr ."}/> | Tei sa aek rmr! | <Audio ipa="te͡i sa ʔaik ɜmɜ" file=""/> | Good luck! |
-| <RenderSemlek phrase={". Nepa ta, our ta, demr rmr lu ."}/> | Nepa tei ouwr tei demr-rmr lu? | <Audio ipa="nɛpa te͡i ʔo͡uwɜ te͡i demɜːmɜ lu" file=""/> | Do you want to talk to me? |
-| <RenderSemlek phrase={". Nepa aruja, dem sa ta, demr ."}/> | Nepa arujei dem sa tei demr? | <Audio ipa="nɛpa ʔaʁuʒe͡i dɛm sa te͡i dɛmɜ" file=""/> | Do you speak Arusian? |
-| <RenderSemlek phrase={". Nepa ah nh gh lh eh dem sa ta, demr ."}/> | Nepa anglei dem sa tei demr? | <Audio ipa="nɛpa ʔangɜle͡i dɛm sa te͡i dɛmɜ" file=""/> | Do you speak English? |
-| <RenderSemlek phrase={". juea da, lus ."}/> | [juweya] dei lus. | <Audio ipa="ʒuweja de͡i lus" file=""/> | My name is Juweya |
-| <RenderSemlek phrase={". Pua, da, ta,s ."}/> | Puwei dei teis? | <Audio ipa="puwe͡i de͡i te͡is" file=""/> | What is your name? |
+|Arusian |Pronunciation|Translation|
+|---|---|---|
+| <RenderSemlek phrase={". . su s,u . ."}/> <br/> Suzu! | <Audio ipa="suzu" file=""/> | Hello/Goodbye (person A) |
+| <RenderSemlek phrase={". . so so . ."}/> <br/> Soso! | <Audio ipa="soso" file=""/> | Hello/Goodbye (person B) |
+| <RenderSemlek phrase={". Pua, ta, ."}/> <br/> Puwei-tei? | <Audio ipa="puwe͡i te͡i" file=""/> | How are you? |
+| <RenderSemlek phrase={". Pua, ta, Pa, ."}/> <br/> Puwei-tei-pei? | <Audio ipa="puwe͡i te͡i pe͡i" file=""/> | How are you guys? |
+| <RenderSemlek phrase={". Nepa ta, ba,s ."}/> <br/> Nepa-tei-beis? | <Audio ipa="nɛpa te͡i be͡is" file=""/> | Are you okay? Are you fine? |
+| <RenderSemlek phrase={". lu ba,s ."}/> <br/> Lu beis! | <Audio ipa="lu be͡is" file=""/> | I'm fine |
+| <RenderSemlek phrase={". . ta, edras . ."}/> <br/> Tei edras! | <Audio ipa="te͡i ʔɛdɜʁas" file=""/> | Thank you |
+| <RenderSemlek phrase={". ta, sa lu ka,elr ."}/> <br/> Tei sa lu keyelr | <Audio ipa="te͡i sa lu kejɛlɜ" file=""/> | I'm sorry |
+| <RenderSemlek phrase={". Pua, ta, kouas ."}/> <br/> Puwei-tei kouwas? | <Audio ipa="puwe͡i te͡i ko͡uwas" file=""/> | What are you doing? |
+| <RenderSemlek phrase={". ta, sa aec rmr ."}/> <br/>Tei sa aek rmr! | <Audio ipa="te͡i sa ʔaik ɜmɜ" file=""/> | Good luck! |
+| <RenderSemlek phrase={". Nepa ta, our ta, demr rmr lu ."}/> <br/> Nepa tei ouwr tei demr-rmr lu? | <Audio ipa="nɛpa te͡i ʔo͡uwɜ te͡i demɜːmɜ lu" file=""/> | Do you want to talk to me? |
+| <RenderSemlek phrase={". Nepa aruja, dem sa ta, demr ."}/> <br/> Nepa arujei dem sa tei demr? | <Audio ipa="nɛpa ʔaʁuʒe͡i dɛm sa te͡i dɛmɜ" file=""/> | Do you speak Arusian? |
+| <RenderSemlek phrase={". Nepa ah nh gh lh eh dem sa ta, demr ."}/> <br/> Nepa anglei dem sa tei demr? | <Audio ipa="nɛpa ʔangɜle͡i dɛm sa te͡i dɛmɜ" file=""/> | Do you speak English? |
+| <RenderSemlek phrase={". juea da, lus ."}/> <br/> [juweya] dei lus. | <Audio ipa="ʒuweja de͡i lus" file=""/> | My name is Juweya |
+| <RenderSemlek phrase={". Pua, da, ta,s ."}/> <br/> Puwei dei teis? | <Audio ipa="puwe͡i de͡i te͡is" file=""/> | What is your name? |
