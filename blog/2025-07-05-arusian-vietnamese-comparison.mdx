@@ -1,0 +1,138 @@
+---
+slug: arusian-vietnamese-comparison
+title: Typological Comparison Between Southern Asian Languages and Arusian - Part 1
+authors: [andrewnation]
+tags: [arusian, linguistics, asian]
+---
+
+This post is the first out of a series of posts on which we will compare Arusian to some
+Asian languages to test and seek features that might be similar. In this post, we will
+be comparing Arusian to Vietnamese by taking into consideration five main features:
+
+- Morphology and word building
+- Topic-Comment syntax
+- Adpositions
+- Relative Clauses
+- Copula
+
+<!-- truncate -->
+
+## Morphology and Word building
+
+Both Arusian and Vietnamese are highly analytic and form words by putting two or more roots
+side by side to create more complex words. Also, the concept of what might be a word in those
+languages may differ significantly from what is a word in English.
+
+Let's compare how those languages form words:
+
+Example 1:
+- Vietnamese: **Xe đạp** ("bicycle" < vehicle + pedal)
+- Arusian: **Vek-jeg** ("bicycle" < vehicle + leg)
+
+Example 2:
+- Vietnamese: **Sách giáo khoa** ("textbook" < book + teaching)
+- Arusian: **Juwa-tek** ("textbook" < book + study)
+
+## Topic-Comment syntax
+
+We will be dwelving first into the realm of Topic-Comment. What is topic-comment afterall?
+Well, it is nothing more than a way of organizing elements in a sentence, based on what are
+we talking about and then commenting about that thing. This structure is found in several
+languages, out of which we can name Mandarin Chinese, Japanese, Turkish, Hungarian, Portuguese, etc.
+
+In both Arusian and Vietnamese, elements can be moved to the left periphery of the sentence 
+(aka _the beginning of the sentence_, in less technical terms) to be focused and become the topic
+of the sentence. Let's see an example:
+
+import Glossing from '../src/components/Glossing.tsx'
+
+<Glossing data={[
+    { word: 'juwa', gloss: 'book' },
+    { word: 'pu-s', gloss: 'here-LINK' },
+    { word: 'u', gloss: 'REL.TOP' },
+    { word: 'sa', gloss: 'PRED.LINK' },
+    { word: 'lu', gloss: 'I' },
+    { word: 'puwauwr', gloss: 'read.TRANS' },
+  ]}
+    translation={'As for this book, I read it'}
+    title="Arusian"/>
+
+<Glossing data={[
+    { word: 'sách', gloss: 'book' },
+    { word: 'này', gloss: 'this' },
+    { word: 'thì', gloss: 'TOP' },
+    { word: 'tôi', gloss: 'I' },
+    { word: 'đọc', gloss: 'read' }
+  ]}
+    translation={'As for this book, I read it'}
+    title="Vietnamese"/>
+
+## Adpositions
+Arusian and Vietnamese use verbs to express the same notion expressed by prepositions in
+English. As such, prepositions don't really exist in either language.
+
+<Glossing data={[
+    { word: 'Tra pus', gloss: 'today' },
+    { word: 'u sa', gloss: 'REL.TOP LINK' },
+    { word: 'lu vekras', gloss: 'I drive-car-TRANS.LINK' },
+    { word: 'wei', gloss: 'REL' },
+    { word: 'tr', gloss: 'go.TRANS' },
+    { word: 'Veyet-fna', gloss: 'Vietnam' }
+  ]}
+    translation={'As for today, I drive the car to Vietnam'}
+    title="Arusian"/>
+
+<Glossing data={[
+    { word: 'Hôm nay', gloss: 'today' },
+    { word: 'tôi', gloss: 'I' },
+    { word: 'lái xe', gloss: 'drive-car' },
+    { word: 'đến', gloss: 'arrive' },
+    { word: 'Viêt Nam', gloss: 'Vietnam' }
+  ]}
+    translation={'As for today, I drive the car to Vietnam'}
+    title="Vietnamese"/>
+
+## Relative Clauses
+In Vietnamese, relative clauses follow the noun they modify, but there is often no 
+connector or relative pronoun. 
+In Arusian, connectors such as _u_, _sa_, or _wei_ are used as relative pronouns or linkers. 
+
+<Glossing data={[
+    { word: 'lu', gloss: 'I' },
+    { word: 'ouwr', gloss: 'like-TRANS' },
+    { word: 'lru', gloss: 'dog' },
+    { word: 'sa', gloss: 'LINK' },
+    { word: 'kluwa aj', gloss: 'color red' },
+  ]}
+    translation={'I like the dog that is red'}
+    title="Arusian"/>
+
+<Glossing data={[
+    { word: 'con chó', gloss: 'CL dog' },
+    { word: 'tôi', gloss: 'I' },
+    { word: 'yêu', gloss: 'like' },
+    { word: 'màu đỏ', gloss: 'color-red' }
+  ]}
+    translation={'I like the dog that is red'}
+    title="Vietnamese"/>
+
+## Copula
+In Arusian, the word **trmr** serves to link two nouns and convey a sense of equivalence, 
+much like the verb `to be` in English. Similarly, Vietnamese uses **là** for the same purpose. 
+This cannot be used for "adjectives", just nouns.
+
+<Glossing data={[
+    { word: 'Mai-dei', gloss: 'Mai-PROP.NOUN' },
+    { word: 'trmr', gloss: 'COP' },
+    { word: 'so-tekra', gloss: 'AGENT-study-INTR' }
+  ]}
+    translation={'Mai is a student'}
+    title="Arusian"/>
+
+<Glossing data={[
+    { word: 'Mai', gloss: 'Mai' },
+    { word: 'là', gloss: 'COP' },
+    { word: 'sinh viên', gloss: 'student' },
+  ]}
+    translation={'Mai is a student'}
+    title="Vietnamese"/>

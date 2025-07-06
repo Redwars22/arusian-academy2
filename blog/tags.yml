@@ -3,6 +3,16 @@ arusian:
   permalink: /arusian
   description: Posts related to Arusian language
 
+linguistics:
+  label: Linguistics
+  permalink: /Linguistics
+  description: Posts related to Linguistics
+
+asian:
+  label: Asian Languages
+  permalink: /asian-languages
+  description: Posts related to Asian languages
+
 welcome:
   label: Welcome
   permalink: /welcome
