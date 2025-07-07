@@ -1,0 +1,172 @@
+---
+slug: arusian-cantonese-comparison
+title: Southern Asian Languages and Arusian - Typological Comparison Part 2
+authors: [andrewnation]
+tags: [arusian, linguistics, asian]
+---
+
+This post is the second out of a series of posts on which we will compare Arusian to some
+Asian languages to test and seek features that might be similar. In this post, we will
+be comparing Arusian to Cantonese by taking into consideration five main features:
+
+- Morphology and word building
+- Topic-Comment syntax
+- Adpositions
+- Relative Clauses
+- Copula
+
+[Please check out the comparison between Arusian and Vietnamese here!](https://thearusianlanguage.vercel.app/blog/arusian-vietnamese-comparison)
+
+<!-- truncate -->
+
+import Glossing from '../src/components/Glossing.tsx'
+
+## Morphology and Word building
+
+Both Arusian and Cantonese are highly analytic (just like Vietnamese, as we saw in the last post) 
+and form words by putting two or more roots
+side by side to create more complex words. Also, the concept of what might be a word in those
+languages may differ significantly from what is a word in English.
+
+Let's compare how those languages form words:
+
+??? use the example of school here
+
+## Topic-Comment syntax
+
+In Cantonese, Topic-Comment (T-C) is a common sentence structure where the topic is 
+introduced first, often followed by a pause, and then a comment is made about that topic. 
+It's like saying "As for X, Y is true."
+The same is true for Arusian and Vietnamese.
+
+<Glossing data={[
+    { word: 'Juwa', gloss: 'book' },
+    { word: 'fus', gloss: 'that-LINK' },
+    { word: 'u sa', gloss: 'TOP LINK' },
+    { word: 'lu', gloss: 'I' },
+    { word: 'puwauwr', gloss: 'read' }
+  ]}
+    translation={"As for the book, I've read it"}
+    title="Arusian"/>
+
+<Glossing data={[
+    { word: 'go2', gloss: 'that' },
+    { word: 'bun2 syu1', gloss: 'CL book' },
+    { word: 'ngo5', gloss: 'I' },
+    { word: 'tai2 zo2', gloss: 'read-PERF' },
+  ]}
+    nativeScript={["嗰", "本書", "我", "睇咗"]}
+    showNativeScript
+    translation={"As for the book, I've read it"}
+    title="Cantonese"/>
+
+## Adpositions
+Arusian and Cantonese use verbs to express the same notion expressed by prepositions in
+English. As such, prepositions don't really exist in either language.
+
+<Glossing data={[
+    { word: 'Lu', gloss: 'I' },
+    { word: 'semr', gloss: 'write' },
+    { word: 'juwa', gloss: 'book' },
+    { word: 'u', gloss: 'REL' },
+    { word: 'oremr', gloss: 'use' },
+    { word: 'tai', gloss: 'pencil' }
+  ]}
+    translation={'I write a book with a pencil'}
+    title="Arusian"/>
+
+<Glossing data={[
+    { word: 'ngo5', gloss: 'I' },
+    { word: 'jung6', gloss: 'use' },
+    { word: 'jyun4 bat1', gloss: 'pencil' },
+    { word: 'se2', gloss: 'write' },
+    { word: 'jat1', gloss: 'one' },
+    { word: 'bun2 syu1', gloss: 'CL book' }
+  ]}
+    nativeScript={["我", "用", "鉛筆", "寫", "一", "本書"]}
+    showNativeScript
+    translation={'I write a book with a pencil'}
+    title="Cantonese"/>
+
+## Relative Clauses
+Arusian uses a post-nominal relative clause introduced by a relativizer _wei_, 
+although we can find other relativizers or linking particles like _u_ or _sa_. 
+In the following example, the relative clause follows the noun it modifies, 
+and _wei_ marks the relationship. In Cantonese, on the other hand, the relative clause 
+precedes the head noun. The particle **嘅** (ge3) functions as a possessive/attributive 
+marker that links the modifying clause to the head noun. This structure is similar to 
+how adjectives precede nouns in many languages.
+
+<Glossing data={[
+    { word: 'Cantonese', gloss: 'Cantonese' },
+    { word: 'trmr', gloss: 'be' },
+    { word: 'dem', gloss: 'language' },
+    { word: 'wei', gloss: 'REL' },
+    { word: 'lu', gloss: 'I' },
+    { word: 'tekr', gloss: 'study' }
+  ]}
+    translation={'Cantonese is the language that I study'}
+    title="Arusian"/>
+
+<Glossing data={[
+    { word: 'gwong2 dung1 waa2', gloss: 'Guangdong-speech' },
+    { word: 'hai6', gloss: 'COP' },
+    { word: 'ngo5', gloss: 'I' },
+    { word: 'hok6', gloss: 'study' },
+    { word: 'ge3', gloss: 'of' },
+    { word: 'ju5 jin4', gloss: 'language' }
+  ]}
+    nativeScript={["廣東話", "係", "我", "學", "嘅", "語言"]}
+    showNativeScript
+    translation={'Cantonese is the language that I study'}
+    title="Cantonese"/>
+
+## Copula
+In Arusian, the word **trmr** serves to link two nouns and convey a sense of equivalence, 
+much like the verb `to be` in English. Similarly, Cantonese uses **係** (hai6) for the same purpose. 
+This cannot be used for "adjectives", just nouns. Also, Cantonese uses another copula for 
+location (**喺** hai2), which is equivalent to Arusian **payr**, which is not considered a copula.
+
+- Example 1 (Equative copula)
+
+<Glossing data={[
+    { word: 'Lu', gloss: 'I' },
+    { word: 'trmr', gloss: 'be' },
+    { word: 'Chinese', gloss: 'Chinese' }
+  ]}
+    translation={'I am Chinese'}
+    title="Arusian"/>
+
+<Glossing data={[
+    { word: 'ngo5', gloss: 'I' },
+    { word: 'hai6', gloss: 'be' },
+    { word: 'zung1 gwok3 jan4', gloss: 'middle-country-person' },
+  ]}
+    nativeScript={["我", "係", "中國人"]}
+    showNativeScript
+    translation={'I am Chinese'}
+    title="Cantonese"/>
+
+- Example 2 (Locative copula)
+
+<Glossing data={[
+    { word: 'Lu', gloss: 'I' },
+    { word: 'payr', gloss: 'be-at' },
+    { word: 'pai-tek', gloss: 'place-study' }
+  ]}
+    translation={'I am at school'}
+    title="Arusian"/>
+
+<Glossing data={[
+    { word: 'ngo5', gloss: 'I' },
+    { word: 'hai2', gloss: 'be-at' },
+    { word: 'hok2 haau6', gloss: 'study-place' },
+  ]}
+    nativeScript={["我", "喺", "學校"]}
+    showNativeScript
+    translation={'I am at school'}
+    title="Cantonese"/>
+
+## Conclusion
+
+> "???" Juweya.
