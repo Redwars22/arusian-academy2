@@ -70,7 +70,7 @@ const config: Config = {
     navbar: {
       title: 'Arusian Academy (BETA)',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Arusian Academy',
         src: 'https://conworkshop.com/static/flag/ARJ-cd25782814914ef07162048aeac51e8cc80529b8.png',
       },
       items: [
@@ -81,6 +81,7 @@ const config: Config = {
           label: 'Learn Arusian',
         },
         {
+          type: 'docSidebar',
           href: 'https://kemkemjuwa.miraheze.org/wiki/Category:Juwa-ket_Arujeis',
           label: 'Arusian Encyclopedia',
           position: 'left',
