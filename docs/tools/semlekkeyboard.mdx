@@ -33,18 +33,22 @@ export const semlekCharacters = {
   'gz': 'x',
   'c_ch': ',k',
   'z': '-j',
+  'upper_diacr': '-',
+  'lower_diacr': ',',
+  'semlek_excl': '..'
 };
 
 export const semlekKeyboardLayout = [
   ['e', 'r_consonant', 't', 'u', 'i', 'o', 'p'],
-  ['a', 's', 'd', 'f', 'g', 'j', 'k', 'l', 'semlek_point'],
-  ['z', 'gz', 'c_sh', 'v', 'b', 'n', 'm']
+  ['a', 's', 'd', 'f', 'g', 'j', 'k', 'l', 'semlek_point', 'upper_diacr'],
+  ['z', 'gz', 'c_sh', 'v', 'b', 'n', 'm', 'lower_diacr']
 ];
 
 export const semlekShiftMap = {
   'r_consonant': 'r_vowel_alt',
   'a': 'ei',
-  'k': 'c_ch'
+  'k': 'c_ch',
+  'semlek_point': 'semlek_excl'
 };
 
 
