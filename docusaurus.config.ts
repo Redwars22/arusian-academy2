@@ -84,6 +84,7 @@ const config: Config = {
           type: 'docSidebar',
           href: 'https://kemkemjuwa.miraheze.org/wiki/Category:Juwa-ket_Arujeis',
           label: 'Arusian Encyclopedia',
+          sidebarId: 'tutorialSidebar',
           position: 'left',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
