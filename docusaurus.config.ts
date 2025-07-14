@@ -80,6 +80,11 @@ const config: Config = {
           position: 'left',
           label: 'Learn Arusian',
         },
+        {
+          href: 'https://kemkemjuwa.miraheze.org/wiki/Category:Juwa-ket_Arujeis',
+          label: 'Arusian Encyclopedia',
+          position: 'left',
+        },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://conworkshop.com/view_language.php?l=ARJ',
