@@ -16,10 +16,17 @@ export function RenderSemlek(props) {
 }
 
 export function Audio(props){
+
+    const getURL = (file) => {
+        const BASE = "https://thearusianlanguage.vercel.app/audio/";
+
+        return `${BASE}${file}`
+    }
+
     return <>
             <div>
               <audio controls style={{width: '100px'}}>
-                  <source src={props.file} type="audio/mpeg"/>
+                  <source src={getURL(props.file)} type="audio/mpeg"/>
               </audio>
             </div>
             <span>[{props.ipa}]</span>
