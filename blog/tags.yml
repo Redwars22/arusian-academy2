@@ -17,3 +17,13 @@ welcome:
   label: Welcome
   permalink: /welcome
   description: Posts welcoming the user
+
+syntax:
+  label: Syntax
+  permalink: /syntax
+  description: Posts related to Syntax
+
+pragmatics:
+  label: Pragmatics
+  permalink: /pragmatics
+  description: Posts related to Pragmatics
