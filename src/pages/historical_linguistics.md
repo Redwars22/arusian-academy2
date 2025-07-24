@@ -50,6 +50,10 @@ Instead of _vej_, a preverbal **nei** was used to negate sentences. The syntax d
 ### Passive Voice and Verb Markers
 Verbs in Middle Arusian (the transitive ones) were consistently marked with -r when the subject was the actor and with -s when it was the undergoer (the patient). The agent in **patient trigger verbs** was introduced by the **er** particle, which over time fused into the root of the verb and yielded the modern **-se** ending for **transitive patient trigger verbs**.  
 
+- Middle Arusian: **Juwa decus er lu** (The book was bought by me)
+- Modern Standard Arusian (Fenadel Dialect): **Juwa decse lu**
+- Modern Arusian (Puerto Lobos): **Juwa  deces lu**
+
 ### Adjectives in Middle Aru?
 
 ### Peis: Plural Marker
