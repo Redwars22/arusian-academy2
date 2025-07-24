@@ -64,7 +64,15 @@ The particle **peis** was used sporadically as a plural marker, although it was 
 In Modern Arusian, it was replaced by a shorter form (**pei**) and disappeared altogether in Porto Lobos.
 
 ### The Lack of "WEI"
-Soon!
+The pronoun **wei** (whose classification is still under debate, but candidates include _anaphoric pro-form_, _relative pronoun_, and _ligature_, similar in function to Tagalog _ng_ as a clause connector) didn't exist yet in Middle Arusian. Instead, you would connect elements in a more direct way. Most of the time, **wei** is there, in Modern Arusian, to reduce the risk of ambiguity, especially in strings of nouns connected with **sa**.
+
+- Middle Arusian: **Tei adecr vek timus lus** (You are buying my black car in Fenadel).
+
+Since Middle Arusian possessed an adjective class, **VEK TIMUS LUS** clearly means `my black car`. However, since they started to merge with nouns and verbs, **VEK TIMUS LUS** could be understood either as `my black car` or `car of my blackness`. To reduce this ambiguity, **wei** appeared in the language. Its etymology is unknown, though.  
+
+- Modern Arusian: **Tei decr vek sa tim wei lus**
+
+Notice that **wei** is attached to a constituent that ISN'T the topic of the sentence, that is, it is part of the predicate. This is the main contrast between **u** (describes a topic) and **wei** (describes a predicate/comment). Otherwise, their function is the same.
 
 # Etymology of Arusian Roots
 
@@ -75,3 +83,5 @@ Soon!
 |**keyekr**|*kieken* in German or Plattdeutsch|to watch|
 |**Mred**|a hybrid between Elanian *Mehanen* 'Earth' and Arusian *Ared* 'Earth'|Earth, community|
 |**grau**|from Old Endric *garrald*|message, letter, notice|
+|**mez**|from French *maison*|house|
+|**vek**|from French *véhicule*|car, vehicle|
