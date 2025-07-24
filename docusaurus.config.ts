@@ -87,6 +87,11 @@ const config: Config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
         },
+        {
+          to: '/historical_linguistics',
+          position: 'left',
+          label: 'Historical Linguistics',
+        },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://conworkshop.com/view_language.php?l=ARJ',

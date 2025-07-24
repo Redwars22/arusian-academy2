@@ -26,7 +26,7 @@ import {FontRenderer} from "../components/FontRenderer"
 Middle Arusian is the stage of the Arusian language before the year of 2019. The language underwent few changes
 in morphology, but lexicon and syntax changed quite considerably. We will detail some of those here.
 
-### Linguistic Purism and "European" taboo
+### Linguistic Purism and "European" Taboo
 Arusian used to have more words borrowed from European languages in the past However, there was a period in Arusia where there was a taboo about everything that was European or of European origin (and that included borrowings). Arusians started replacing them with native Eru roots. Here are some:
 
 |Middle Aru|Modern Arusian|Meaning|Origin|
@@ -35,7 +35,7 @@ Arusian used to have more words borrowed from European languages in the past How
 |lak|luwa-vai|milk|Latin|
 |nei|vej|no, not (**vej** also means _void_)|Unknown, likely Scandinavian|
 
-### Negation with "nei"
+### Negation with "NEI"
 Instead of _vej_, a preverbal **nei** was used to negate sentences. The syntax differed considerably here.
 
 - Middle Arusian: **Lu nei ouwr lu decr juwa** (I don't want to buy a book)
@@ -50,7 +50,26 @@ Verbs in Middle Arusian (the transitive ones) were consistently marked with -r w
 - Modern Arusian (Puerto Lobos): **Juwa  deces lu**
 
 ### Adjectives in Middle Aru?
+As for adjectives, they were still a productive class in Middle Aru and ended with either **-s** (for roots ending in vowels) and **-us** (for roots ending in a consonant). Over time, adjectives started to behave more like nouns and verbs and ceased to exist as a distinct class in Arusian.
+
+- Middle Arusian: **Vek timus sa lu adecr** (I buy a black car)
+- Modern Arusian: **Vek sa tim sa lu decr**
 
 ### Peis: Plural Marker
+The particle **peis** was used sporadically as a plural marker, although it was never mandatory, like the English -s. It could have been a noun/adjective (because adjectives and attributive words ended with **-s/-us** in Middle Arusian) whose meaning was something in the lines of 'more than one'. Also, in Modern Arusian it is also prefixed to numbers when they are used together with nouns to express quantity: i.e. *som sa pei-tef* (three men).
 
-### The lack of "wei"
+- **Juwa** (book, books)
+- **Juwa peis** (books)
+
+In Modern Arusian, it was replaced by a shorter form (**pei**) and disappeared altogether in Porto Lobos.
+
+### The Lack of "WEI"
+Soon!
+
+# Etymology of Arusian Roots
+
+|Arusian|Source Language|Meaning|
+|---|---|---|
+|**srouwr**|from Portuguese *sacar* 'to get'|to understand|
+|**piyr**|from Italian or Neapolitan *pigliare*|to understand|
+|**keyekr**|*kieken* in German or Plattdeutsch|to watch|
