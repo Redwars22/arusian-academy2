@@ -73,3 +73,5 @@ Soon!
 |**srouwr**|from Portuguese *sacar* 'to get'|to understand|
 |**piyr**|from Italian or Neapolitan *pigliare*|to understand|
 |**keyekr**|*kieken* in German or Plattdeutsch|to watch|
+|**Mred**|a hybrid between Elanian *Mehanen* 'Earth' and Arusian *Ared* 'Earth'|Earth, community|
+|**grau**|from Old Endric *garrald*|message, letter, notice|
