@@ -28,7 +28,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'pt', 'fr', 'es', 'de'],
   },
 
   presets: [
@@ -66,7 +66,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/aru_flag.webp',
+    image: 'img/aru_flag.png',
     navbar: {
       title: 'Arusian Academy (BETA)',
       logo: {
