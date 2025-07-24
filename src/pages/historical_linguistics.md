@@ -74,7 +74,7 @@ Since Middle Arusian possessed an adjective class, **VEK TIMUS LUS** clearly mea
 
 Notice that **wei** is attached to a constituent that ISN'T the topic of the sentence, that is, it is part of the predicate. This is the main contrast between **u** (describes a topic) and **wei** (describes a predicate/comment). Otherwise, their function is the same.
 
-# Etymology of Arusian Roots
+## Etymology of Arusian Roots
 
 |Arusian|Source Language|Meaning|
 |---|---|---|
