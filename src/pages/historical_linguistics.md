@@ -19,22 +19,19 @@ import {FontRenderer} from "../components/FontRenderer"
     size="33px"
     color="var(--ifm-color-primary, #794cbd)"
 />
+<br/>
 
 ## Middle Arusian
 
 Middle Arusian is the stage of the Arusian language before the year of 2019. The language underwent few changes
 in morphology, but lexicon and syntax changed quite considerably. We will detail some of those here.
 
-### The "Er" letter as tap
-The Arusian letter ER is nowadays pronounced as an uvular R sound, like the one found in French, Portuguese (-RR-),
-most dialects of High German and Danish. However, between two vowels, it used to be pronounced as a tap, like in the Spanish word **caro** or the English **butter** in some American dialects.
-
 ### Linguistic Purism and "European" taboo
 Arusian used to have more words borrowed from European languages in the past However, there was a period in Arusia where there was a taboo about everything that was European or of European origin (and that included borrowings). Arusians started replacing them with native Eru roots. Here are some:
 
 |Middle Aru|Modern Arusian|Meaning|Origin|
 |---|---|---|---|
-|aku|luwa|water|Latin|
+|aku|luwa|water|Latin or maybe native but displaced because of its resemblance to Latin *aqua*|
 |lak|luwa-vai|milk|Latin|
 |nei|vej|no, not (**vej** also means _void_)|Unknown, likely Scandinavian|
 
