@@ -10,14 +10,12 @@ import {FontRenderer} from "../components/FontRenderer"
 
 <FontRenderer
     text=". r,ag ,au suP ,aal ,aaF as u sarGerM Ges as med ,ajura as mad ."
-    rtl
     size="33px"
     color="var(--ifm-color-primary, #794cbd)"
 />
 <br/>
 <FontRenderer
     text=". . s,araM ,arTal . ."
-    rtl
     size="33px"
     color="var(--ifm-color-primary, #794cbd)"
 />
