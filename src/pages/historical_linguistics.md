@@ -6,6 +6,22 @@ title: Historical Linguistics
 
 This page aims to provide you with some information about older stages of the Arusian language. Have fun!
 
+import {FontRenderer} from "../components/FontRenderer"
+
+<FontRenderer
+    text=". r,ag ,au suP ,aal ,aaF as u sarGerM Ges as med ,ajura as mad ."
+    rtl
+    size="33px"
+    color="var(--ifm-color-primary, #794cbd)"
+/>
+
+<FontRenderer
+    text=". . s,araM ,arTal . ."
+    rtl
+    size="33px"
+    color="var(--ifm-color-primary, #794cbd)"
+/>
+
 ## Middle Arusian
 
 Middle Arusian is the stage of the Arusian language before the year of 2019. The language underwent few changes
