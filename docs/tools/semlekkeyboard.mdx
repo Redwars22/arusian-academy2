@@ -74,14 +74,14 @@ export function Keyboard() {
             semlekCodeToInsert = semlekCharacters[shiftedKeyName]; // Get the actual code for the shifted key
         } else if (semlekCodeToInsert) {
             // If no specific shift mapping but it's a Semlek char, try to uppercase (though Semlek might not have uppercase)
-            semlekCodeToInsert = semlekCodeToInsert.toUpperCase();
+            semlekCodeToInsert = semlekCodeToInsert + "h";
         } else {
             // For non-Semlek chars (like numbers/symbols), use shiftMap or default uppercase
             charToAdd = shiftMap[key] || key.toUpperCase();
         }
         setIsShiftActive(false); // Deactivate Shift after use
     } else if (isCapsActive) {
-        semlekCodeToInsert = semlekCodeToInsert ? semlekCodeToInsert.toUpperCase() : key.toUpperCase();
+        semlekCodeToInsert = semlekCodeToInsert ? semlekCodeToInsert + "h " : key.toUpperCase() + "h" ;
     } else {
         semlekCodeToInsert = semlekCodeToInsert || key.toLowerCase();
     }
@@ -290,6 +290,7 @@ export function Keyboard() {
             marginTop: '8px',
           }}>
             <Key value="Shift" />
+            <Key value="Caps Lock" />
             <Key value="Space" />
             <Key value="Enter" />
           </div>
