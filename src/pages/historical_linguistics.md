@@ -14,7 +14,7 @@ import {FontRenderer} from "../components/FontRenderer"
     size="33px"
     color="var(--ifm-color-primary, #794cbd)"
 />
-
+<br/>
 <FontRenderer
     text=". . s,araM ,arTal . ."
     rtl
