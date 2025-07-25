@@ -9,7 +9,13 @@ This page aims to provide you with some information about older stages of the Ar
 import {FontRenderer} from "../components/FontRenderer"
 
 <FontRenderer
-    text=". r,ag ,au suP ,aal ,aaF as u sarGerM Ges as med ,ajura as mad ."
+    text=". Ges arGerM as med ,ajura as mad ."
+    size="33px"
+    color="var(--ifm-color-primary, #794cbd)"
+/>
+<br/>
+<FontRenderer
+    text=". r,ag ,au suP ,aal ,aaF as us ."
     size="33px"
     color="var(--ifm-color-primary, #794cbd)"
 />
@@ -52,8 +58,8 @@ Verbs in Middle Arusian (the transitive ones) were consistently marked with -r w
 ### Adjectives in Middle Aru?
 As for adjectives, they were still a productive class in Middle Aru and ended with either **-s** (for roots ending in vowels) and **-us** (for roots ending in a consonant). Over time, adjectives started to behave more like nouns and verbs and ceased to exist as a distinct class in Arusian.
 
-- Middle Arusian: **Vek timus sa lu adecr** (I buy a black car)
-- Modern Arusian: **Vek sa tim sa lu decr**
+- Middle Arusian: **Vek timus u sa lu adecr** (I buy a black car)
+- Modern Arusian: **Vek sa tim u sa lu decr**
 
 ### Peis: Plural Marker
 The particle **peis** was used sporadically as a plural marker, although it was never mandatory, like the English -s. It could have been a noun/adjective (because adjectives and attributive words ended with **-s/-us** in Middle Arusian) whose meaning was something in the lines of 'more than one'. Also, in Modern Arusian it is also prefixed to numbers when they are used together with nouns to express quantity: i.e. *som sa pei-tef* (three men).
@@ -61,27 +67,30 @@ The particle **peis** was used sporadically as a plural marker, although it was 
 - **Juwa** (book, books)
 - **Juwa peis** (books)
 
-In Modern Arusian, it was replaced by a shorter form (**pei**) and disappeared altogether in Porto Lobos.
+In Modern Arusian, (**pei**) became more common and now works more like a marker/particle than a noun. It disappeared altogether in Porto Lobos.
 
 ### The Lack of "WEI"
-The pronoun **wei** (whose classification is still under debate, but candidates include _anaphoric pro-form_, _relative pronoun_, and _ligature_, similar in function to Tagalog _ng_ as a clause connector) didn't exist yet in Middle Arusian. Instead, you would connect elements in a more direct way. Most of the time, **wei** is there, in Modern Arusian, to reduce the risk of ambiguity, especially in strings of nouns connected with **sa**.
+The pronoun **wei** (whose classification is still under debate, but candidates include _anaphoric pro-form_, _relative pronoun_, and _ligature_, similar in function to Tagalog _ng_ as a clause connector) didn't exist yet in Middle Arusian. Instead, you would connect elements in a more direct way. Most of the time, **wei** is there, in Modern Arusian, to reduce the risk of ambiguity in non-topicalised clauses and comments.
 
 - Middle Arusian: **Tei adecr vek timus lus** (You are buying my black car in Fenadel).
 
-Since Middle Arusian possessed an adjective class, **VEK TIMUS LUS** clearly means `my black car`. However, since they started to merge with nouns and verbs, **VEK TIMUS LUS** could be understood either as `my black car` or `car of my blackness`. To reduce this ambiguity, **wei** appeared in the language. Its etymology is unknown, though.  
+Since Middle Arusian possessed an adjective class, **VEK TIMUS LUS** clearly means `my black car`. However, since they started to merge with nouns and verbs, **VEK SA TIM LUS** could be understood either as `my black car` or `car of my blackness`. To reduce this ambiguity, **wei** appeared in the language. Its etymology is unknown, though.  
 
 - Modern Arusian: **Tei decr vek sa tim wei lus**
 
-Notice that **wei** is attached to a constituent that ISN'T the topic of the sentence, that is, it is part of the predicate. This is the main contrast between **u** (describes a topic) and **wei** (describes a predicate/comment). Otherwise, their function is the same.
+Notice that **wei** is attached to a constituent that ISN'T the topic of the sentence, that is, it is part of the predicate. This is the main contrast between **u** (describes a topic/focused element) and **wei** (describes a predicate/comment, thus, a non-focused element). Otherwise, their function is the same. Let's take a look at another example:
+
+- Middle Arusian: **Nut sa vom auwayeis dauwr** (Reconstructed form)
+- Modern Arusian: **Nut sa vom dauwr wei auwayeis** (As for the food, the beautiful people eat it)
 
 ## Etymology of Arusian Roots
 
 |Arusian|Source Language|Meaning|
 |---|---|---|
-|**srouwr**|from Portuguese *sacar* 'to get'|to understand|
-|**piyr**|from Italian or Neapolitan *pigliare*|to understand|
-|**keyekr**|*kieken* in German or Plattdeutsch|to watch|
-|**Mred**|a hybrid between Elanian *Mehanen* 'Earth' and Arusian *Ared* 'Earth'|Earth, community|
+|**srau**|from Portuguese *sacar* 'to get'|understanding|
+|**piya**|from Italian or Neapolitan *pigliare*|understanding (obsolete, replaced by **srau**)|
+|**keyek**|*kieken* in German or Plattdeutsch|obsolete in the sense of 'watching', now it means 'ogling'|
+|**Mred**|a hybrid between Elanian *Mehanen* 'Earth' and Arusian *Ared* 'Earth'|World, realm, community|
 |**grau**|from Old Endric *garrald*|message, letter, notice|
 |**mez**|from French *maison*|house|
 |**vek**|from French *véhicule*|car, vehicle|
