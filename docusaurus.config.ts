@@ -76,7 +76,7 @@ const config: Config = {
           isServer: boolean,
           utils: ConfigureWebpackUtils
         ) {
-          const { webpack } = utils;
+          const webpack  = utils;
 
           return {
             plugins: [
