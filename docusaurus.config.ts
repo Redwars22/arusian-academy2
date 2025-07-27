@@ -1,3 +1,10 @@
+// docusaurus.config.js
+
+// **PASSO 1: Adicione esta linha no TOPO do arquivo.**
+// Isso carrega as variáveis do seu arquivo .env para o ambiente Node.js
+// onde este docusaurus.config.js é executado.
+require('dotenv').config();
+
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
@@ -62,6 +69,28 @@ const config: Config = {
         },
       } satisfies Preset.Options,
     ],
+  ],
+
+  // **PASSO 2: Adicione a seção 'plugins' aqui.**
+  plugins: [
+    async function customWebpackPlugin(context, options) {
+      return {
+        name: 'docusaurus-plugin-custom-webpack',
+        configureWebpack(config, isServer, utils) {
+          const { webpack } = utils;
+          return {
+            plugins: [
+              new webpack.DefinePlugin({
+                // Garante que process.env.SUPABASE_URL esteja disponível no código do navegador
+                'process.env.SUPABASE_URL': JSON.stringify(process.env.SUPABASE_URL),
+                // Garante que process.env.SUPABASE_ANON_KEY esteja disponível no código do navegador
+                'process.env.SUPABASE_ANON_KEY': JSON.stringify(process.env.SUPABASE_ANON_KEY),
+              }),
+            ],
+          };
+        },
+      };
+    },
   ],
 
   themeConfig: {
