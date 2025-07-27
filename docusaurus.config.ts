@@ -3,6 +3,7 @@ require("dotenv").config();
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config, ConfigureWebpackUtils } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import * as realWebpack from 'webpack';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -71,18 +72,18 @@ const config: Config = {
       return {
         name: "docusaurus-plugin-custom-webpack",
         configureWebpack(
-          config: webpack.Configuration, 
+          config: realWebpack.Configuration, 
           isServer: boolean,
           utils: ConfigureWebpackUtils
         ) {
 
-          const environmentPlugin = new utils.webpack.EnvironmentPlugin({
-            SUPABASE_URL: process.env.SUPABASE_URL,
-            SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY,
-          });
-
           return {
-            plugins: [environmentPlugin],
+            plugins: [
+              new realWebpack.EnvironmentPlugin({ // <-- MUDANÇA AQUI: Usa 'realWebpack' importado
+                SUPABASE_URL: process.env.SUPABASE_URL,
+                SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY,
+              }),
+            ],
           };
         },
       };
