@@ -71,19 +71,18 @@ const config: Config = {
     ],
   ],
 
-  // **PASSO 2: Adicione a seção 'plugins' aqui.**
   plugins: [
     async function customWebpackPlugin(context, options) {
       return {
         name: 'docusaurus-plugin-custom-webpack',
-        configureWebpack(config, isServer, utils) {
-          const { webpack } = utils;
+        configureWebpack(config, isServer, utils) { // O 'utils' é o terceiro argumento
+          // Correção: Acesse 'webpack' diretamente de 'utils'
+          const webpack = utils.webpack; // OU const { webpack } = utils; (se tiver certeza da desestruturação)
+          
           return {
             plugins: [
               new webpack.DefinePlugin({
-                // Garante que process.env.SUPABASE_URL esteja disponível no código do navegador
                 'process.env.SUPABASE_URL': JSON.stringify(process.env.SUPABASE_URL),
-                // Garante que process.env.SUPABASE_ANON_KEY esteja disponível no código do navegador
                 'process.env.SUPABASE_ANON_KEY': JSON.stringify(process.env.SUPABASE_ANON_KEY),
               }),
             ],
