@@ -78,6 +78,7 @@ const config: Config = {
         ) {
           // CORREÇÃO: Você precisa desestruturar 'webpack' do objeto 'utils'
           // O objeto 'utils' contém o 'webpack' como uma propriedade.
+          //@ts-ignore
           const { webpack } = utils; // <-- Essa é a linha correta!
 
           return {
