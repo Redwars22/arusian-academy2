@@ -8,6 +8,7 @@ require("dotenv").config();
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config, ConfigureWebpackUtils } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import type * as webpack from 'webpack';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
