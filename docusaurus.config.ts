@@ -1,8 +1,3 @@
-// docusaurus.config.js
-
-// **PASSO 1: Adicione esta linha no TOPO do arquivo.**
-// Isso carrega as variáveis do seu arquivo .env para o ambiente Node.js
-// onde este docusaurus.config.js é executado.
 require("dotenv").config();
 
 import { themes as prismThemes } from "prism-react-renderer";
@@ -76,14 +71,11 @@ const config: Config = {
     async function customWebpackPlugin(context, options) {
       return {
         name: "docusaurus-plugin-custom-webpack",
-        // Tipagem mais precisa dos parâmetros:
         configureWebpack(
-          config: webpack.Configuration, // 'config' é do tipo webpack.Configuration
+          config: webpack.Configuration,
           isServer: boolean,
-          utils: ConfigureWebpackUtils // 'utils' é do tipo ConfigureWebpackUtils
+          utils: ConfigureWebpackUtils
         ) {
-          // Agora, TypeScript sabe que 'utils' tem 'webpack'
-          // A desestruturação funcionará corretamente.
           const { webpack } = utils;
 
           return {
