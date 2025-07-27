@@ -3,69 +3,69 @@
 // **PASSO 1: Adicione esta linha no TOPO do arquivo.**
 // Isso carrega as variáveis do seu arquivo .env para o ambiente Node.js
 // onde este docusaurus.config.js é executado.
-require('dotenv').config();
+require("dotenv").config();
 
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config, ConfigureWebpackUtils } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Arusian Academy (BETA)',
-  tagline: 'The Language of Nature',
-  favicon: 'https://conworkshop.com/static/flag/ARJ-cd25782814914ef07162048aeac51e8cc80529b8.png',
+  title: "Arusian Academy (BETA)",
+  tagline: "The Language of Nature",
+  favicon:
+    "https://conworkshop.com/static/flag/ARJ-cd25782814914ef07162048aeac51e8cc80529b8.png",
 
   // Set the production url of your site here
-  url: 'https://thearusianlanguage.vercel.app',
+  url: "https://thearusianlanguage.vercel.app",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: "facebook", // Usually your GitHub org/user name.
+  projectName: "docusaurus", // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'pt', 'fr', 'es', 'de'],
+    defaultLocale: "en",
+    locales: ["en", "pt", "fr", "es", "de"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
           showReadingTime: true,
           feedOptions: {
-            type: ['rss', 'atom'],
+            type: ["rss", "atom"],
             xslt: true,
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/Redwars22/arusian-academy2/edit/main/',
+          editUrl: "https://github.com/Redwars22/arusian-academy2/edit/main/",
           // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onInlineTags: "warn",
+          onInlineAuthors: "warn",
+          onUntruncatedBlogPosts: "warn",
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
@@ -74,16 +74,26 @@ const config: Config = {
   plugins: [
     async function customWebpackPlugin(context, options) {
       return {
-        name: 'docusaurus-plugin-custom-webpack',
-        configureWebpack(config, isServer, utils) { // O 'utils' é o terceiro argumento
-          // Correção: Acesse 'webpack' diretamente de 'utils'
-          const webpack = utils.webpack; // OU const { webpack } = utils; (se tiver certeza da desestruturação)
-          
+        name: "docusaurus-plugin-custom-webpack",
+        // Tipagem mais precisa dos parâmetros:
+        configureWebpack(
+          config: webpack.Configuration, // 'config' é do tipo webpack.Configuration
+          isServer: boolean,
+          utils: ConfigureWebpackUtils // 'utils' é do tipo ConfigureWebpackUtils
+        ) {
+          // Agora, TypeScript sabe que 'utils' tem 'webpack'
+          // A desestruturação funcionará corretamente.
+          const { webpack } = utils;
+
           return {
             plugins: [
               new webpack.DefinePlugin({
-                'process.env.SUPABASE_URL': JSON.stringify(process.env.SUPABASE_URL),
-                'process.env.SUPABASE_ANON_KEY': JSON.stringify(process.env.SUPABASE_ANON_KEY),
+                "process.env.SUPABASE_URL": JSON.stringify(
+                  process.env.SUPABASE_URL
+                ),
+                "process.env.SUPABASE_ANON_KEY": JSON.stringify(
+                  process.env.SUPABASE_ANON_KEY
+                ),
               }),
             ],
           };
@@ -94,71 +104,71 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/aru_flag.png',
+    image: "img/aru_flag.png",
     navbar: {
-      title: 'Arusian Academy (BETA)',
+      title: "Arusian Academy (BETA)",
       logo: {
-        alt: 'Arusian Academy',
-        src: 'https://conworkshop.com/static/flag/ARJ-cd25782814914ef07162048aeac51e8cc80529b8.png',
+        alt: "Arusian Academy",
+        src: "https://conworkshop.com/static/flag/ARJ-cd25782814914ef07162048aeac51e8cc80529b8.png",
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Learn Arusian',
+          type: "docSidebar",
+          sidebarId: "tutorialSidebar",
+          position: "left",
+          label: "Learn Arusian",
         },
         {
-          type: 'docSidebar',
-          href: 'https://kemkemjuwa.miraheze.org/wiki/Category:Juwa-ket_Arujeis',
-          label: 'Arusian Encyclopedia',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
+          type: "docSidebar",
+          href: "https://kemkemjuwa.miraheze.org/wiki/Category:Juwa-ket_Arujeis",
+          label: "Arusian Encyclopedia",
+          sidebarId: "tutorialSidebar",
+          position: "left",
         },
         {
-          to: '/historical_linguistics',
-          position: 'left',
-          label: 'Historical Linguistics',
+          to: "/historical_linguistics",
+          position: "left",
+          label: "Historical Linguistics",
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        { to: "/blog", label: "Blog", position: "left" },
         {
-          href: 'https://conworkshop.com/view_language.php?l=ARJ',
-          label: 'Conworkshop',
-          position: 'right',
+          href: "https://conworkshop.com/view_language.php?l=ARJ",
+          label: "Conworkshop",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Arusian',
+          title: "Arusian",
           items: [
             {
-              label: 'Learn Arusian',
-              to: '/docs/intro',
+              label: "Learn Arusian",
+              to: "/docs/intro",
             },
           ],
         },
         {
-          title: 'Community',
+          title: "Community",
           items: [
             {
-              label: 'Discord',
-              href: 'https://discord.gg/NH5K3Vc2',
-            }
+              label: "Discord",
+              href: "https://discord.gg/NH5K3Vc2",
+            },
           ],
         },
         {
-          title: 'More',
+          title: "More",
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: "Blog",
+              to: "/blog",
             },
             {
-              label: 'Conworkshop',
-              href: 'https://conworkshop.com/view_language.php?l=ARJ',
+              label: "Conworkshop",
+              href: "https://conworkshop.com/view_language.php?l=ARJ",
             },
           ],
         },
