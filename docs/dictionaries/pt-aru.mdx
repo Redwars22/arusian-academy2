@@ -1,9 +1,11 @@
 # 📚 Dicionário Português - Aru
 
-Nesta página você poderá usar o dicionário para encontrar palavras e expressões tanto 
+Nesta página você poderá usar o dicionário para encontrar palavras e expressões tanto 
 em português quanto em aru. Seja bem-vindo!
 
 import React, { useState, useEffect } from 'react';
+// Importe o cliente Supabase que você criou
+import { supabase } from '../../src/utils/supabaseClient'; 
 import { FontRenderer } from "../../src/components/FontRenderer";
 
 export function RenderSemlek(props) {
@@ -18,21 +20,26 @@ export function Dictionary() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Effect para carregar os dados do dicionário
   useEffect(() => {
     const fetchDictionaryData = async () => {
       try {
         setLoading(true);
-        const response = await fetch('https://raw.githubusercontent.com/andrewnationdev/arusian-database/refs/heads/main/dictionaries/pt-br_aru.json'); 
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+        setError(null);
+
+        const { data, error: supabaseError } = await supabase
+          .from('pt-aru-dict') 
+          .select('*'); // Seleciona todas as colunas
+
+        if (supabaseError) {
+          throw supabaseError;
         }
-        const data = await response.json();
+
         setDictionaryData(data);
-        setLoading(false);
+        
       } catch (e) {
-        console.error("Erro ao carregar dados do dicionário:", e);
-        setError("Não foi possível carregar os dados do dicionário. Por favor, tente novamente mais tarde.");
+        console.error("Erro ao carregar dados do dicionário do Supabase:", e.message);
+        setError("Não foi possível carregar os dados do dicionário do Supabase. Por favor, tente novamente mais tarde.");
+      } finally {
         setLoading(false);
       }
     };
@@ -50,13 +57,15 @@ export function Dictionary() {
 
     const filtered = dictionaryData.filter(entry => {
       if (searchDirection === 'arusiano') {
+        // Ajuste os nomes das propriedades para corresponderem aos seus dados do Supabase
+        // (Ex: 'arusian' em vez de 'translit_aru', 'xsampa_aru' em vez de 'ipa_aru')
         return (
-          entry.translit_aru.toLowerCase().includes(lowerCaseSearchTerm) ||
-          entry.semlek.toLowerCase().includes(lowerCaseSearchTerm) ||
-          entry.ipa_aru.toLowerCase().includes(lowerCaseSearchTerm)
+          entry.arusian?.toLowerCase().includes(lowerCaseSearchTerm) || // Use ?. para evitar erros se a propriedade não existir
+          entry.semlek?.toLowerCase().includes(lowerCaseSearchTerm) ||
+          entry.xsampa_aru?.toLowerCase().includes(lowerCaseSearchTerm) // Era ipa_aru no seu JSON
         );
       } else {
-        return entry.pt.toLowerCase().includes(lowerCaseSearchTerm);
+        return entry.pt?.toLowerCase().includes(lowerCaseSearchTerm);
       }
     });
     setSearchResults(filtered);
@@ -118,7 +127,7 @@ export function Dictionary() {
               }}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              disabled={loading || error} // Desabilita o input enquanto carrega ou se houver erro
+              disabled={loading || error} 
             />
 
             <div style={{
@@ -189,7 +198,7 @@ export function Dictionary() {
               }}>
                 {searchResults.map((entry, index) => (
                   <li
-                    key={index}
+                    key={entry.id || index} // Use entry.id se existir, é mais robusto
                     style={{
                       backgroundColor: '#F9FAFB',
                       padding: '1rem',
@@ -213,13 +222,13 @@ export function Dictionary() {
                         wordBreak: 'break-word',
                         paddingRight: '0.5rem'
                       }}>
-                        {entry.translit_aru}
+                        {entry.arusian} {/* Mudou de translit_aru para arusian */}
                       </span>
                       <span style={{
                         fontSize: '0.875rem',
                         color: '#6B7280'
                       }}>
-                        ({entry.word_class})
+                        ({entry.wordclass}) {/* Mudou de word_class para wordclass */}
                       </span>
                     </div>
                     <p style={{
@@ -238,14 +247,14 @@ export function Dictionary() {
                       color: '#4B5563',
                       fontSize: '0.875rem'
                     }}>
-                      <span style={{ fontWeight: '500' }}>AFI (Aru):</span> {entry.ipa_aru}
+                      <span style={{ fontWeight: '500' }}>AFI (Aru):</span> {entry.xsampa_aru} {/* Mudou de ipa_aru para xsampa_aru */}
                     </p>
-                    {entry.ipa_pt && (
+                    {entry.xsampa_pt && ( // Mudou de ipa_pt para xsampa_pt
                       <p style={{
                         color: '#4B5563',
                         fontSize: '0.875rem'
                       }}>
-                        <span style={{ fontWeight: '500' }}>AFI Português (Brasil, Rio):</span> {entry.ipa_pt}
+                        <span style={{ fontWeight: '500' }}>AFI Português (Brasil, Rio):</span> {entry.xsampa_pt}
                       </p>
                     )}
                   </li>
