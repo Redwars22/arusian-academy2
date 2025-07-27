@@ -76,11 +76,13 @@ const config: Config = {
           isServer: boolean,
           utils: ConfigureWebpackUtils
         ) {
-          const webpack  = utils;
+          // CORREÇÃO: Você precisa desestruturar 'webpack' do objeto 'utils'
+          // O objeto 'utils' contém o 'webpack' como uma propriedade.
+          const { webpack } = utils; // <-- Essa é a linha correta!
 
           return {
             plugins: [
-              new webpack.DefinePlugin({
+              new webpack.DefinePlugin({ // Agora 'webpack' terá o método DefinePlugin
                 "process.env.SUPABASE_URL": JSON.stringify(
                   process.env.SUPABASE_URL
                 ),
