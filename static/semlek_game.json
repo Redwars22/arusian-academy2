@@ -1,10 +1,10 @@
 [
   {
-    "name": "",
-    "possible_answers: ["", "", ""]
+    "name": "Vel Auwayeis.png",
+    "possible_answers: ["The girl is beautiful", "The woman is beautiful", "The female is beautiful", "The girl is pretty", "The woman is pretty", "The female is pretty"]
   },
   {
-    "name": "",
-    "possible_answers": ["", "", ""]
+    "name": "Vel dauwas",
+    "possible_answers": ["The woman eats", "The woman is eating", "The woman ate", "The woman will eat", "The girl eats", "The girl is eating", "The girl ate", "The girl will eat", "The female eats", "The female is eating", "The female ate", "The female will eat" ]
   }
 ]
