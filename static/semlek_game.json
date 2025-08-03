@@ -6,5 +6,10 @@
   {
     "name": "Vel dauwas",
     "possible_answers": ["The woman eats", "The woman is eating", "The woman ate", "The woman will eat", "The girl eats", "The girl is eating", "The girl ate", "The girl will eat", "The female eats", "The female is eating", "The female ate", "The female will eat" ]
+  },
+  {
+    "name": "Juwa sa so puwauwr",
+    "possible_answers": ["He reads a book.", "She reads a book", "It reads a book", "He read a book", "She read a book", "It read a book", "He will read a book", "She will read a book", "It will read a book", "He reads the book.", "She reads the book", "It reads the book", "He read the book", "She read the book", "It read the book", "He will read the book", "She will read the book", "It will read the book" ]
   }
+  
 ]
