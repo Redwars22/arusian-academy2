@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Guess the Meaning
+# 🎮 Guess the Meaning Game
 
 This is a game where you are given a contextual image and an Arusian sentence.
 You should try to translate it in English. It is a good way practice your Arusian!
@@ -11,22 +11,26 @@ import { useState, useEffect } from "react";
 import { FontRenderer } from "../../src/components/FontRenderer";
 
 export const TranslationGame = () => {
-  const [currentImage, setCurrentImage] = useState({
-    url: "",
-    rightAnswers: [],
-    points: 0,
-  });
-  const [progress, setProgress] = useState(1);
+  const [currentImage, setCurrentImage] = useState(null); // Initialize as null
+  const [progress, setProgress] = useState(0); // Start at 0 for initial display
   const [lives, setLives] = useState(3);
   const [points, setPoints] = useState(0);
   const [images, setImages] = useState([]);
   const [answer, setAnswer] = useState("");
 
-
   const advance = () => {
-    if (answer.toLowerCase() === currentLetter.answer.toLowerCase()) {
+    if (!currentImage) return; // Guard clause if currentImage is not set yet
+
+    // Check if the answer is one of the right answers (case-insensitive)
+    if (
+      currentImage.rightAnswers.some(
+        (ans) => ans.toLowerCase() === answer.toLowerCase()
+      )
+    ) {
       setPoints(points + Math.round(Math.random() * 100));
       setProgress(progress + 1);
+      setAnswer(""); // Clear input on correct answer
+      getCurrImage(); // Load next image
     } else {
       setLives(lives - 1);
     }
@@ -36,36 +40,50 @@ export const TranslationGame = () => {
     setProgress(0);
     setLives(3);
     setPoints(0);
+    setAnswer("");
+    getCurrImage(); // Load a new image for restart
   };
 
   const resetLives = () => {
     setLives(3);
     setProgress(0);
     setPoints(0);
+    setAnswer("");
+    getCurrImage(); // Load a new image for retry
   };
 
   const getCurrImage = () => {
-    let index = Math.round(Math.random() * images.length);
+    if (images.length === 0) return; // Don't try to get an image if none are loaded
 
+    let index = Math.floor(Math.random() * images.length); // Use floor for correct index
     setCurrentImage({
       name: images[index].name,
-      rightAnswers: images[index].possible_answers
+      rightAnswers: images[index].possible_answers,
+      points: images[index].points || 0, // Assuming points might be in your data
     });
-  }
+  };
 
   useEffect(() => {
-    async function loadImages(){
-      const req = await fetch("https://thearusianlanguage.vercel.app/semlek_game.json");
-
-      const data = await req.json();
-      console.log(data);
-      setImages(data);
-
-      getCurrImage();
+    async function loadImages() {
+      try {
+        const req = await fetch(
+          "https://thearusianlanguage.vercel.app/semlek_game.json"
+        );
+        const data = await req.json();
+        setImages(data);
+      } catch (error) {
+        console.error("Failed to load images:", error);
+      }
     }
 
     loadImages();
-  }, []);
+  }, []); // Run once on component mount
+
+  useEffect(() => {
+    if (images.length > 0 && !currentImage) {
+      getCurrImage(); // Set the first image once images are loaded
+    }
+  }, [images, currentImage]); // Re-run when images are loaded or currentImage is null
 
   // Estilos alinhados ao tema global (roxo principal, azul para stats e barra)
   const cardStyle = {
@@ -106,7 +124,7 @@ export const TranslationGame = () => {
     backgroundColor: " #3392fd", // Azul para barra de progresso
     borderRadius: "5px",
     transition: "width 0.3s",
-    width: `${progress * 10}%`,
+    width: `${(progress / 10) * 100}%`, // Calculate percentage based on 10 steps
   };
 
   const scoreTextStyle = {
@@ -210,7 +228,11 @@ export const TranslationGame = () => {
         <div style={cardBodyStyle}>
           <h2 style={h2Style}>What do you think it means?</h2>
           <div style={fontRendererContainerStyle}>
-            <img height="350px" src={`/img/game/${images.length > 0 ? currentImage.name : ''}`}/>
+            {currentImage ? (
+              <img height="350px" src={`/img/game/${currentImage.name}`} />
+            ) : (
+              <p>Loading image...</p> // Display loading message
+            )}
           </div>
           <div style={inputButtonContainerStyle}>
             <input
