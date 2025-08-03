@@ -4,43 +4,28 @@ sidebar_position: 4
 
 # Guess the Meaning
 
+This is a game where you are given a contextual image and an Arusian sentence.
+You should try to translate it in English. It is a good way practice your Arusian!
+
 import { useState, useEffect } from "react";
-import { letters } from "../../src/data/letters";
 import { FontRenderer } from "../../src/components/FontRenderer";
 
 export const TranslationGame = () => {
-  const [currentLetter, setCurrentLetter] = useState({
-    fontCode: "",
-    answer: "",
+  const [currentImage, setCurrentImage] = useState({
+    url: "",
+    rightAnswers: [],
     points: 0,
   });
   const [progress, setProgress] = useState(1);
   const [lives, setLives] = useState(3);
   const [points, setPoints] = useState(0);
+  const [images, setImages] = useState({});
   const [answer, setAnswer] = useState("");
 
-  const _letters = [...letters.consonants, ...letters.vowels];
-
-  const getRandomLetter = () => {
-    return _letters[Math.floor(Math.random() * _letters.length)];
-  };
-
-  const loadLetter = () => {
-    const letter = getRandomLetter();
-
-    setCurrentLetter({
-      fontCode: letter.arukey,
-      answer: letter.translit,
-      points: Math.round(Math.random() * 360),
-    });
-
-    setAnswer("");
-  };
 
   const advance = () => {
     if (answer.toLowerCase() === currentLetter.answer.toLowerCase()) {
       setPoints(points + Math.round(Math.random() * 100));
-      loadLetter();
       setProgress(progress + 1);
     } else {
       setLives(lives - 1);
@@ -51,19 +36,24 @@ export const TranslationGame = () => {
     setProgress(0);
     setLives(3);
     setPoints(0);
-    loadLetter();
   };
 
   const resetLives = () => {
     setLives(3);
     setProgress(0);
     setPoints(0);
-    loadLetter();
   };
 
   useEffect(() => {
-    loadLetter();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    async function loadImages(){
+      const req = await fetch("https://thearusianlanguage.vercel.app/semlek_game.json");
+
+      const data = await req.json();
+      console.log(data);
+      setImages(data);
+    }
+
+    loadImagens();
   }, []);
 
   // Estilos alinhados ao tema global (roxo principal, azul para stats e barra)
@@ -209,7 +199,7 @@ export const TranslationGame = () => {
         <div style={cardBodyStyle}>
           <h2 style={h2Style}>What do you think it means?</h2>
           <div style={fontRendererContainerStyle}>
-            <img height="350px" src="/img/game/Nik_Seyais.webp"/>
+            <img height="350px" src={`/img/game/${images[0].name}`}/>
           </div>
           <div style={inputButtonContainerStyle}>
             <input
