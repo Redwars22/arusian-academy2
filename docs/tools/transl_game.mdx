@@ -19,7 +19,7 @@ export const TranslationGame = () => {
   const [progress, setProgress] = useState(1);
   const [lives, setLives] = useState(3);
   const [points, setPoints] = useState(0);
-  const [images, setImages] = useState({});
+  const [images, setImages] = useState([]);
   const [answer, setAnswer] = useState("");
 
 
@@ -44,6 +44,15 @@ export const TranslationGame = () => {
     setPoints(0);
   };
 
+  const getCurrImage = () => {
+    let index = Math.round(Math.random() * images.length);
+
+    setCurrentImage({
+      name: images[index].name,
+      rightAnswers: images[index].possible_answers
+    });
+  }
+
   useEffect(() => {
     async function loadImages(){
       const req = await fetch("https://thearusianlanguage.vercel.app/semlek_game.json");
@@ -51,9 +60,11 @@ export const TranslationGame = () => {
       const data = await req.json();
       console.log(data);
       setImages(data);
+
+      getCurrImage();
     }
 
-    loadImagens();
+    loadImages();
   }, []);
 
   // Estilos alinhados ao tema global (roxo principal, azul para stats e barra)
@@ -199,7 +210,7 @@ export const TranslationGame = () => {
         <div style={cardBodyStyle}>
           <h2 style={h2Style}>What do you think it means?</h2>
           <div style={fontRendererContainerStyle}>
-            <img height="350px" src={`/img/game/${images[0].name}`}/>
+            <img height="350px" src={`/img/game/${images.length > 0 ? currentImage.name : ''}`}/>
           </div>
           <div style={inputButtonContainerStyle}>
             <input
