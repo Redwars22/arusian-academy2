@@ -62,5 +62,21 @@
   {
     "name": "Nut sa som dauwr.png",
     "possible_answers": [ "The man eats food", "The male eats food", "The boy eats food", "The man is eating food", "The male is eating food", "The boy is eating food", "The man ate food", "The male ate food", "The boy ate food", "The man was eating food", "The male was eating food", "The boy was eating food", "The man will eat food", "The male will eat food", "The boy will eat food", "The man has eaten food", "The male has eaten food", "The boy has eaten food",  "The man had eaten food", "The male had eaten food", "The boy had eaten food"]
+  },
+  {
+    "name": "Tara pus u umuuweis.png",
+    "possible_answers": [ "The city here is big", "This city here is big", "This city is big", "The city here is huge", "This city here is huge", "This city is huge" ]
+  },
+  {
+    "name": "Umu ared umuuweis.png",
+    "possible_answers": [ "The mountain here is big", "This mountain here is big", "This mountain is big", "The mountain here is huge", "This mountain here is huge", "This mountain is huge" ]
+  },
+  {
+    "name": "Mai-ared umuuweis.png",
+    "possible_answers": [ "The Earth is big", "The Earth is huge", "The world is big", "The world is huge" ]
+  },
+   {
+    "name": "Mez umuuweis.png",
+    "possible_answers": [ "The house is big", "The house is huge", "The home is big", "The home is huge" ]
   }
 ]
