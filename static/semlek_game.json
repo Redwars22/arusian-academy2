@@ -69,7 +69,7 @@
   },
   {
     "name": "Umu ared umuuweis.png",
-    "possible_answers": [ "The mountain here is big", "This mountain here is big", "This mountain is big", "The mountain here is huge", "This mountain here is huge", "This mountain is huge" ]
+    "possible_answers": [ "The mountain is big", "mountains are big", "The mountain is huge", "mountains are huge" ]
   },
   {
     "name": "Mai-ared umuuweis.png",
