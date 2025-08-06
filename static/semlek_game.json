@@ -78,5 +78,23 @@
    {
     "name": "Mez umuuweis.png",
     "possible_answers": [ "The house is big", "The house is huge", "The home is big", "The home is huge" ]
+  },
+  {
+    "name": "Luwa dauweis.png",
+    "possible_answers": [ "The water is drank", "water is drank", "The water is drunk", "water is drunk", "The water was drank", "water was drank", "The water was drunk", "water was drunk", "The water will be drank", "water will be drank", "The water will be drunk", "water will be drunk", "the water was being drunk", "water was being drunk" ]
+  },
+  {
+    "name": "Luwa sa puk dauwr.png",
+    "possible_answers": [ "The child drank water", "the baby drank water", "the child is drinking water", "the baby is drinking water", "The child drunk water", "the baby drunk water", "the child will drink water", "the baby will drink water"  ]
+  },
+  {
+    "name": "Nut sa so dauwr.png",
+    "possible_answers": [ "she eats food", "he eats food", "she is eating food", "he is eating food", "she was eating food", "he was eating food", "she was eating food", "he was eating food", "she will eat food", "she eats the food", "he eats the food", "she is eating the food", "he is eating the food", "she was eating the food", "he was eating the food", "she was eating the food", "he was eating the food", "she will eat the food" ]
+  },
+  {
+    "name": "Vel dauwas u payr lei.png",
+    "possible_answers": [ "The woman eats on the road", "The girl eats on the road",  "The woman is eating on the road", "The girl is eating on the road", "the girl was eating on the road", "The woman eats in the road", "The girl eats in the road",  "The woman is eating in the road", "The girl is eating in the road", "the girl was eating in the road", "the woman will eat on the road", "the girl will eat on the road", "a woman eats on the road", "a girl eats on the road",  "a woman is eating on the road", "a girl is eating on the road", "a girl was eating on the road", "a woman eats in the road", "a girl eats in the road",  "a woman is eating in the road", "a girl is eating in the road", "a girl was eating in the road", "a woman will eat on the road", "a girl will eat on the road"]
   }
+
+  
 ]
