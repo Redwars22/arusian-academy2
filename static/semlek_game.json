@@ -100,17 +100,20 @@
     "possible_answers": [ "The pants are red", "the pants are the color red",  "pants are red", "pants are the color red" ]
   },
    {
-    "name": "vro-tej sa kluwa-vai.png",
+    "name": "Vro-tej sa kluwa-vai.png",
     "possible_answers": [ "The shirt is white", "the shirt is the color white", "shirts are white", "shirts are the color white" ]
   },
    {
-    "name": "vro-tej sa kluwa-aj.png",
+    "name": "Vro-tej sa kluwa-aj.png",
     "possible_answers": [ "The shirt is red", "the shirt is the color red", "shirts are red", "shirts are the color red" ]
   },
   {
-    "name": "vro sos u sa kluwa-del.png",
+    "name": "Vro sos u sa kluwa-del.png",
     "possible_answers": [ "his clothing is purple", "his clothing is violet", "his clothing is blue", "his clothes are purple", "his clothes violet", "his clothes are blue", "his clothing is the color purple", "his clothing is the color violet", "his clothing is the color blue", "his clothes are the color purple", "his clothes the color violet", "his clothes are the color blue", "her clothing is purple", "her clothing is violet", "her clothing is blue", "her clothes are purple", "her clothes are violet", "her clothes are blue", "her clothing is the color purple", "her clothing is the color violet", "her clothing is the color blue", "her clothes are the color purple", "her clothes are the color violet", "her clothes are the color blue",  "its clothing is purple", "its clothing is violet", "its clothing is blue", "its clothes are purple", "its clothes are violet", "are clothes are blue", "its clothing is the color purple", "its clothing is the color violet", "its clothing is the color blue", "its clothes are the color purple", "its clothes are the color violet", "its clothes are the color blue" ]
+  },
+  {
+    "name": "Vro-tej sos u sa kluwa-ju.png",
+    "possible_answers": [ "her shirt is green", "her shirt is yellow",  "her shirt is the color green", "her shirt is the color yellow", "his shirt is green", "his shirt is yellow",  "his shirt is the color green", "his shirt is the color yellow", "its shirt is green", "its shirt is yellow",  "its shirt is the color green"  ]
   }
-
 
 ]
