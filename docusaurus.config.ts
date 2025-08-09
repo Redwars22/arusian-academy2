@@ -124,6 +124,11 @@ const config: Config = {
           label: "Conworkshop",
           position: "right",
         },
+        {
+          href: "https://www.instagram.com/arusian_academy/",
+          label: "Instagram",
+          position: "right",
+        }
       ],
     },
     footer: {

@@ -41,6 +41,9 @@ Arusian is a personal language. I created the language in 2009 and it has only e
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <h2>Find Arusian Academy on Instagram</h2>
+        <p>Scan the QR-Code below</p>
+        <img src="/img/arusian_academy-qr.webp" alt="Instagram QR Code" style={{width: '200px', height: '200px'}} />
       </main>
     </Layout>
   );
