@@ -116,4 +116,40 @@
     "possible_answers": [ "her shirt is green", "her shirt is yellow",  "her shirt is the color green", "her shirt is the color yellow", "his shirt is green", "his shirt is yellow",  "his shirt is the color green", "his shirt is the color yellow", "its shirt is green", "its shirt is yellow",  "its shirt is the color green"  ]
   }
 
+  {
+    "name": "Ara kuuweis u fos.png",
+    "possible_answers": [ "it is cloudy there", "it was cloudy there", "it will be cloudy there" ]
+  }
+
+  {
+    "name": "Ara timreis u fus.png",
+    "possible_answers": [ "It is night there", "It is night where you are.", "It is night there where you are.", "It is nighttime there", "It is nighttime where you are.", "It is nighttime there where you are.", "It was night there", "It is night where you are.", "It was night there where you are.", "It was nighttime there", "It was there nighttime where you are.", "It was nighttime there where you are.", "It will be night there", "It will there night where you are.", "It will be night there where you are.", "It will be nighttime there", "It will be nighttime where you are.", "It will be nighttime there where you are." ]
+  }
+
+  {
+    "name": "Lu kreyeis.png",
+    "possible_answers": [ "I am dancing",  "I dance", "I was dancing", "I will dance", "I will be dancing"]
+  }
+
+  {
+    "name": "vom otras u kreyeis.png",
+    "possible_answers": [ "many people are dancing",  "many people dance", "a lot of people are dancing",  "a lot of people dance", "many people were dancing",  "many people danced", "a lot of people were dancing",  "a lot of people danced", "many people will be dancing",  "many people will dance", "a lot of people will be dancing",  "a lot of people will dance"]
+  }
+
+  {
+    "name": "Kai-mo sa lu auwr.png",
+    "possible_answers": [ "I am listening to music", "I'm listening to music", "I listen to music", "I hear music", "I was listening to music", "I heard music", "I will listen to music", "I will hear music" ]
+  }
+
+  {
+    "name": "Su jegras u payr tara.png",
+    "possible_answers": [ "She walks in the city", "she is walking in the city", "she walked in the city", "she walked in the city", "she will walk in the city" ]
+  }
+
+   {
+    "name": "ara auwayeis u fos.png",
+    "possible_answers": [ "The sky is beautiful there", "The weather is nice there", "the weather is nice there", "the weather is good there", "the weather is pretty there", "the sky is pretty there", "The sky was beautiful there", "The weather was nice there", "the weather was nice there", "the weather was good there", "the weather was pretty there", "the sky was pretty there" ]
+  }
+
+  
 ]
