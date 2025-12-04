@@ -15,7 +15,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Arusian is a personal language. I created the language in 2009 and it has only ever grown and evolved since then.
+        Arusian is a personal language. I started building the language in 2009 and it has only ever grown and evolved since then.
       </>
     ),
   },
