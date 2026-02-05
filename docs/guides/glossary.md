@@ -10,7 +10,7 @@ Here you can find the translation of some recurrent linguistics terms in Arusian
 
 **Dative:** Edrei-vreyek
 
-**Etymology:** Tekrei-vreg
+**Etymology:** Tekrei-Pai-deg
 
 **Genitive:** Kamrei-vreyek
 
