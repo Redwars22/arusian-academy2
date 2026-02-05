@@ -18,9 +18,9 @@ Here you can find the translation of some recurrent linguistics terms in Arusian
 
 **Inanimate:** Uwaai-bai
 
-**Linguistics:** tekrei-dem
+**Linguistics:** Tekrei-dem
 
-**Morphology:** arek-tep
+**Morphology:** Arek-tep
 
 **Nominative:** Kouwa-vreyek
 
