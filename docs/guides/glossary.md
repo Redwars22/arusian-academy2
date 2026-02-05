@@ -16,7 +16,7 @@ Here you can find the translation of some recurrent linguistics terms in Arusian
 
 **Grammar:** Po-dem
 
-**Inanimate:** Vej-bai-vreyek
+**Inanimate:** Uwaai-bai
 
 **Linguistics:** tekrei-dem
 
