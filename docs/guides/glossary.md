@@ -18,14 +18,14 @@ Here you can find the translation of some recurrent linguistics terms in Arusian
 
 **Inanimate:** Vej-bai-vreyek
 
-**Linguistics:** Dem-tek
+**Linguistics:** tekrei-dem
 
-**Morphology:** Kra-tep
+**Morphology:** arek-tep
 
 **Nominative:** Kouwa-vreyek
 
 **Noun:** Dei-vreyek
 
-**Syntax:** Kra-dem
+**Syntax:** Dem-arek
 
 **Topic:** Puwau
