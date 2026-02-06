@@ -94,3 +94,4 @@ Notice that **wei** is attached to a constituent that ISN'T the topic of the sen
 |**grau**|from Old Endric *garrald*|message, letter, notice|
 |**mez**|from French *maison*|house|
 |**vek**|from French *véhicule*|car, vehicle|
+|**marei**|from Old Arusian *marei*|2nd person pronoun in the imperative mood|
