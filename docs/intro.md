@@ -10,6 +10,8 @@ Here are some resources to help you learn more about Arusian and discover about 
 
 - [**Kemkemjuwa:**](https://kemkemjuwa.miraheze.org/wiki/Category:Juwa-ket_Arujeis) read articles in romanized (Roma-sem) Arusian in this Wikipedia-like website. 
 
+- [**Name Generator**](https://colab.research.google.com/drive/1C6GZeVZOCUpmvV75fIGzLC74ptV0iUyE?usp=sharing) - Use this tool to find an Arusian name for you!
+
 :::tip
 You can check the spellchecker and grammar tool for Arusian built with the help of N Grams [here](https://andrewnationdev.github.io/arusian-database/arusian_spellchecker.html). It currently supports Roma-sem (the transliterated version of Arusian) and should help you correct and practice Arusian grammar. Please note that this tool may be inaccurate for certain sentence structures. Use it with caution and have fun!
 :::
