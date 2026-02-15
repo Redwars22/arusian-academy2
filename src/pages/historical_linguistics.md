@@ -95,3 +95,5 @@ Notice that **wei** is attached to a constituent that ISN'T the topic of the sen
 |**mez**|from French *maison*|house|
 |**vek**|from French *véhicule*|car, vehicle|
 |**marei**|from Old Arusian *marei*|2nd person pronoun in the imperative mood|
+|**ed**|from French *aider, aide*|to help, to, for, help|
+|**kei**|from Sanskrit *karma* or unknown etymology|reason, motivation|
