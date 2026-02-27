@@ -8,39 +8,43 @@ This page is a work and progress and things may be corrected, added or removed l
 
 import { FontRenderer } from "../../src/components/FontRenderer";
 
+export function RenderSemlek(props) {
+  return <FontRenderer size="22px" weight="900" rtl color="var(--ifm-color-primary, #794cbd)" text={props.phrase} />
+}
+
 ### NUMBERS
 
 You will easily recognize Arusian numerals because they always have the root **PEI**, used for counting. A fun fact is that most Arusian numerals come from nouns. For example, **KAU** means *insect*, but **PEI-KAU** means *six*. Numbers are flexible and can either precede or follow the noun. Since they behave like nouns too, they need the **SA** copula between the noun and the numeral. Like most world's languages, it is also a base-10 system, so don't worry.
 
 |Roma-Sem|Semlek|Indo-Arabic|
 |---|---|---|
-|**pei-vej**||0|
-|**pei-at** or **pei-ka**||1|
-|**pei-ta**||2|
-|**pei-tef**||3|
-|**pei-kef** or **pei-pek**||4|
-|**pei-mei** or **pei-kam**||5|
-|**pei-kau**||6|
-|**pei-aek**||7|
-|**pei-lei**||8|
-|**pei-ara**||9|
-|**pei-ta-mei**||10|
+|**pei-vej**|<RenderSemlek phrase={". . su s,u . ."}/>|0|
+|**pei-at** or **pei-ka**|<RenderSemlek phrase={". . su s,u . ."}/>|1|
+|**pei-ta**|<RenderSemlek phrase={". . su s,u . ."}/>|2|
+|**pei-tef**|<RenderSemlek phrase={". . su s,u . ."}/>|3|
+|**pei-kef** or **pei-pek**|<RenderSemlek phrase={". . su s,u . ."}/>|4|
+|**pei-mei** or **pei-kam**|<RenderSemlek phrase={". . su s,u . ."}/>|5|
+|**pei-kau**|<RenderSemlek phrase={". . su s,u . ."}/>|6|
+|**pei-aek**|<RenderSemlek phrase={". . su s,u . ."}/>|7|
+|**pei-lei**|<RenderSemlek phrase={". . su s,u . ."}/>|8|
+|**pei-ara**|<RenderSemlek phrase={". . su s,u . ."}/>|9|
+|**pei-ta-mei**|<RenderSemlek phrase={". . su s,u . ."}/>|10|
 
 To form numbers between 11 and 19, just add **-DA-TA-MEI** (literally PLUS TWO TIMES FIVE) after the 1-9 digits. For example:
 
-- 19: **pei-ara-da-ta-mei**
+- 19: **pei-ara-da-ta-mei** <RenderSemlek phrase={". . su s,u . ."}/>
 
-- 16: **pei-kau-da-ta-mei**
+- 16: **pei-kau-da-ta-mei** <RenderSemlek phrase={". . su s,u . ."}/>
 
-- 13: **pei-tef-da-ta-mei**
+- 13: **pei-tef-da-ta-mei** <RenderSemlek phrase={". . su s,u . ."}/>
 
 For numbers 20-90, add **-TA-MEI** after 2-9:
 
-- 20: **pei-ta-ta-mei**
+- 20: **pei-ta-ta-mei** <RenderSemlek phrase={". . su s,u . ."}/>
 
-- 40: **pei-kef-ta-mei**
+- 40: **pei-kef-ta-mei** <RenderSemlek phrase={". . su s,u . ."}/>
 
-- 90: **pei-ara-ta-mei**
+- 90: **pei-ara-ta-mei** <RenderSemlek phrase={". . su s,u . ."}/>
 
 For numbers 21-99, you begin with the 1-9 digits, add **-DA-** and then add the multiples of 10:
 
