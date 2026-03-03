@@ -94,7 +94,6 @@ Notice that **wei** is attached to a constituent that ISN'T the topic of the sen
 |Arusian|Source Language|Meaning|
 |---|---|---|
 |**srau**|from Portuguese *sacar* 'to get'|understanding|
-|**piya**|from Italian or Neapolitan *pigliare*|understanding (obsolete, replaced by **srau**)|
 |**Mred**|a hybrid between Elanian *Mehanen* 'Earth' and Arusian *Ared* 'Earth'|World, realm, community|
 |**grau**|from Old Endric *garrald*|message, letter, notice|
 |**mez**|from French *maison*|house|
@@ -104,7 +103,7 @@ Notice that **wei** is attached to a constituent that ISN'T the topic of the sen
 |**kei**|from Sanskrit *karma* or unknown etymology|reason, motivation|
 |**um**|from Old Arusian *gzumei*|money, wealth|
 |**pai**|from Old Arusian *paz*|place|
-|No descendant in Modern Ausian, expected *kr|Old Arusian: *krt*|shortness, short|
+|No descendant in Modern Ausian|Old Arusian: *krt*|shortness, short|
 |**lo**|from Old Arusian *loz*|semantic shift from 'long' to 'distance'|
 |**puweyr**|from Old Arusian *poweiz-*|to ask, to question|
 |**puwei**|from Old Arusian *poweiz*|question marker, developed from an unstressed formof *poweiz|
