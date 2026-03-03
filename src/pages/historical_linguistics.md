@@ -27,6 +27,12 @@ import {FontRenderer} from "../components/FontRenderer"
 />
 <br/>
 
+## Early Old Arusian/Late Eru/Old Arusian
+
+:::info
+Coming soon!
+:::
+
 ## Middle Arusian
 
 Middle Arusian is the stage of the Arusian language before the year of 2019. The language underwent few changes
@@ -97,3 +103,20 @@ Notice that **wei** is attached to a constituent that ISN'T the topic of the sen
 |**marei**|from Old Arusian *marei*|2nd person pronoun in the imperative mood|
 |**ed**|from French *aider, aide*|to help, to, for, help|
 |**kei**|from Sanskrit *karma* or unknown etymology|reason, motivation|
+|**um**|from Old Arusian *gzumei*|money, wealth|
+|**pai**|from Old Arusian *paz*|place|
+|No descendant in Modern Ausian, expected *kr|Old Arusian: *krt*|shortness, short|
+|**lo**|from Old Arusian *loz*|semantic shift from 'long' to 'distance'|
+|**puweyr**|from Old Arusian *poweiz-*|to ask, to question|
+|**puwei**|from Old Arusian *poweiz*|question marker, developed from an unstressed formof *poweiz|
+|**muwa**|from Old Arusian *mowal*|originally meaning 'library', its meaning shifted to 'memory'|
+|**luwa**|from Old Arusian *lowa*|originally meaning 'lake', its meaning expanded to include 'water'|
+|**kamr**|from Old Arusian *kamt-*|originally 'to trap, to hold', semantic shift to 'to have' and 'to hold'|
+|**larei**|from Old Arusian *lamdei*|nerve|
+|**kai**|from Old Arusian *kaet*|art, creation|
+|**fai**|from Old Arusian *frma*|plant|
+|**suwa**|from Old Arusian *sowa*|star, lighthouse|
+|**leyem**|from Old Arusian *lemei*|semantic shift from 'to love' to romantic love|
+|**pu**|from Old Arusian *puz*|here|
+|**seg**|from Old Arusian *segz ~ sex*|time|
+|**tek**|unknown origin|to teach|
