@@ -43,7 +43,13 @@ Literally: 'you are the one being talked to by me'.
 
 ### ORDINAL NUMBERS IN ARUSIAN
 
-To form ordinal numbers in Arusian, replace **PEI-** (the numeral marker) with **LA-**.
+To form ordinal numbers in Arusian, replace **PEI-** (the numeral marker) with **LA-**. The only number that is different ordinal number is first.
+
+- 1st: **la-deg**
+
+- 2nd: **la-ta**
+
+- 3rd: **la-tef**
 
 - 5th: **la-mei / la-kam**
 
@@ -78,7 +84,7 @@ Educational texts in Arusian use sentences that are straight to the point and fo
 
 **Albert Einstein tekr sam gaus** (Albert Einstein studied gravity)
 
-**Naj ayr gau sa pei-tef da ta-mei da ta-mei-dek-umu** (The Universe is 13 billion years old)
+**Naj ayr gau sa pei-tef-da-dek-dek-umu** (The Universe is 13 billion years old)
 
 **Mai-ared osa nru u gauwr-otr pu-suwa gauwr-otr wet sa pu-tara-suwa.  Sagittarius A\* trmr pra-tim u payr wet sa pu-tara-suwa** (The Earth and the Moon orbit the Sun, which in turn orbits the center of the Milky Way, where lies a blackhole named Sagittarius A*)
 
