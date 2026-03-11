@@ -39,7 +39,7 @@ To express more complex actions, Arusian might use "complex verbs", formed from 
 Literally: 'you are the one being talked to by me'.
 :::
 
-**Sum sa tei lekr-rmr u sa vai-pai ** (You connect with family at home)
+**Sum sa tei lekr-rmr u sa vai-pai** (You connect with family at home)
 
 ### ORDINAL NUMBERS IN ARUSIAN
 
