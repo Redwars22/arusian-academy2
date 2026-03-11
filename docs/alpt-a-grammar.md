@@ -94,7 +94,7 @@ Journalistic speech and writing in Arusian also follows OSV word order and tends
 
 **Tara sa ara-jrai kijr** (The city was destroyed by a tornado/The tornado destroyed the city)
 
-**Vom sa pei-mei nouweis u sa Las-Vegas paise u sa mrai mregras wei segse** (Five people were killed in Las Vegas last night)
+**Vom sa pei-mei u nouweis u sa Las-Vegas paise u sa mrai mregras wei segse** (Five people were killed in Las Vegas last night)
 
 **I need to practice using foreign vocab in aru more....
 
