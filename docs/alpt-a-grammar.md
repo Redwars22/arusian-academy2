@@ -92,7 +92,7 @@ Educational texts in Arusian use sentences that are straight to the point and fo
 
 Journalistic speech and writing in Arusian also follows OSV word order and tends to favor direct sentences and the usage of passive voice, for focus on the events rather than on the actors.
 
-**Tara sa ara-jrai kijr** (The city was destroyed by a tornado/The tornado destroyed the city)
+**Tara sa ara-jrau kijr** (The city was destroyed by a tornado/The tornado destroyed the city)
 
 **Vom sa pei-mei u nouweis u sa Las-Vegas paise u sa mrai mregras wei segse** (Five people were killed in Las Vegas last night)
 
@@ -104,7 +104,7 @@ Journalistic speech and writing in Arusian also follows OSV word order and tends
 
 For personal journals, you can use either SVO (for an informal and/or childish tone) or OSV (for a more neutral tone) word orders.
 
-> **Ayau-vai sa lu auwr u fauwr Japonei-dem u sa wai pus. Kafei sa lu dauwr u segr lu vrauweis. Kodei sa lu semr u edr aplekaseyonei lus.**
+> **Ayau-vai sa lu auwr u fauwr Japonei-dem u sa wai pus. Kef sa lu dauwr u segr lu vrauweis. Kodei sa lu semr u edr aplekaseyonei lus.**
 
 ### WRITING LETTERS IN ARUSIAN
 
