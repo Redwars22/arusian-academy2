@@ -39,17 +39,11 @@ To express more complex actions, Arusian might use "complex verbs", formed from 
 Literally: 'you are the one being talked to by me'.
 :::
 
-**Sum sa tei lekr-rmr u sa vai-pai** (You connect with family at home)
+**Sum sa tei lekr-rmr u sa vai-pai ** (You connect with family at home)
 
 ### ORDINAL NUMBERS IN ARUSIAN
 
-To form ordinal numbers in Arusian, replace **PEI-** (the numeral marker) with **LA-**. The only number that is different ordinal number is first.
-
-- 1st: **la-deg**
-
-- 2nd: **la-ta**
-
-- 3rd: **la-tef**
+To form ordinal numbers in Arusian, replace **PEI-** (the numeral marker) with **LA-**.
 
 - 5th: **la-mei / la-kam**
 
@@ -72,8 +66,11 @@ Next, you write your message using OSV word order for formality. There's no need
 Last, but not the least, you add **tei sa edra edras** at the end of the message and finish it with your name. Here is an example:
 
 > *U-juweya sa kara-wek
+>
 > Tei sa mrai beis wei edr. Puwei-seg sa tei-lu aemras u sa kef sa orem wei paise? Su sa lu ouwr lu krmr.
+>
 > Tei sa edra edras.
+>
 > Andrew*
 
 ### EDUCATIONAL TEXTS
@@ -84,7 +81,7 @@ Educational texts in Arusian use sentences that are straight to the point and fo
 
 **Albert Einstein tekr sam gaus** (Albert Einstein studied gravity)
 
-**Naj ayr gau sa pei-tef-da-dek-dek-umu** (The Universe is 13 billion years old)
+**Naj ayr gau sa pei-tef da ta-mei da ta-mei-dek-umu** (The Universe is 13 billion years old)
 
 **Mai-ared osa nru u gauwr-otr pu-suwa gauwr-otr wet sa pu-tara-suwa.  Sagittarius A\* trmr pra-tim u payr wet sa pu-tara-suwa** (The Earth and the Moon orbit the Sun, which in turn orbits the center of the Milky Way, where lies a blackhole named Sagittarius A*)
 
@@ -92,9 +89,9 @@ Educational texts in Arusian use sentences that are straight to the point and fo
 
 Journalistic speech and writing in Arusian also follows OSV word order and tends to favor direct sentences and the usage of passive voice, for focus on the events rather than on the actors.
 
-**Tara sa ara-jrau kijr** (The city was destroyed by a tornado/The tornado destroyed the city)
+**Tara sa ara-jrai kijr** (The city was destroyed by a tornado/The tornado destroyed the city)
 
-**Vom sa pei-mei u nouweis u sa Las-Vegas paise u sa mrai mregras wei segse** (Five people were killed in Las Vegas last night)
+**Vom sa pei-mei nouweis u sa Las-Vegas paise u sa mrai mregras wei segse** (Five people were killed in Las Vegas last night)
 
 **I need to practice using foreign vocab in aru more....
 
@@ -104,7 +101,7 @@ Journalistic speech and writing in Arusian also follows OSV word order and tends
 
 For personal journals, you can use either SVO (for an informal and/or childish tone) or OSV (for a more neutral tone) word orders.
 
-> **Ayau-vai sa lu auwr u fauwr Japonei-dem u sa wai pus. Kef sa lu dauwr u segr lu vrauweis. Kodei sa lu semr u edr aplekaseyonei lus.**
+> **Ayau-vai sa lu auwr u fauwr Japonei-dem u sa wai pus. Kafei sa lu dauwr u segr lu vrauweis. Kodei sa lu semr u edr aplekaseyonei lus.**
 
 ### WRITING LETTERS IN ARUSIAN
 
@@ -162,8 +159,8 @@ Here are a "few" big numbers in Arusian:
 |10,000,000,000,000|**pei-ta-mei-umu-umu**|ten trillion|
 |100,000,000,000,000|**pei-dek-umu-umu**|one hundred trillion|
 |1,000,000,000,000,000|**pei-ta-mei-dek-umu-umu**|one quadrillion|
-|10,000,000,000,000,000|**pei-dek-dek-umu-umu**|ten quadrillion|
-|100,000,000,000,000,000|**pei-ta-mei-dek-dek-umu-umu**|one hundred quadrillion|
+|10^16|**pei-dek-dek-umu-umu**|ten quadrillion|
+|10^17|**pei-ta-mei-dek-dek-umu-umu**|one hundred quadrillion|
 |10^18|**pei-otra**|one quintillion|
 |10^19|**pei-ta-mei-otra**|ten quintillion|
 |10^20|**pei-dek-otra**|one hundred quintillion|
@@ -219,7 +216,67 @@ Some concepts and words in Arusian cannot be translated into English using a sin
 
 ### ARUSIAN SLANG
 
-### DIALECTS OF ARUSIAN
+Like any other language, Arusian has some expressions used among friends and in colloquial speech. In this table, we will teach you some of them.
+
+|Arusian|English|
+|---|---|
+|**Marei-lu mregras!**|Let's go!|
+|**Trlra sos!**|Amazing|
+|**Lu auwas**|I got it|
+|**Puwei-tei**|What's up? How are you?|
+|**Kit sa kit**|Shit! (when someone is in trouble or makes a serious mistake)|
+|**knau**|Indicates sarcasm and contradicts the previous statement||
+
+
+### STYLISTICS, POETRY AND LITERARY LANGUAGE
+
+One of the most famous and oldest Arusian poems is ***Rej-umu***:
+
+> Rej-umu tregras u sa mred jekreis wei segse.
+>
+> Rej-umu sa ko-rau geise.
+>
+> Rej-umu sa vot sa ared wei nose sasa leyek.
+>
+> Rej-umu nouweis.
+>
+> Rej-umu numreis u sa seg otras.
+>
+> Rej-umu sa pruuwa-paya u sa aek trmrse u ararar vot.
+
+In this poem, we see that there is a heavy usage of intransitive passive (-(r)ei) and active forms (-(r)a), **u** pronoun, topicalization, although sentences tend to be short, as is normal in Arusian.
+
+Here is the English translation:
+
+> When the world changes, the great hero comes.
+> 
+> The great hero shows its rage.
+>
+> The great hero kills all on the Earth from above.
+>
+> The great hero dies.
+>
+> The great hero sleeps for a lot time.
+>
+> After all, the great hero returns as hope.
+
+#### SYNONYMS AND ANTONYMS
+
+Here is a table with some useful synonyms and antonyms in Arusian:
+
+|English|Arusian|Antonyms|
+|---|---|---|
+|Good(ness)|bei|na (badness, bad, evil)|
+|Nice(ness), kind(ness)|aru|sei (rude, rudeness, evil, evilness)|
+|Hot|nek|beg (cold)|
+|Big(ness), tall|umu|kut (small, smallness, short, shortness)|
+|Many|otra|nra (few)|
+|Beauty, beautiful|auwai|vrlreg (ugly, ugliness)|
+|Fun, amusement, amusing|lat|dlo (boring, dull, boredom)|
+|Sky, up, upward|leyek|ba (down)|
+|Black, blackness|kluwa-tim|kluwa-vai (white)|
+
+#### RHYMING IN ARUSIAN POETRY
 
 ### POLITENESS IN ARUSIAN SOCIETY
 
@@ -232,13 +289,3 @@ Some concepts and words in Arusian cannot be translated into English using a sin
 |**Kara-wek**|boss, leader, CEO|
 |**su-delra-rmra**|Prime Minister/co-king/queen|
 |**Su-delra**|King/Queen|
-
-### STYLISTICS, POETRY AND LITERARY LANGUAGE
-
-Synonyms, hyponyms, hyperonyms, rhymes,  antonyms
-
-#### SYNONYMS AND ANTONYMS
-
-#### HYPONYMS AND HYPERONYMS
-
-#### RHYMING IN ARUSIAN POETRY
