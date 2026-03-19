@@ -59,7 +59,7 @@ SVO word order in Arusian is informal and is usually used with people you know a
 
 ### WRITING FORMAL E-MAILS
 
-When writing an e-mail in Arusian, you usually begin the message with a vocative expression (usually the name of the person, preceded by the **U** marker, and the title, if applicable). For example: **U-Juweya Kara-wek** (CEO Juweya, Juweya the boss, etc.). Then, in the next line, you can wish them 'good morning' or 'good evening' using the formal versions of them: **tei sa mrai beis wei edr** for 'good evening' and tei sa wai beis wei edr**** for 'good morning'.
+When writing an e-mail in Arusian, you usually begin the message with a vocative expression (usually the name of the person, preceded by the **U** marker, and the title, if applicable). For example: **U-Juweya sa kara-wek** (CEO Juweya, Juweya the boss, etc.). Then, in the next line, you can wish them 'good morning' or 'good evening' using the formal versions of them: **tei sa mrai beis wei edr** for 'good evening' and tei sa wai beis wei edr**** for 'good morning'.
 
 Next, you write your message using OSV word order for formality. There's no need to use the **ER** form of verbs unless the message is for a royal member or a very old person.
 
@@ -310,11 +310,11 @@ There are many words used to express love in Arusian society.
 
 |Arusian|Explanation|
 |---|---|
-|**Ou-ko**|Used for things and objects. This word is not used for people|
-|**Am-ko**|This word is for people. This word is used for friends. It also means "to be friends with"|
-|**Leyem-ko**|This word is for people you want to kiss. We use it for a romantic partner|
-|**Sum-ko**|This word is for people who are part of your family. People like your parents, cousins, siblings, grandparents, etc|
-|**Um-ko**|We use it for special things and people|
+|**Ouweg**|Used for things and objects. This word is not used for people|
+|**Am**|This word is for people. This word is used for friends. It also means "to be friends with"|
+|**Leyem**|This word is for people you want to kiss. We use it for a romantic partner|
+|**Sum**|This word is for people who are part of your family. People like your parents, cousins, siblings, grandparents, etc|
+|**Um**|We use it for special things and people|
 
 ### WORK AND SOCIAL HIERARCHIES
 
