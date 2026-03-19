@@ -312,7 +312,7 @@ There are many words used to express love in Arusian society.
 |---|---|
 |**Ouweg**|Used for things and objects. This word is not used for people|
 |**Am**|This word is for people. This word is used for friends. It also means "to be friends with"|
-|**Leyem**|This word is for people you want to kiss. We use it for a romantic partner|
+|**Leyem**|This word is for your girlfriend, boyfirend, husband or wife. We use it for a romantic partner|
 |**Sum**|This word is for people who are part of your family. People like your parents, cousins, siblings, grandparents, etc|
 |**Um**|We use it for special things and people|
 
@@ -326,5 +326,20 @@ Here is a table with some titles you can use with people in Arusian.
 |**su-delra-rmra**|Prime Minister/co-king/queen|
 |**Su-delra**|King/Queen|
 |**Su-telra**|Teacher, Professor|
-|**Miya**|Girlfriend, boyfriend|
-|**Su-tekra**|Student, pupil|
+|**Gru**|Teacher, Professor, Master, Professional|
+|**Gru-jik**|medical doctor|
+|**Gru-naj**|Astronomer|
+|**Gru-lei**|Programmer|
+|**Gru-kuwei**|Mathematician|
+|**Gru-sam**|Scientist|
+|**Gru-nut**|Chef|
+|**Gru-kai**|artist, inventor|
+|**Miya**|Girlfriend, Boyfriend|
+|**Su-tekra**|Student, Pupil|
+|**Juwei**|Leader, Capital|
+|**Su-wekra**|employer|
+|**Su-wekrei**|employee|
+|**Su-kouwa**|worker|
+|**Su-kaya**|artist, inventor|
+|**Su-kouwa**|worker|
+|**Su-nutra**|cook|
