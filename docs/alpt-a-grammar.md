@@ -39,7 +39,7 @@ To express more complex actions, Arusian might use "complex verbs", formed from 
 Literally: 'you are the one being talked to by me'.
 :::
 
-**Sum sa tei lekr-rmr u sa vai-pai ** (You connect with family at home)
+**Sum sa tei lekr-rmr u sa vai-pai** (You connect with family at home)
 
 ### ORDINAL NUMBERS IN ARUSIAN
 
@@ -92,8 +92,6 @@ Journalistic speech and writing in Arusian also follows OSV word order and tends
 **Tara sa ara-jrai kijr** (The city was destroyed by a tornado/The tornado destroyed the city)
 
 **Vom sa pei-mei nouweis u sa Las-Vegas paise u sa mrai mregras wei segse** (Five people were killed in Las Vegas last night)
-
-**I need to practice using foreign vocab in aru more....
 
 **Luiz-Inácio-Lula-da-Silva sa presedantei sa fna-braselei wei trmr** (Luiz Inácio Lula da Silva is the President of Brazil)
 
@@ -276,16 +274,57 @@ Here is a table with some useful synonyms and antonyms in Arusian:
 |Sky, up, upward|leyek|ba (down)|
 |Black, blackness|kluwa-tim|kluwa-vai (white)|
 
-#### RHYMING IN ARUSIAN POETRY
-
 ### POLITENESS IN ARUSIAN SOCIETY
+
+Politeness in Arusian is a very important part of their society and it can be shown in many ways. We are going to list here some tips for foreigners coming to Arusia.
+
+1-You sometimes downplay yourself when you receive a cumpliment from someone to act polite.
+2-The word for **you** is usually the topic of the sentence when you want to emphasize the listener.
+3-Show respect to people by treating them as if they were the center of attention, focusing on their importance and value.
+
+Example of respectful dialog between two friends:
+
+**LU: U-Pauwa! Nepa-luwa sa tei ouwr?**
+
+*Pauwa! Do you want some water?*
+
+**PAUWA: Luwa sa lu ouwr. Tei edras !**
+
+*Yes, I want some water. Thank you!*
+
+**LU: Orei ! Tei sa lu deyekras wei edr. Tei sa sum kuwemse. Nepa-krmra teis?**
+
+*Okay/great! I will give you some. You are a part of the family. You know?*
+
+**PAUWA: Su beis ! Tei sa edra otras. Otra sa tei osa sum teis wei tuwaas. Tei sa lu sumr sasa sai.**
+
+*Yes ! Thank you so much. You and your family helps out a lot. You are my family, like siblings.*
+
+**LU: Tei sa luwa edr. Marei dauwas !**
+
+*Here is your water. Drink up!*
 
 ### LOVE IN ARUSIAN SOCIETY
 
+There are many words used to express love in Arusian society.
+
+|Arusian|Explanation|
+|---|---|
+|**Ou-ko**|Used for things and objects. This word is not used for people|
+|**Am-ko**|This word is for people. This word is used for friends. It also means "to be friends with"|
+|**Leyem-ko**|This word is for people you want to kiss. We use it for a romantic partner|
+|**Sum-ko**|This word is for people who are part of your family. People like your parents, cousins, siblings, grandparents, etc|
+|**Um-ko**|We use it for special things and people|
+
 ### WORK AND SOCIAL HIERARCHIES
+
+Here is a table with some titles you can use with people in Arusian.
 
 |Title|Usage|
 |---|---|
 |**Kara-wek**|boss, leader, CEO|
 |**su-delra-rmra**|Prime Minister/co-king/queen|
 |**Su-delra**|King/Queen|
+|**Su-telra**|Teacher, Professor|
+|**Miya**|Girlfriend, boyfriend|
+|**Su-tekra**|Student, pupil|
