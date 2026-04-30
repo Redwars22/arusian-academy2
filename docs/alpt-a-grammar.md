@@ -336,7 +336,7 @@ Here is a table with some titles you can use with people in Arusian.
 |**Gru-kai**|artist, inventor|
 |**Miya**|Girlfriend, Boyfriend|
 |**Su-tekra**|Student, Pupil|
-|**Juwei**|Leader, Capital|
+|**Juwei**|Leader, Capitain|
 |**Su-wekra**|employer|
 |**Su-wekrei**|employee|
 |**Su-kouwa**|worker|
