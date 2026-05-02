@@ -50,8 +50,8 @@ Arusian used to have more words borrowed from European languages in the past How
 ### Negation with "NEI"
 Instead of _vej_, a preverbal **nei** was used to negate sentences. The syntax differed considerably here.
 
-- Middle Arusian: **Lu nei ouwr lu decr juwa** (I don't want to buy a book)
-- Modern Standard Arusian (Fenadel Dialect): **Vej sa lu ouwr lu decr juwa**
+- Middle Arusian: **Lu nei ouwr lu adecr juwa** (I don't want to buy a book)
+- Modern Standard Arusian (Fenadel Dialect): **Vej sa lu ouwr lu drejr juwa**
 - Modern Arusian (Puerto Lobos): **Veca l'ouwr lu decr juwa**
 
 ### Passive Voice and Verb Markers
@@ -65,7 +65,7 @@ Verbs in Middle Arusian (the transitive ones) were consistently marked with -r w
 As for adjectives, they were still a productive class in Middle Aru and ended with either **-s** (for roots ending in vowels) and **-us** (for roots ending in a consonant). Over time, adjectives started to behave more like nouns and verbs and ceased to exist as a distinct class in Arusian.
 
 - Middle Arusian: **Vek timus u sa lu adecr** (I buy a black car)
-- Modern Arusian: **Vek sa tim u sa lu decr**
+- Modern Arusian: **Vek sa tim u sa lu drejr**
 
 ### Peis: Plural Marker
 The particle **peis** was used sporadically as a plural marker, although it was never mandatory, like the English -s. It could have been a noun/adjective (because adjectives and attributive words ended with **-s/-us** in Middle Arusian) whose meaning was something in the lines of 'more than one'. Also, in Modern Arusian it is also prefixed to numbers when they are used together with nouns to express quantity: i.e. *som sa pei-tef* (three men).
@@ -82,30 +82,28 @@ The pronoun **wei** (whose classification is still under debate, but candidates 
 
 Since Middle Arusian possessed an adjective class, **VEK TIMUS LUS** clearly means `my black car`. However, since they started to merge with nouns and verbs, **VEK SA TIM LUS** could be understood either as `my black car` or `car of my blackness`. To reduce this ambiguity, **wei** appeared in the language. Its etymology is unknown, though.  
 
-- Modern Arusian: **Tei decr vek sa tim wei lus**
+- Modern Arusian: **Tei drejr vek sa tim wei lus**
 
 Notice that **wei** is attached to a constituent that ISN'T the topic of the sentence, that is, it is part of the predicate. This is the main contrast between **u** (describes a topic/focused element) and **wei** (describes a predicate/comment, thus, a non-focused element). Otherwise, their function is the same. Let's take a look at another example:
 
 - Middle Arusian: **Nut sa vom auwayeis dauwr** (Reconstructed form)
-- Modern Arusian: **Nut sa vom dauwr wei auwayeis** (As for the food, the beautiful people eat it)
+- Modern Arusian: **Nut sa vom auwayeis wei dauwr** (As for the food, the beautiful people eat it)
 
 ## Etymology of Arusian Roots
 
 |Arusian|Source Language|Meaning|
 |---|---|---|
 |**srau**|from Portuguese *sacar* 'to get'|understanding|
-|**piya**|from Italian or Neapolitan *pigliare*|understanding (obsolete, replaced by **srau**)|
-|**keyek**|*kieken* in German or Plattdeutsch|obsolete in the sense of 'watching', now it means 'ogling'|
 |**Mred**|a hybrid between Elanian *Mehanen* 'Earth' and Arusian *Ared* 'Earth'|World, realm, community|
 |**grau**|from Old Endric *garrald*|message, letter, notice|
 |**mez**|from French *maison*|house|
 |**vek**|from French *véhicule*|car, vehicle|
-|**marei**|from Old Arusian *marei*|2nd person pronoun in the imperative mood|
+|**marei**|from Old Arusian *mandei*|2nd person pronoun in the imperative mood|
 |**ed**|from French *aider, aide*|to help, to, for, help|
 |**kei**|from Sanskrit *karma* or unknown etymology|reason, motivation|
 |**um**|from Old Arusian *gzumei*|money, wealth|
 |**pai**|from Old Arusian *paz*|place|
-|No descendant in Modern Ausian, expected *kr|Old Arusian: *krt*|shortness, short|
+|No descendant in Modern Ausian|Old Arusian: *krt*|shortness, short|
 |**lo**|from Old Arusian *loz*|semantic shift from 'long' to 'distance'|
 |**puweyr**|from Old Arusian *poweiz-*|to ask, to question|
 |**puwei**|from Old Arusian *poweiz*|question marker, developed from an unstressed formof *poweiz|
