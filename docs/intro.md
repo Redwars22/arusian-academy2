@@ -6,6 +6,8 @@ sidebar_position: 1
 
 Here are some resources to help you learn more about Arusian and discover about it.
 
+- [**Phonology and Phonetics of Arusian (Advanced)**](https://docs.google.com/document/d/1JHKya6oN4puHqY9f32nIkcasMsIkoWLVwiY93GlUnhg/edit?usp=sharing): a guide to Arusian phonology and phonetics using IPA symbols and describing some phonological rules affecting the language. This is for people with some knowledge of Linguistics.
+
 - [**Dictionary:**](https://drive.google.com/file/d/1iFXsJk3T8Iv0tfnZeulWPTPvYY-3B8X1/view?usp=sharing) an Arusian to English dictionary, with translations of its roots and some compound words and inflected roots (especially verbs).
 
 - [**Kemkemjuwa:**](https://kemkemjuwa.miraheze.org/wiki/Category:Juwa-ket_Arujeis) read articles in romanized (Roma-sem) Arusian in this Wikipedia-like website. 
