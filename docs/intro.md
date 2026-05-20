@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # 🎓 Learn Arusian
 
-Here are some resources to help you learn more about Arusian and discover about it.
+Here are some resources to help you learn more about Arusian and discover about it. Don't forget to check the blog, where there will be some posts explaining some aspects of Arusian grammar in more depth.
 
 - [**Phonology and Phonetics of Arusian (Advanced)**](https://docs.google.com/document/d/1JHKya6oN4puHqY9f32nIkcasMsIkoWLVwiY93GlUnhg/edit?usp=sharing): a guide to Arusian phonology and phonetics using IPA symbols and describing some phonological rules affecting the language. This is for people with some knowledge of Linguistics.
 
