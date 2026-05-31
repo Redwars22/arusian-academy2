@@ -30,7 +30,7 @@ You can check the spellchecker and grammar tool for Arusian built with the help 
 
 ## Arusian Alphabet
 
-COMING SOON!
+![Arusian Alphabet](/img/files/semlek-chart.webp)
 
 ## Books
 
