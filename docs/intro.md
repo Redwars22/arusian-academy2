@@ -6,6 +6,10 @@ sidebar_position: 1
 
 Here are some resources to help you learn more about Arusian and discover about it. Don't forget to check the blog, where there will be some posts explaining some aspects of Arusian grammar in more depth.
 
+## Arusian Alphabet
+
+![Arusian Alphabet](/img/files/semlek-chart.png)
+
 # Core Material
 
 - [**Arusian Dictionary:**](https://drive.google.com/file/d/1kbctxSAT8IRVAEPGzoOK7T8K_VmOoFC7/view?usp=sharing) an Arusian to English dictionary, with translations of its roots and some compound words and inflected roots.
@@ -27,10 +31,6 @@ You can check the spellchecker and grammar tool for Arusian built with the help 
 :::
 
 - **N Gram Chatbot/Text Generator for Arusian (EXPERIMENTAL)** (SOON!)
-
-## Arusian Alphabet
-
-![Arusian Alphabet](/img/files/semlek-chart.webp)
 
 ## Books
 
