@@ -14,7 +14,7 @@ Here are some resources to help you learn more about Arusian and discover about 
 
 - [**Introduction to Arusian:**](https://drive.google.com/file/d/1MbuLpWyqwXibVfssW2cd02cuXqQAhd4t/view?usp=sharing) an Arusian grammatical guide, with tones of example sentences with explanations.
 
-# Secondary Material (Correctly may have errors)
+# Secondary Material (May have errors)
 
 - [**Kemkemjuwa:**](https://kemkemjuwa.miraheze.org/wiki/Category:Juwa-ket_Arujeis) read articles in romanized (Roma-sem) Arusian in this Wikipedia-like website. 
 
