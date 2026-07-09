@@ -35,7 +35,6 @@ Input sa so-oremra u sa tei delr tei kamr u sa “scanf” oremse. Integer sa te
 
 ```cpp
 #include <stdio.h>
-
 int main(){
 	int ai = 0; //ai sa so-semra. Su trmr integer  
 	printf(“Marei semr ai teis:”); 
@@ -46,7 +45,7 @@ int main(){
 }
 ```
 
-	Kuwei-jem sa tei delr tei semr u sa operator oremse: `+ - > < * /`. Neyo sa ko-pai-kel u sa “%” geyr: `10 % 2` trmr 0. `10 % 3` trmr 1.
+	Kuwei-jem sa tei delr tei semr u sa operator oremse: **+ - > < * /**. Neyo sa ko-pai-kel u sa “%” geyr: `10 % 2` trmr 0. `10 % 3` trmr 1.
 
 `int x = 10 + 2` trmr 12
 
@@ -56,13 +55,12 @@ int main(){
 
  	`&&` osa `||` osa `!` sa operator u sa C++ kamr. “&&” ramr TRUE && TRUE = TRUE. “||” ramr TRUE || FALSE trmr TRUE. “!” ramr na u osa duwei.
 
-	Kuwei-jem sa tei delr tei oremr u sa “if”-jem paise-pekse. Kuwei-jem pus u vraais u keyr lei-kei wei payr “if”-jem pus. `if(kuwei-jem){ lei-kei }`.
+	Kuwei-jem sa tei delr tei oremr u sa “if”-jem paise-pekse. Kuwei-jem pus u vraais u keyr lei-kei wei payr “if”-jem pus: `if(kuwei-jem){ lei-kei }`.
 
 ```cpp
 if(ai_sa_so_oremse > 18){  
 	printf(“Tei trmr jru”);  
 }
-
 if(ai_sa_so_oremse < 18){
 	printf(“Vej sa tei trmr jru. Tei trmr puk”);
 }
