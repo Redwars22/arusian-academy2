@@ -7,6 +7,8 @@ tags: [arusian, linguistics]
 
 Keyem-dem sa kut u degreis u segr 1990 u wemr juwa-tek sa Noam Chomsky semr. Keyem pus u sa puwei sa 2 wei tuwause: Puwei-dem? Puwei-kei sa so kamr jef pus? X-Bar peyekse keyem pus u wemr Bare Phrase Structure (Deyau-Arek Auwekreis). “Move” (Ak) osar “Agree” (Dlai) u sa so oremr sasa ag.  
 
+<!-- truncate -->
+
 Juwai: 
 
 `Tep sa So-Kamrei u sa Puwau-Ket ⇒ Kuwem ⇒ Ak ⇒ Dlai ⇒ Dem – KEYEM-PEK (KP) | MO-PEK (MP). KP trmr “Logical Form” u payr keyei u fauwr Anglei-dem u uwemr MP trmr “Phonological Form”`
