@@ -20,7 +20,7 @@ int main(){
 
 Tep osa kot u sa “printf” semr u payr so-geya. Vot kareis u sa semi-colon (;) nor. Rmreg sa fai-lai-lei-kei (library/source code) u sa “include” ramr u edr lei-kei pus.   
 
-Input sa so-oremra u sa tei delr tei kamr u sa “scanf” oremse. Integer sa tei delr tei kamr u sa “%d” oremse. Kef osa dei u sa eya-kot (variable) agr.`
+Input sa so-oremra u sa tei delr tei kamr u sa “scanf” oremse. Integer sa tei delr tei kamr u sa “%d” oremse. Kef osa dei u sa eya-kot (variable) agr.
 
 | `Kef (angle-dem)` | `Um` | `Tuwem` |
 | :---- | :---- | :---- |
@@ -56,7 +56,7 @@ int main(){
 
  	`&&` osa `||` osa `!` sa operator u sa C++ kamr. “&&” ramr TRUE && TRUE = TRUE. “||” ramr TRUE || FALSE trmr TRUE. “!” ramr na u osa duwei.
 
-	Kuwei-jem sa tei delr tei oremr u sa “if”-jem paise-pekse. Kuwei-jem pus u vraais u keyr lei-kei wei payr “if”-jem pus. `if(kuwei-jem){ lei-kei }.`
+	Kuwei-jem sa tei delr tei oremr u sa “if”-jem paise-pekse. Kuwei-jem pus u vraais u keyr lei-kei wei payr “if”-jem pus. `if(kuwei-jem){ lei-kei }`.
 
 ```cpp
 if(ai_sa_so_oremse > 18){  
