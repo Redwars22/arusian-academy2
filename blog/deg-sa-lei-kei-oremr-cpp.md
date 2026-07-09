@@ -1,0 +1,69 @@
+---
+slug: deg-sa-lei-kei-oremr-cpp
+title: Deg sa Lei-Kei oremr C++
+authors: [andrewnation]
+tags: [arusian]
+---
+
+Su-su, u-su-tekra-pei! C++ sa lu telr u sa tei-pei edse u sa tra pus. C++ ayeis u osa su agreis. Lei–kei-dem pus u oremse vot sa nuweyei-rem (software) u sa gau sa la-2026.
+
+Vot sa lei-kei (program) degse wet sa function. “int” ramr function pus wei pruwr integer.
+
+<!-- truncate -->
+
+```cpp
+int main(){ 
+	printf(“Su-su, u-Mred!”);  
+	return 0; 
+}
+```
+
+Tep osa kot u sa “printf” semr u payr so-geya. Vot kareis u sa semi-colon (;) nor. Rmreg sa fai-lai-lei-kei (library/source code) u sa “include” ramr u edr lei-kei pus.   
+
+Input sa so-oremra u sa tei delr tei kamr u sa “scanf” oremse. Integer sa tei delr tei kamr u sa “%d” oremse. Kef osa dei u sa eya-kot (variable) agr.`
+
+| `Kef (angle-dem)` | `Um` | `Tuwem` |
+| :---- | :---- | :---- |
+| `int` | `-127, 127` | `%d osa %i` |
+| `float` | `127.0, 127.1…` | `%f` |
+| `double` | `127.12872772` |  |
+| `bool` | `true (vraa), false (???)` | `Vej sa so oremreis.` |
+| `char` | `“A”, “1”, “\n` | `%c` |
+| `void` | `vej` | `Vej sa so oremreis.` |
+
+“scanf” sa tei oremr u keyr <stdio.h> sa tei oremr u payr lei-kei. Tei ouwr tei kamr ai sa so-oremra u payr lei-kei pus:
+
+```cpp
+#include <stdio.h>
+
+int main(){
+	int ai = 0; //ai sa so-semra. Su trmr integer  
+	printf(“Marei semr ai teis:”); 
+	scanf(“%d”, &ai);
+	printf(“Ai teis trmr %d”, ai);
+		  
+	return 0;
+}
+```
+
+	Kuwei-jem sa tei delr tei semr u sa operator oremse: `+ - > < * /`. Neyo sa ko-pai-kel u sa “%” geyr: `10 % 2` trmr 0. `10 % 3` trmr 1.
+
+`int x = 10 + 2` trmr 12
+
+`int y = x - 1` trmr 11
+
+`bool z = x < y` trmr “true”
+
+ 	`&&` osa `||` osa `!` sa operator u sa C++ kamr. “&&” ramr TRUE && TRUE = TRUE. “||” ramr TRUE || FALSE trmr TRUE. “!” ramr na u osa duwei.
+
+	Kuwei-jem sa tei delr tei oremr u sa “if”-jem paise-pekse. Kuwei-jem pus u vraais u keyr lei-kei wei payr “if”-jem pus. `if(kuwei-jem){ lei-kei }.`
+
+```cpp
+if(ai_sa_so_oremse > 18){  
+	printf(“Tei trmr jru”);  
+}
+
+if(ai_sa_so_oremse < 18){
+	printf(“Vej sa tei trmr jru. Tei trmr puk”);
+}
+```
