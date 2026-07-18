@@ -14,6 +14,8 @@ Here are some resources to help you learn more about Arusian and discover about 
 
 - [**Arusian Dictionary:**](https://drive.google.com/file/d/1kbctxSAT8IRVAEPGzoOK7T8K_VmOoFC7/view?usp=sharing) an Arusian to English dictionary, with translations of its roots and some compound words and inflected roots.
 
+- [**ARU-DEM ARUSIAN DICTIONARY (BETA)**](https://thearusianlanguage.vercel.app/iframes/dictionary.html) an Arusian to English dictionary and grammar guide. However, this is still experimental and you might not find every single word yet. By all means, have fun!
+
 - [**Learn Arusian:**](https://drive.google.com/file/d/1d2sUiLkxIy1MTk8MJioxJcZvGx8GH59j/view?usp=sharing) an Arusian grammatical guide, with tones of example sentences with explanations. This book is based on the course here in Arusian Academy!
 
 - [**Introduction to Arusian:**](https://drive.google.com/file/d/1MbuLpWyqwXibVfssW2cd02cuXqQAhd4t/view?usp=sharing) an Arusian grammatical guide, with tones of example sentences with explanations.
