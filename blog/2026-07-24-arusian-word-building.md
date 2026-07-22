@@ -7,7 +7,7 @@ tags: [arusian, linguistics, c1c2, asian]
 
 Arusian root system is extremely flexible, therefore you can build your own words for things that the Arusian dictionary still doesn’t have a name for. Despite the flexibility, there are a few rules you should follow to make your words sound native and natural. With less than 600 roots, you can describe anything in Arusian, although, sometimes, some speakers might prefer borrowings. In Standard Arusian, however, there is a preference for native roots over borrowings, given that borrowings are hard to adapt due to the restrictive nature of Arusian phonology. There is a limited set of syllables/moræ based on the initial consonant + rhymes structure, similar to many Asian languages, like Mandarin, Cantonese, Vietnamese, only to name a few.
 
-<!—truncate —>
+<!-- truncate -->
 
 ## 1 - THE ORDER OF THE ROOTS DOESN’T MATTER EXCEPT FOR…
 
