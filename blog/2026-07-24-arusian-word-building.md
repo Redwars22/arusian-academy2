@@ -1,5 +1,5 @@
 ---
-slug: arusian-world-building
+slug: arusian-word-building
 title: Neologisms and Word Building in Arusian
 authors: [andrewnation]
 tags: [arusian, linguistics, c1c2, asian]
