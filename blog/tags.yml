@@ -3,6 +3,11 @@ arusian:
   permalink: /arusian
   description: Posts related to Arusian language
 
+c1c2:
+  label: C1-C2 Arusian
+  permalink: /advanced
+  description: Advanced content in Arusian
+
 linguistics:
   label: Linguistics
   permalink: /Linguistics
