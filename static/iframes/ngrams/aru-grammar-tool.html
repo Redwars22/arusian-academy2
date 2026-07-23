@@ -1,0 +1,262 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arusian Grammar Checker and Dialect Detector</title>
+    <style>
+        body { font-family: system-ui, sans-serif; background: #f8fafc; margin: 0; padding: 15px; color: #334155; }
+        .box { max-width: 650px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        h2 { font-size: 1.2rem; margin: 0 0 10px 0; color: #1e293b; }
+        
+        .editor-wrapper { position: relative; width: 100%; margin-bottom: 15px; }
+        .editor-container { position: relative; width: 100%; height: 100px; border: 1px solid #cbd5e1; border-radius: 6px; background: white; box-sizing: border-box; overflow: hidden; }
+        .backdrop, textarea { position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 8px; font-family: inherit; font-size: 0.9rem; line-height: 1.4; box-sizing: border-box; white-space: pre-wrap; word-wrap: break-word; margin: 0; border: none; }
+        .backdrop { color: transparent; pointer-events: none; overflow: hidden; background: transparent; }
+        textarea { background: transparent; color: #334155; resize: none; outline: none; }
+        
+        .error-highlight { border-bottom: 2px wavy #ef4444; background-color: rgba(239, 68, 68, 0.12); }
+        
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; font-size: 0.85rem; }
+        .card { background: #f8fafc; border: 1px solid #e2e8f0; padding: 10px; border-radius: 6px; }
+        .card h4 { margin: 0 0 5px 0; font-size: 0.9rem; color: #475569; }
+        
+        #sug { background: white; border: 1px solid #cbd5e1; max-height: 80px; overflow-y: auto; border-radius: 4px; display: none; position: absolute; z-index: 20; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-size: 0.85rem; top: 112px; left: 12px; }
+        #sug div { padding: 6px 10px; cursor: pointer; }
+        #sug div:hover { background: #f1f5f9; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Arusian N-Gram Grammar Tool</h2>
+    
+    <div class="editor-wrapper">
+        <div class="editor-container">
+            <div id="backdrop" class="backdrop"></div>
+            <textarea id="txt" placeholder="Type here..." oninput="handleInput()" onscroll="handleScroll()" onfocus="checkAutocomplete()" onblur="hideAutocomplete()"></textarea>
+        </div>
+        <div id="sug"></div>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h4>📊 Top Words</h4>
+            <div id="freq">-</div>
+        </div>
+        <div class="card">
+            <h4>💎 Richness (TTR)</h4>
+            <div id="rich" style="font-weight: bold; color: #16a34a;">0 / 100</div>
+        </div>
+        <div class="card">
+            <h4>🎯 Grammar Score</h4>
+            <div id="score" style="font-weight: bold; color: #2563eb;">100 / 100</div>
+        </div>
+        <div class="card">
+            <h4>🌍 Dialect</h4>
+            <div id="dial">-</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let bigrams = new Set();
+    let trigrams = new Set();
+    let corpusWords = new Set();
+    let nextWordsMap = {};
+
+    window.onload = async () => {
+        try {
+            let res = await fetch('https://thearusianlanguage.vercel.app/corpora/standard_arusian.txt');
+            if(res.ok) {
+                let text = await res.text();
+                buildModel(text);
+                handleInput();
+            }
+        } catch(e) {}
+    };
+
+    function buildModel(text) {
+        let clean = text.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"']/g, "").replace(/\s+/g, " ").trim();
+        let words = clean.split(" ").filter(w => w.length > 0);
+
+        corpusWords = new Set(words);
+        bigrams = new Set();
+        trigrams = new Set();
+        nextWordsMap = {};
+
+        for(let i = 0; i < words.length - 1; i++) {
+            let w1 = words[i], w2 = words[i+1];
+            bigrams.add(`${w1} ${w2}`);
+            
+            if(!nextWordsMap[w1]) nextWordsMap[w1] = {};
+            nextWordsMap[w1][w2] = (nextWordsMap[w1][w2] || 0) + 1;
+
+            if(i < words.length - 2) {
+                let w3 = words[i+2];
+                trigrams.add(`${w1} ${w2} ${w3}`);
+                let key2 = `${w1} ${w2}`;
+                if(!nextWordsMap[key2]) nextWordsMap[key2] = {};
+                nextWordsMap[key2][w3] = (nextWordsMap[key2][w3] || 0) + 1;
+            }
+        }
+    }
+
+    function handleInput() {
+        let raw = document.getElementById('txt').value;
+        analyzeStats(raw);
+        renderBackdrop(raw);
+        checkAutocomplete();
+    }
+
+    function analyzeStats(raw) {
+        if(!raw) {
+            document.getElementById('freq').innerText = '-';
+            document.getElementById('rich').innerText = '0 / 100';
+            document.getElementById('dial').innerText = '-';
+            document.getElementById('score').innerText = '100 / 100';
+            return;
+        }
+
+        let clean = raw.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"']/g, "").replace(/\s+/g, " ").trim();
+        let words = clean.split(" ").filter(w => w.length > 0);
+
+        let f = {};
+        words.forEach(w => f[w] = (f[w] || 0) + 1);
+        let top = Object.keys(f).sort((a,b) => f[b] - f[a]).slice(0, 3);
+        document.getElementById('freq').innerHTML = top.map(w => `${w} (${f[w]})`).join(', ') || '-';
+
+        let uniq = new Set(words).size;
+        let ttr = words.length ? Math.min(100, Math.round((uniq / words.length) * 150)) : 0;
+        document.getElementById('rich').innerText = `${ttr} / 100`;
+
+        let hasUnknown = words.some(w => !corpusWords.has(w));
+        if(hasUnknown && corpusWords.size > 0) {
+            document.getElementById('dial').innerText = 'Mixed';
+        } else {
+            let uk = (raw.match(/\b(colour|neighbour|centre|programme)\b/gi) || []).length;
+            let us = (raw.match(/\b(color|neighbor|center|program)\b/gi) || []).length;
+            document.getElementById('dial').innerText = uk > us ? 'UK English' : us > uk ? 'US English' : 'Standard';
+        }
+
+        let totalTransitions = Math.max(0, words.length - 2);
+        let errors = 0;
+        if(corpusWords.size > 0 && totalTransitions > 0) {
+            for(let i = 0; i < words.length - 2; i++) {
+                let tri = `${words[i]} ${words[i+1]} ${words[i+2]}`;
+                if(!trigrams.has(tri)) errors++;
+            }
+        }
+        
+        let score = totalTransitions > 0 ? Math.max(0, Math.round(100 - (errors / totalTransitions) * 100)) : 100;
+        document.getElementById('score').innerText = `${score} / 100`;
+    }
+
+    function renderBackdrop(raw) {
+        let backdrop = document.getElementById('backdrop');
+        if(!raw || corpusWords.size === 0) {
+            backdrop.innerHTML = escapeHtml(raw) + '&nbsp;';
+            return;
+        }
+
+        let tokens = raw.split(/(\s+)/);
+        let cleanedWords = raw.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"']/g, "").replace(/\s+/g, " ").trim().split(" ").filter(Boolean);
+        
+        let errorIndices = new Set();
+        for(let i = 0; i < cleanedWords.length - 2; i++) {
+            let tri = `${cleanedWords[i]} ${cleanedWords[i+1]} ${cleanedWords[i+2]}`;
+            if(!trigrams.has(tri)) {
+                errorIndices.add(i);
+                errorIndices.add(i+1);
+                errorIndices.add(i+2);
+            }
+        }
+
+        let wordIdx = 0;
+        let html = tokens.map(token => {
+            if(/^\s+$/.test(token)) return escapeHtml(token);
+            let isCleanWord = token.trim().length > 0;
+            let currentWordIdx = isCleanWord ? wordIdx++ : -1;
+            
+            let escapedToken = escapeHtml(token);
+            if(currentWordIdx !== -1 && errorIndices.has(currentWordIdx)) {
+                return `<span class="error-highlight">${escapedToken}</span>`;
+            }
+            return escapedToken;
+        }).join('');
+
+        backdrop.innerHTML = html + '&nbsp;';
+    }
+
+    function escapeHtml(text) {
+        return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    function handleScroll() {
+        let txt = document.getElementById('txt');
+        let backdrop = document.getElementById('backdrop');
+        backdrop.scrollTop = txt.scrollTop;
+        backdrop.scrollLeft = txt.scrollLeft;
+    }
+
+    function checkAutocomplete() {
+        let txt = document.getElementById('txt');
+        let val = txt.value;
+        let selPos = txt.selectionStart;
+        let textBeforeCursor = val.substring(0, selPos).toLowerCase();
+        let cleanBefore = textBeforeCursor.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"']/g, " ");
+        let parts = cleanBefore.trim().split(/\s+/);
+        
+        let box = document.getElementById('sug');
+        if(parts.length === 0 || !parts[parts.length - 1]) {
+            box.style.display = 'none';
+            return;
+        }
+
+        let key = "";
+        if(parts.length >= 2) {
+            let k2 = `${parts[parts.length - 2]} ${parts[parts.length - 1]}`;
+            if(nextWordsMap[k2]) key = k2;
+        }
+        if(!key) {
+            key = parts[parts.length - 1];
+        }
+
+        let nexts = nextWordsMap[key];
+        if(!nexts) {
+            box.style.display = 'none';
+            return;
+        }
+
+        let suggestions = Object.keys(nexts).sort((a,b) => nexts[b] - nexts[a]).slice(0, 3);
+        if(suggestions.length === 0) {
+            box.style.display = 'none';
+            return;
+        }
+
+        box.innerHTML = suggestions.map(s => `<div onmousedown="applySuggestion('${s}')">${s}</div>`).join('');
+        box.style.display = 'block';
+    }
+
+    function hideAutocomplete() {
+        setTimeout(() => {
+            document.getElementById('sug').style.display = 'none';
+        }, 200);
+    }
+
+    function applySuggestion(word) {
+        let txt = document.getElementById('txt');
+        let pos = txt.selectionStart;
+        let val = txt.value;
+        
+        let before = val.substring(0, pos);
+        let after = val.substring(pos);
+        
+        txt.value = before + (before.endsWith(' ') || before.length === 0 ? '' : ' ') + word + ' ' + after;
+        document.getElementById('sug').style.display = 'none';
+        txt.focus();
+        handleInput();
+    }
+</script>
+
+</body>
+</html>
