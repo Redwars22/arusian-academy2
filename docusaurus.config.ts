@@ -121,7 +121,7 @@ const config: Config = {
           href: "https://thearusianlanguage.vercel.app/iframes/ngrams/aru-grammar-tool.html",
           position: "left",
           label: "Grammar and Spellchecker"
-        }
+        },
         { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://www.instagram.com/arusian_academy/",
