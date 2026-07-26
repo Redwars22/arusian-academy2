@@ -117,7 +117,11 @@ const config: Config = {
           to: "/historical_linguistics",
           position: "left",
           label: "Historical Linguistics",
-        },
+        },{
+          href: "https://thearusianlanguage.vercel.app/iframes/ngrams/aru-grammar-tool.html",
+          position: "left",
+          label: "Grammar and Spellchecker"
+        }
         { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://conworkshop.com/view_language.php?l=ARJ",
