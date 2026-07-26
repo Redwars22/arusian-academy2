@@ -107,13 +107,6 @@ const config: Config = {
           label: "Learn Arusian",
         },
         {
-          type: "docSidebar",
-          href: "https://kemkemjuwa.miraheze.org/wiki/Category:Juwa-ket_Arujeis",
-          label: "Arusian Encyclopedia",
-          sidebarId: "tutorialSidebar",
-          position: "left",
-        },
-        {
           to: "/historical_linguistics",
           position: "left",
           label: "Historical Linguistics",
