@@ -124,11 +124,6 @@ const config: Config = {
         }
         { to: "/blog", label: "Blog", position: "left" },
         {
-          href: "https://conworkshop.com/view_language.php?l=ARJ",
-          label: "Conworkshop",
-          position: "right",
-        },
-        {
           href: "https://www.instagram.com/arusian_academy/",
           label: "Instagram",
           position: "right",
