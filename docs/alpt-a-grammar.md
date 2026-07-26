@@ -7,7 +7,7 @@ This page is a work and progress and things may be corrected, added or removed l
 :::
 
 ### ER-VERBS AND ROYAL SPEECH
-Except for **ERA-**, all other Arusian **ER-** verbs are often restricted to very formal speech and to talking with authorities such as kings and monarchy members. Their usage is not difficult, though: 1-Prefix **er-** to the verb in the **-RA/-A** form (intransitive) (the hyphen here is optional in Roma-sem and doesn't appear at all in Semlek), 2-attach the direct object to the verb. The **SA** copula is needed to connect it to the rest of the sentence, just like any other kind of predicate of the **X sa Y** or **Y sa X** type.
+Except for **ERA-**, all other Arusian **ER-** verbs are often restricted to very formal speech and to talking with authorities such as kings and monarchy members. Their usage is not difficult, though: 1-Prefix **er-** to the verb in the **-RA/-A** form (intransitive) (the hyphen here is optional in Ro-ma-sem and doesn't appear at all in Semlek), 2-attach the direct object to the verb. The **SA** copula is needed to connect it to the rest of the sentence, just like any other kind of predicate of the **X sa Y** or **Y sa X** type.
 
 **Erpaya-pai-nut sa nut sa lu dauwr** (I ate at the restaurant today) [talking to a king or queen]
 
@@ -93,13 +93,13 @@ Journalistic speech and writing in Arusian also follows OSV word order and tends
 
 **Vom sa pei-mei nouweis u sa Las-Vegas paise u sa mrai mregras wei segse** (Five people were killed in Las Vegas last night)
 
-**Luiz-Inácio-Lula-da-Silva sa presedantei sa fna-braselei wei trmr** (Luiz Inácio Lula da Silva is the President of Brazil)
+**Luiz-Inácio-Lula-da-Silva sa presedantei sa fna-bra-sel wei trmr** (Luiz Inácio Lula da Silva is the President of Brazil)
 
 ### WRITING JOURNALS IN ARUSIAN
 
 For personal journals, you can use either SVO (for an informal and/or childish tone) or OSV (for a more neutral tone) word orders.
 
-> **Ayau-vai sa lu auwr u fauwr Japonei-dem u sa wai pus. Kafei sa lu dauwr u segr lu vrauweis. Kodei sa lu semr u edr aplekaseyonei lus.**
+> **Ayau-vai sa lu auwr u fauwr Suwa-deg-dem u sa wai pus. Cai-karei sa lu dauwr u segr lu vrauweis. Kodei sa lu semr u edr aplekaseyonei lus.**
 
 ### WRITING LETTERS IN ARUSIAN
 
