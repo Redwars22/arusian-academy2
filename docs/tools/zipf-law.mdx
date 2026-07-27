@@ -1,6 +1,6 @@
 # 📉 Zipf Law in Arusian
 
-This is a top 100 list with the 100 most common Arusian words in the corpus. 
+This is a top 100 list with the 100 most common Arusian words in the corpus. Zipf's Law is an empirical law stating that given a large corpus of natural language text, the frequency of any word is inversely proportional to its rank in the frequency table.This means that the most frequent word will occur approximately twice as often as the second most frequent word, three times as often as the third most frequent word, and so on. Originally observed in linguistics, this pattern of power-law distribution appears naturally in various other domains, such as city populations, website traffic, and income rankings.
 
 import React, { useState, useEffect } from 'react';
 
@@ -44,7 +44,7 @@ export default function ZipfTop100() {
   return (
     <div style={{ fontFamily: 'system-ui, sans-serif', maxWidth: '800px', margin: '0 auto', padding: '24px', background: '#faf9f6', borderRadius: '12px', border: '1px solid #e5e0d8' }}>
       <h2 style={{ color: '#2c3e50', borderBottom: '2px solid #3498db', paddingBottom: '8px', marginTop: 0 }}>Top 100 Words & Zipf's Law</h2>
-      <p style={{ color: '#555', fontSize: '0.95rem' }}>Word frequency analysis compared to Zipf's theoretical model ($Frequency \approx \frac{Max}{Rank}$).</p>
+      <p style={{ color: '#555', fontSize: '0.95rem' }}>Word frequency analysis compared to Zipf's theoretical model ($Frequency \approx \frac{maxFreq}{Rank}$).</p>
       
       <div style={{ maxHeight: '500px', overflowY: 'auto', marginTop: '16px', border: '1px solid #e5e0d8', borderRadius: '8px', background: '#fff' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.9rem' }}>
