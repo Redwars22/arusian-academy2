@@ -1,0 +1,85 @@
+# 📉 Zipf Law in Arusian
+
+This is a top 100 list with the 100 most common Arusian words in the corpus. 
+
+import React, { useState, useEffect } from 'react';
+
+export default function ZipfTop100() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function processCorpus() {
+      try {
+        const res = await fetch('https://thearusianlanguage.vercel.app/corpora/standard_aru.txt');
+        const text = await res.text();
+        
+        const cleanText = text.toLowerCase().replace(/[^\w\sáéíóúàèìòùãõâêîôûç]/g, '');
+        const words = cleanText.split(/\s+/).filter(p => p.length > 0);
+        
+        const freq = {};
+        words.forEach(word => {
+          freq[word] = (freq[word] || 0) + 1;
+        });
+
+        const sorted = Object.entries(freq)
+          .map(([word, frequency]) => ({ word, frequency }))
+          .sort((a, b) => b.frequency - a.frequency)
+          .slice(0, 100);
+
+        setData(sorted);
+      } catch (e) {
+        console.error(e);
+      } finally {
+        setLoading(false);
+      }
+    }
+    processCorpus();
+  }, []);
+
+  if (loading) return <p style={{ textAlign: 'center', color: '#666' }}>Loading corpus and calculating Zipf's law...</p>;
+
+  const maxFreq = data[0]?.frequency || 1;
+
+  return (
+    <div style={{ fontFamily: 'system-ui, sans-serif', maxWidth: '800px', margin: '0 auto', padding: '24px', background: '#faf9f6', borderRadius: '12px', border: '1px solid #e5e0d8' }}>
+      <h2 style={{ color: '#2c3e50', borderBottom: '2px solid #3498db', paddingBottom: '8px', marginTop: 0 }}>Top 100 Words & Zipf's Law</h2>
+      <p style={{ color: '#555', fontSize: '0.95rem' }}>Word frequency analysis compared to Zipf's theoretical model ($Frequency \approx \frac{Max}{Rank}$).</p>
+      
+      <div style={{ maxHeight: '500px', overflowY: 'auto', marginTop: '16px', border: '1px solid #e5e0d8', borderRadius: '8px', background: '#fff' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.9rem' }}>
+          <thead>
+            <tr style={{ background: '#2c3e50', color: '#fff', position: 'sticky', top: 0 }}>
+              <th style={{ padding: '12px' }}>Rank</th>
+              <th style={{ padding: '12px' }}>Word</th>
+              <th style={{ padding: '12px' }}>Actual</th>
+              <th style={{ padding: '12px' }}>Zipf Theoretical</th>
+              <th style={{ padding: '12px' }}>Proportion</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item, index) => {
+              const rank = index + 1;
+              const theoretical = Math.round(maxFreq / rank);
+              const barWidth = Math.min(100, (item.frequency / maxFreq) * 100);
+              
+              return (
+                <tr key={item.word} style={{ borderBottom: '1px solid #eee', background: index % 2 === 0 ? '#fff' : '#fcfcfc' }}>
+                  <td style={{ padding: '10px 12px', fontWeight: 'bold', color: '#7f8c8d' }}>#{rank}</td>
+                  <td style={{ padding: '10px 12px', fontWeight: '600', color: '#2c3e50' }}>{item.word}</td>
+                  <td style={{ padding: '10px 12px' }}>{item.frequency}</td>
+                  <td style={{ padding: '10px 12px', color: '#7f8c8d' }}>~{theoretical}</td>
+                  <td style={{ padding: '10px 12px', width: '150px' }}>
+                    <div style={{ background: '#ecf0f1', borderRadius: '4px', height: '8px', width: '100%', overflow: 'hidden' }}>
+                      <div style={{ background: '#3498db', height: '100%', width: `${barWidth}%` }}></div>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
