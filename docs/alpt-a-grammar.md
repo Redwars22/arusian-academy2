@@ -326,8 +326,10 @@ Here is a table with some titles you can use with people in Arusian.
 |**su-delra-rmra**|Prime Minister/co-king/queen|
 |**Su-delra**|King/Queen|
 |**Su-telra**|Teacher, Professor|
+|**su-metra**|medical doctor|
 |**Gru**|Teacher, Professor, Master, Professional|
-|**Gru-jik**|medical doctor|
+|**Gru-jik**|repair man|
+|**Gru-met**|medical doctor|
 |**Gru-naj**|Astronomer|
 |**Gru-lei**|Programmer|
 |**Gru-kuwei**|Mathematician|
