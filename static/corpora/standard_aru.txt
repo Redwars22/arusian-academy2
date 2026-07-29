@@ -476,11 +476,11 @@ Vej sa mred touweis.
 Ket dereis u sa vot agr!
 Puwei kot sa vom pus? Vom otras u sa lu auwr u pus. Keg umus u pus! Mo-kai beis u sa lu muwauwr. Vel auwayeis u kreyas.
 Lu wayeis. Tra pus u sa lu ouwr lu tekr sam. Net sa naj u sa lu ouwr lu tekr. Tekrei-naj sa lu ouwr-ouwr! Juwa suwas u sa lu kamr. Lu delr lu tekr kuwei sa net suwas. Era lu sa suwa ouwauweis. Suwa otras u payr naj. Vom otras u auwr so u sa tim las. Vom sa vej sa su mer tara umus. Vai taras u sa suwa defse. Vej fuwas u sa lu auwr suwa otras wei payr naj. Tra tregras u sa lu auwr naj sa suwa otras. Lu agr lu mr tara lus u edr suwa otras wei auweis. Lu ouwr lu auwr suwa otras. Bai das u sa lu kamr u edr lu auwr so. Gau araraas u sa lu ouwr vrai. Vrai umus u sa lu ouwr. Vej fuwas u sa lu kor vrai. Vrai tr fna areyeis u sa lu ouwr! Vej sa lu ouwr lu vrayr Fna-kut-orai. Da sa lu ouwr lu auwr. Sel osa vom areyeis u sa lu ouwr lu auwr.
-Vek ara sa vom otras wei payr. Fna areis u sa vek ara tr. Nepa fna-mo-lei sa vek ara tr? Vej sa lu krmr brai.
-Vek ara umus u sa vom otras wei payr.
-Vom otras u payr vek ara.
-Vom otras u sa vek ara paise.
-Vom otras u sa vek ara umus wei paise.
+ara-vek sa vom otras wei payr. Fna areis u sa ara-vek tr. Nepa fna-mo-lei sa ara-vek tr? Vej sa lu krmr brai.
+ara-vek umus u sa vom otras wei payr.
+Vom otras u payr ara-vek.
+Vom otras u sa ara-vek paise.
+Vom otras u sa ara-vek umus wei paise.
 Nut otras u sa vom otras wei dauwr.
 Nut sa vom otras wei dauwr.
 Nut sa vom dauwr. Su nas u sa vom otras wei ketr. bu otras u sa nut fos. Vej sa lu ouwr lu tr pai-nut sasa wem.
@@ -1589,8 +1589,8 @@ vru sara nau sa lu ouwr.
 vru sara nau sa so ouwr.
 Su ouwr vru sara nau.
 vej sa cokola sa lru delr so dauwr.
-Alumei tna sa vek ara pekse.
-Alumei tna otras u agreis u edr vek ara pei.
+Alumei tna sa ara-vek pekse.
+Alumei tna otras u agreis u edr ara-vek pei.
 Um otras u sa lu agr.
 Um sa lu agr.
 Um sa lu agr u edr lu drejras.
