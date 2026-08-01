@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew's Semlek Keyboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        .keyboard-key {
+            transition: all 0.2s;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px;
+            background: white;
+            min-height: 50px;
+            position: relative;
+        }
+        .keyboard-key:hover { background-color: #f1f5f9; }
+        
+        .keyboard-key::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: -45px;
+            background: #333;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            display: none;
+            z-index: 20;
+            white-space: nowrap;
+        }
+        .keyboard-key:hover::after { display: block; }
+
+        #output {
+            direction: rtl;
+            unicode-bidi: bidi-override;
+            text-align: right;
+            font-size: 1.5rem;
+            min-height: 120px;
+            border: 2px solid #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            outline: none;
+            background: #fff;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+        <h1 class="text-2xl font-bold mb-6 text-center text-gray-800">Andrew's Semlek Keyboard</h1>
+        
+        <div id="output" contenteditable="true" dir="rtl" class="w-full mb-6 whitespace-pre-wrap shadow-inner"></div>
+
+        <div id="keyboard" class="grid grid-cols-10 gap-2 mb-4"></div>
+
+        <div class="grid grid-cols-3 gap-4">
+            <button onclick="handleBackspace()" class="py-3 bg-gray-200 hover:bg-gray-300 font-bold rounded-lg transition">Backspace</button>
+            <button onclick="insertSpace()" class="py-3 bg-gray-200 hover:bg-gray-300 font-bold rounded-lg transition">Space</button>
+            <button onclick="copyText()" class="py-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition">Copy</button>
+        </div>
+    </div>
+
+    <script>
+        const keyMap = {
+            'q': { sym: 'Ь', label: 'p' }, 'w': { sym: 'G', label: 'e' }, 'e': { sym: "G'", label: "i" },
+            'r': { sym: 'O', label: 'r' }, 't': { sym: 'V', label: 't' }, 'y': { sym: 'Ѳ', label: 'u' },
+            'u': { sym: '5', label: 'n' }, 'i': { sym: 'Є', label: 'a' }, 'o': { sym: "Є'", label: "ei" },
+            'p': { sym: 'Э', label: 'o' }, 'a': { sym: 'A', label: 's' }, 's': { sym: 'U', label: 'd' },
+            'd': { sym: 'Ե', label: 'c' }, 'f': { sym: 'Z', label: 'f' }, 'g': { sym: 'B', label: 'g' },
+            'h': { sym: 'Б', label: 'b' }, 'j': { sym: 'Ն', label: 'j' }, 'k': { sym: 'Ը', label: 'k' },
+            'l': { sym: 'Ո', label: 'l' }, 'z': { sym: "Ն'", label: "z" }, 'x': { sym: 'Շ', label: 'm' },
+            'c': { sym: 'I', label: 'v' }, 'v': { sym: '|', label: '.' }
+        };
+
+        const keyboardContainer = document.getElementById('keyboard');
+        const outputField = document.getElementById('output');
+
+        Object.keys(keyMap).forEach(key => {
+            const data = keyMap[key];
+            const btn = document.createElement('div');
+            btn.className = "keyboard-key";
+            btn.setAttribute('data-tooltip', `Physical: ${key.toUpperCase()}`);
+            btn.innerHTML = `<span class="text-xl font-bold">${data.sym}</span><span class="text-xs text-gray-500">${data.label}</span>`;
+            btn.onclick = () => { outputField.innerText += data.sym; outputField.focus(); };
+            keyboardContainer.appendChild(btn);
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Backspace') {
+                handleBackspace();
+            } else if (event.key === ' ') {
+                event.preventDefault();
+                insertSpace();
+            } else if (keyMap[event.key.toLowerCase()]) {
+                event.preventDefault();
+                outputField.innerText += keyMap[event.key.toLowerCase()].sym;
+            }
+        });
+
+        function handleBackspace() {
+            outputField.innerText = outputField.innerText.slice(0, -1);
+        }
+
+        function insertSpace() {
+            outputField.innerText += ' ';
+        }
+
+        function copyText() {
+            const text = outputField.innerText;
+            if (!text) return;
+            
+            const reversedText = text.split('').reverse().join('');
+            
+            const el = document.createElement('textarea');
+            el.value = reversedText;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            alert("Text copied order!");
+        }
+    </script>
+</body>
+</html>
