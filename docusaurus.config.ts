@@ -97,7 +97,7 @@ const config: Config = {
       title: "Arusian Academy (BETA)",
       logo: {
         alt: "Arusian Academy",
-        src: "https://conworkshop.com/static/flag/ARJ-cd25782814914ef07162048aeac51e8cc80529b8.png",
+        src: "https://thearusianlanguage.vercel.app/img/aru_flag.png",
       },
       items: [
         {
