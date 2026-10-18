@@ -11,7 +11,7 @@ const config: Config = {
   title: "Arusian Academy (BETA)",
   tagline: "The Language of Nature",
   favicon:
-    "https://conworkshop.com/static/flag/ARJ-cd25782814914ef07162048aeac51e8cc80529b8.png",
+    "https://thearusianlanguage.vercel.app/img/aru_flag.png",
 
   // Set the production url of your site here
   url: "https://thearusianlanguage.vercel.app",
