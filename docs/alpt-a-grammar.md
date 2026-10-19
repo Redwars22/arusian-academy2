@@ -109,7 +109,7 @@ We will show you two examples of letters in Arusian (one for a parent and anothe
 
 > U-ma lus.
 >
-> Lu aekr tei beis. Lu krmr vej sa lu prauwr tei u sa umu-lo-seg. Osa-mez teis u sa lu tr u segr tra-18 sa nru-ai.
+> Lu aekr tei beis. Lu krmr vej sa lu prauwr tei u sa umu-lo-seg. Osa-mes teis u sa lu tr u segr tra-18 sa nru-ai.
 >
 > Lu sumr tei.
 > Luk teis.
@@ -123,7 +123,7 @@ Adding **OSA** before the first word of a sentence is like "AND" in English.
 > U-su-delra.
 > Era-tei sa wai beyeis.
 >
-> Erpaya-keyai-mez sa luwa-fna u sa so-luwedra kamr aem. Su sa mrai-vai. Plei-ertregra-fu teis?
+> Erpaya-keyai-mes sa luwa-fna u sa so-luwedra kamr aem. Su sa mrai-vai. Plei-ertregra-fu teis?
 >
 > Era-lu teis u sa seg teis
 > Kaya-dei sa delra-rmra
