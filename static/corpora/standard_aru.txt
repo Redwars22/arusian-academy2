@@ -58,14 +58,14 @@ Vom pus u otras. Pai-tek pus u sa vom otras wei tr. Pai tek trmr pai sa vom tekr
 Vom-pei agr su dauwas. pai-nut beis u sa lu aemr. pai-nut nas u sa lu aemr. Vej sa tei lu agr tei lu dauwas wei fos.
 Nut otras u sa lu deyekr. Vom sa lu deyekras wei edr. Vom deyekras u edr vom u beis. Lu ouwr lu deyekras.
 sara nau dauweis. Pru fna sa sara nau vr. Sara nau sa lu ouwr lu dauwr. sara nau mruuweis. Lu agr lu deras. 
-Pizza sa lu ouwr lu dauwr. Pizza ouweis sasa otra. Vom otras u ouwr pizza. Fuwej ouweis u payr pizza. Pepronei sa osa.
+pei-sai sa lu ouwr lu dauwr. pei-sai ouweis sasa otra. Vom otras u ouwr pei-sai. Fuwej ouweis u payr pei-sai. Pepronei sa osa.
 Cuwei sa lu ouwr lu dauwr. Nepa tei ouwas? lu ouwas sasa otra. Puwei jeyai cuweis u sa tei nutr? 
 Vej sa cuwei sa lu ouwr lu dauwr. Cuwei pus u naais. Su sa lu ukse! Vom otras u ukreis.
 Nepa cuwei sa tei ouwr? Su beis. Lu ouwr cuwei. Nepa tei nutras? Su beis. Lu nutras.
-Nepa pizza sa tei ouwr? Vej sa lu ouwr nuwa-gef payr pizza. Ralapeneyo sa lu ouwr u payr pizza!
+Nepa pei-sai sa tei ouwr? Vej sa lu ouwr nuwa-gef payr pei-sai. Ralapeneyo sa lu ouwr u payr pei-sai!
 Nepa dauwei-mef sa tei ouwr? gumrei-Lem sa so nutr u sa tra pus! 
 Nepa dauwei-mef sa so ouwr? Miya lus u ouwr gumrei-lem sasa otra!
-Nepa pizza sa so ouwr? Lu osa miya lus u dauwas! Nepa tei ouwr tei rmr lu pei?
+Nepa pei-sai sa so ouwr? Lu osa miya lus u dauwas! Nepa tei ouwr tei rmr lu pei?
 Nepa cuwei sa so ouwr? Do cuweis u beis! Puwei do sa nut u sa tei ouwr?
 Mef bayeis. Puwei kei sa mef bayeis. Vej sa lu krmras. krmra lus! Vej! Vej sa lu krmras sasa of.
 Nepa tei beis? Lu beis. Puwei tei? Lu beis. Puwei kouwa teis u sa wel pus? Vej agreis u sa lu kor.
@@ -105,7 +105,7 @@ Nepa nut beis? Lu nutr so!
 Nepa nut beis? Su sa lu nutr!
 lu nutras. Tno sa lu nutr. Nepa tei ouwas? 
 Tei nutras.
-vom nutras. vom nutr pizza u sa lu ouwr.
+vom nutras. vom nutr pei-sai u sa lu ouwr.
 vom otras u nutras.
 Miya lus u nutras.
 Nepa su-dauwei beis? Su sa lu nutr!
@@ -180,7 +180,7 @@ Pei-at sa so-am lus u netreis u keise num sos wei kijreis. Vej sa so demras u ke
 Erpaya-mez sos u sa lu semr juwa sa Lei-Vra (dhammapada). Lei-vra demr vreyek sa budda demr. 
 Lei-vra sa lu puwauwr sasa otra. Su sa lu tafr sasa aru dem u sa osa. Pei-at sa so am lus u mr. 
 Lu demr-rmr so-am reweis. Vej agreis u sa lu-pei demr. Dhammapada sa so puwauwr sasa kut u keyr so auwr prmreg sos. 
-Lu-pei demras sasa da u araraas. Vej sa pizza kamr nuwa-gef wei sa so ouwr. Pizza kamr nuwa-gef u sa so duwekr sasa otra! 
+Lu-pei demras sasa da u araraas. Vej sa pei-sai kamr nuwa-gef wei sa so ouwr. pei-sai kamr nuwa-gef u sa so duwekr sasa otra! 
 Lu mr mez sos. Lu tr pai-buk sa Glendale u edr lu dauwas. Vej sa nut u sa lu brayr sasa fo. Lu tr mez lus u araraas. 
 Tra pus u beyeis. Mrai pus u segr lu semr sem pus. Vej sa lu ouwr lu demr sasa seg pus. 
 Lu demr-rmr so-am lus u sa wel pus! Su am teis u sa lu amr. Lu pei sa demra-rmra sasa otra. Nepa tei ouwr tei demr-rmr so am lus? Su am teis u sa lu amr. Tei amreis u sa lu ketr.
@@ -487,7 +487,7 @@ Nut sa vom dauwr. Su nas u sa vom otras wei ketr. bu otras u sa nut fos. Vej sa 
 vom otras u sa nut dause.
 vom auwayeis u sa nut dause.
 Vom sa nut otras wei dause. Lu agr lu mrauwas u keise nut otras. Ukrei lus. Nut ukr vom otras u payr pai-nut!
-Vom otras u sa nut dause. Pizza sa lu ouwr u sa tra pus. Pizza beis. Na-osa sa pizza kutreis.
+Vom otras u sa nut dause. pei-sai sa lu ouwr u sa tra pus. pei-sai beis. Na-osa sa pei-sai kutreis.
 Vom otras u dauwr nut otras. Otra sa nut u sa vom dauwr. bu otras u sa vom dauwr. Vom batr su u keise nut pus! Na-osa sa pek lus wei kijreis.
 Vom otras u dauwr nut. Nut beis u sam vom demr. Nut sa lu ouwr lu suwauwr! Nepa Dauwei-mef sa so nutr? Lem sa lu ouwr sasa umu!
 Vom dauwr nut. nut sa so-nutra kayr u beyeis. Nut trlras u sa lu ouwr lu suwauwr. Marei suwauwr nut sos!
@@ -586,7 +586,7 @@ Ara kuwa sa tara teis.
 Tara lus u sa ara kel!
 tara lus u sa ara kel otras.
 Ara beis u sa tra pus. Vej kus u payr ara.
-vej sa pizza u sa wai pus. Kna ouweis u wais. Kna sa lu dauwr.
+vej sa pei-sai u sa wai pus. Kna ouweis u wais. Kna sa lu dauwr.
 Dei sa Ponta Grossa u trmr umu-ared umuuweis u sa Po-tu-gei-dem.
 Puwei-tei kouwas u sa wel pus? Lu dauwas u osa lu puwauwr juwa.
 Mez lus u sa umuuwei otras. Nepa mez teis u umuuweis u sa osa?
@@ -805,9 +805,9 @@ Vro jekreis u sa lu agr.
 Vro jeg areis u sa lu agr. Vro jeg sa pei tef u sa lu kamr. Vej sa vro jeg otras wei sa lu kamr.
 vro tej otras u sa lu kamr. Vro tej sa kluwa vai u otras u sa lu kamr. Puwei kei sa vro tej otras wei sa lu kamr? Vej keis. Vej sa vro tej umreis.
 Tej lus u kamr dej otras. Vej sa lu ouwr dej otras wei payr tej lus.
-Pizza sa lu ouwr lu dauwr. Nepa pizza kamr pepronei u sa tei ouwr? 
-Ermra tei sa lu ouwr lu dauwr pizza. Ermra tei sa lu ouwr lu dauwas.
-Pizza kamr pepronei u sa lu sekr. Nepa pizza sa so ouwr?
+pei-sai sa lu ouwr lu dauwr. Nepa pei-sai kamr pepronei u sa tei ouwr? 
+Ermra tei sa lu ouwr lu dauwr pei-sai. Ermra tei sa lu ouwr lu dauwas.
+pei-sai kamr pepronei u sa lu sekr. Nepa pei-sai sa so ouwr?
 Marei puwauwr juwa sa vra lei. Juwa sa vra lei u jikras!
 Marei semr juwa sa lu ouwr! Marei semr juwa beis! 
 Vej sa ju nau sa lu delr lu dauwr.
@@ -1046,7 +1046,7 @@ Erpaya mez lus u sa tlo otras.
 Tlo retras.
 Vej sa lu ouwr lu luweyas.
 Pai luwei sa so tr.
-cara sa lu ouwr su rmr pizza.
+cara sa lu ouwr su rmr pei-sai.
 cara sa lu ouwr lu dauwr.
 cara sa lu dauwr.
 cara sa kluwa aj.
@@ -1443,8 +1443,8 @@ Orei. Lu ouwr lu keyekras.
 Vek sa lu kamr.
 Puwei-vek sa tei kamr?
 Toyota sa lu kamr. Vek pus u sa lu ouwr.
-Nepa pizza sa so leyemr? Pizza sa lu ouwr.
-Pizza sa so ouwr. Vej sa pizza sa lu ouwr u segr wel pus.
+Nepa pei-sai sa so leyemr? pei-sai sa lu ouwr.
+pei-sai sa so ouwr. Vej sa pei-sai sa lu ouwr u segr wel pus.
 Tau ket das u sa lu agr lu tauwr. Ket lus u sa lu agr lu beyr.
 Agrei sa ket beyeis wei sa tei kamr.
 Vom otras u kamr ket naais. Vegrei sa ket beyeis wei kamreis.
@@ -2104,10 +2104,10 @@ Pai-kara sa bik u sa lu payr.
 Fna-mei-sek kamr mera-dem otras. Na-ruwa-dem trmr mera-dem guwaais sasa dara u sa fna-mei-sek. Pa-neyo-dem guwaais sasa da das. Pa-neyo-dem sa fna-mei-sek u sa guwaai daras. Pa-neyo-dem sa lu agr lu tekr. Mo-lei-dem sa lu demr sasa bei.
 Lra-naj gauweis u keyr nek otras wei sa ared.
 Tnei sa lu prmrse. Lu kegr tra sa pei-tef-ta-mei wei sa drau waais. Auwet pus u sa lu tuwase sasa otra
-nepa-pizza kamreis? 
-nepa-pizza sa tei kamr?
-Nepa-tei kamr pizza?
-Vej sa pizza kamreis. Vej sa lu ouwas.
+nepa-pei-sai kamreis? 
+nepa-pei-sai sa tei kamr?
+Nepa-tei kamr pei-sai?
+Vej sa pei-sai kamreis. Vej sa lu ouwas.
 Nepa-vreyek kamreis? Vreyek otras u kamreis. Su sa lu krmr. Puwei-vreyek sa tei kamr?
 Au trmr nrai auwr ket ora ouwai. Au sa ket kuwr. Ket sa ouwai kuwr. Vej sa ouwai ora ket u keyr au mayeis. Au mayeis u keyr waai-srel. Vej sa srel payr naj. Srel deise vom orayr au ora ket.
 Pa-neyo-dem sa lu ouwr lu demr. Pa-neyo-dem sa fna-mei-sek u sa lu ouwr lu demr.
@@ -2118,7 +2118,7 @@ Ouwauwei sa vef sa fna-mo-lei ! Puwei-fna sa lu mer?
 Fna-bra-sel sa lu mer. Umuuwei otras u sa fna-bra-sel. Puwei-fna teis? 
 Fna-pei-lei-pei sa lu mer. Auwayei pus.
 Lu vuuweis sasa otra. Lu numreis u sa lu ouwr. Vayau lus u sa lu var. Nouwei-mrai-tim pus. 
-Lu vrauweis. Uwel 2:28 pus. Uwel sa pei-kef u sa lu numreis. Kuwa-duwa sa lu agr u keyr pizza-ralapeneyo sa lu dauwr. Vej sa pizza-ralapeneyo sa lu ouwr lu dauwr u keise so keyr lu duwaas sasa otra. Lu duwaas u sa ralapeneyo keyr. 
+Lu vrauweis. Uwel 2:28 pus. Uwel sa pei-kef u sa lu numreis. Kuwa-duwa sa lu agr u keyr pei-sai-ralapeneyo sa lu dauwr. Vej sa pei-sai-ralapeneyo sa lu ouwr lu dauwr u keise so keyr lu duwaas sasa otra. Lu duwaas u sa ralapeneyo keyr. 
 Vej sa Instagram sa lu ouwr. Uwaai-kej sa lu kamr u sa Instagram. Kej nras u sa lu kamr. Lu auwas sasa pu. Puwei-kei sa Instagram sa tei veyor? Su veyose lu u keise vej sa lu ouwr lu kejr bai lus. Instagram sa kej edse.
 Lu auwas. Lu auwr so sa tei veyor.
 Juwem ouwefras u sa lu auwr u sa wel pus. Lu ouwr lu relras. Vej sa lu relras u sa seg otras. kam sa lu tlar lu relr. Vej sa lu delr lu truuwas u keyr ara-kuwa otras wei sa tra pus. Juwem sa vom sa tnei-drau kamse u sa lu auwr. 
@@ -2152,11 +2152,11 @@ Arelra-dei osa Keya-dei u sa su-pei kefse. Duwei-Lu-dei laekreis u osa su auwemr
 Keya-dei sa sel sus wei demse . Vej sa su juuweis wei rmr so. Kara sa Duwei-Lu-dei crar. Su-pei tas u dlauwas u sa so payauwr. 
 Auwayei-dei wauwas. Su wefreis sasa otra. Su sa Tauwa-dei defr u payr gei-sel. Ouweg sos u veyauweis. Geya-lai sa vel jekreis u sa so auwr. Vel jekreis u kamr so-alra otras. Auwayei-dei ouwemras. 
 ! Su sa lu agr lu negr ! Su mouwas.
-Mo-kai sa lu auwemr u sa wel pus. Vej agreis u sa lu kor. Ayau-vai sa lu auwemr u sa wel pus. Su demr Fna-korei. Velrei-som pus u sa ayau-vai. Nut sa lu ouwr lu dauwr. Pizza sa lu ouwr. Nepa-pizza sa tei ouwr? Su sa lu kamr. lu sa pruuwa-paya.
+Mo-kai sa lu auwemr u sa wel pus. Vej agreis u sa lu kor. Ayau-vai sa lu auwemr u sa wel pus. Su demr Fna-korei. Velrei-som pus u sa ayau-vai. Nut sa lu ouwr lu dauwr. pei-sai sa lu ouwr. Nepa-pei-sai sa tei ouwr? Su sa lu kamr. lu sa pruuwa-paya.
 Ara-kuwa otras u sa tra pus. Cuwa sa 40 u sa tra pus. Cuwa sa 30C u sa mrai-tim pus. Tra-vra pus u sa lu ouwr lu numreis.
 U-ro! Ro-puwei-kei sa tei pus?
 U-ro! Ro-nepa-tei sa nut ouse? Ro-dauwai otras u sa lu-pei kamr. 
-Tei edras. Pizza ora luwa u sa lu ouwr.
+Tei edras. pei-sai ora luwa u sa lu ouwr.
 su beis. lu delr lu semr aru dem wei remr so-kuweya osa kam (: Tei delr tei demr aru-dem.... Tei delr tei krmr joseph.... Su beis... Lu sa lu krmr. Osa-otra sa lu agr lu tekr lu.
 tek-ram agreis u edr tei sa demra-rmra.
 Puwei-kei sa vom otras wei nakreis ? Vej sa vom nakreis wei sa lu auwr u pus. Vej sa vom nakreis wei sa so-pei auwr u fos. Nra sa vom nakreis u lus. Nra sa so auwas sasa osa. Vreyek otras u sa vom kor. Dem pus u sa lu kayr. Dem otras u sa Kaya-dei kayr. Fna otras u sa Najrei-dei kayr. Vot sa vom u kamr ouwei-ko eyaais!
