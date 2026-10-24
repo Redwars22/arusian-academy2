@@ -20,7 +20,7 @@ Here are some resources to help you learn more about Arusian and discover about 
 
 - [**Introduction to Arusian:**](https://drive.google.com/file/d/1MbuLpWyqwXibVfssW2cd02cuXqQAhd4t/view?usp=sharing) an Arusian grammatical guide, with tones of example sentences with explanations.
 
-- [**Aru-Portuguese Dictionary:**](https://thearusianlanguage.vercel.app/iframes/aru-pt-dict.html) an online Brazilian Portuguese <-> Aru dictionary.
+- [**Aru-Portuguese Dictionary:**](https://thearusianlanguage.vercel.app/iframes/aru-pt-dict.html) an online Brazilian Portuguese to Aru (and vice-versa!) dictionary.
 
 # Secondary Material (May have errors)
 
