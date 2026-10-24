@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dicionário Aru-Português</title>
+  
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    @font-face {
+      font-family: 'Buwagat';
+      src: url('https://thearusianlanguage.vercel.app/fonts/Buwagat.ttf') format('truetype');
+      font-display: swap;
+    }
+
+    :root {
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --bg-surface: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --accent-badge: #e0e7ff;
+      --accent-badge-text: #3730a3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-surface);
+      color: var(--text-main);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: linear-gradient(135deg, #312e81 0%, #4f46e5 100%);
+      color: white;
+      padding: 2.5rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: #c7d2fe;
+      font-size: 1rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: -1.5rem auto 2rem auto;
+      padding: 0 1rem;
+      width: 100%;
+      flex: 1;
+    }
+
+    .search-panel {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.25rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .search-panel {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .search-input-wrapper {
+      position: relative;
+      flex: 1;
+    }
+
+    .search-input-wrapper input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .search-input-wrapper input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .controls {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn:hover {
+      background-color: #f1f5f9;
+    }
+
+    .btn.active {
+      background-color: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .stats {
+      margin: 1.5rem 0 1rem 0;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dictionary-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .dictionary-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .word-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.25rem;
+      transition: transform 0.15s, box-shadow 0.15s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .word-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      border-color: #c7d2fe;
+    }
+
+    .aru-text {
+      font-family: 'Buwagat', sans-serif;
+      font-size: 1.75rem;
+      color: var(--text-main);
+      line-height: 1.2;
+    }
+
+    .transliteration {
+      font-size: 0.9rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .definition {
+      font-size: 1rem;
+      color: #334155;
+      margin-bottom: 0.75rem;
+    }
+
+    .notes-badge {
+      display: inline-block;
+      align-self: flex-start;
+      background-color: var(--accent-badge);
+      color: var(--accent-badge-text);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      text-transform: capitalize;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px dashed var(--border-color);
+      color: var(--text-muted);
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease-out;
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal {
+      background: white;
+      border-radius: 16px;
+      max-width: 500px;
+      width: 100%;
+      padding: 1.5rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      transform: scale(0.95);
+      transition: transform 0.2s ease-out;
+      position: relative;
+    }
+
+    .modal-backdrop.active .modal {
+      transform: scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    .modal-header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      background: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Dicionário Aru ↔ Português</h1>
+    <p>Língua Aruana • Léxico e Transliteração Oficial</p>
+  </header>
+
+  <div class="container">
+    <div class="search-panel">
+      <div class="search-input-wrapper">
+        <svg class="search-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Buscar em Aru, transliteração ou português...">
+      </div>
+
+      <div class="controls">
+        <button class="btn active" id="btnAll" onclick="setFilter('all')">Todos</button>
+        <button class="btn" id="btnRoots" onclick="setFilter('root')">Raízes</button>
+        <button class="btn" id="btnDerived" onclick="setFilter('derived')">Derivados/Compostos</button>
+      </div>
+    </div>
+
+    <div class="stats">
+      <span id="resultCount">Carregando vocábulos...</span>
+      <span>Fonte: Buwagat.ttf</span>
+    </div>
+
+    <div class="dictionary-grid" id="dictionaryGrid"></div>
+  </div>
+
+  <!-- Modal para Detalhes -->
+  <div class="modal-backdrop" id="modalBackdrop" onclick="closeModal(event)">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div class="modal-header">
+        <div class="aru-text" id="modalAru" style="font-size: 2.5rem;"></div>
+        <div class="transliteration" id="modalTrans" style="font-size: 1.1rem;"></div>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <strong>Definição / Tradução:</strong>
+        <div class="definition" id="modalDef" style="font-size: 1.1rem; margin-top: 0.2rem;"></div>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <strong>Classificação / Nota Gramatical:</strong>
+        <div style="margin-top: 0.4rem;"><span class="notes-badge" id="modalNotes"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Dicionário Digital da Língua Aru • Desenvolvido com léxico estruturado
+  </footer>
+
+  <script>
+    // Léxico fornecido via JSON integrado com adaptações de tradução explicativas
+    const rawData = [
+      {"lexical_item":"Ta","definition":"um, único","notes":"root","transliteration":"at"},
+      {"lexical_item":"rTa","definition":"tornar único, isolar","notes":"derived form / compound","transliteration":"atr"},
+      {"lexical_item":",r sTa","definition":"tornado único por, tornado sozinho por","notes":"derived form / compound","transliteration":"atse"},
+      {"lexical_item":"arTa","definition":"ato de tornar único","notes":"derived form / compound","transliteration":"atra"},
+      {"lexical_item":",arTa","definition":"ser único, estar sozinho","notes":"derived form / compound","transliteration":"atrei"},
+      {"lexical_item":"Ta ,aP","definition":"um","notes":"derived form / compound","transliteration":"pei-at"},
+      {"lexical_item":"sa","definition":"de um, apenas, único","notes":"derived form / compound","transliteration":"as"},
+      {"lexical_item":"Ta as as","definition":"apenas, somente","notes":"derived form / compound","transliteration":"sasa at"},
+      {"lexical_item":"me,aa","definition":"alho, estigma","notes":"root","transliteration":"ayem"},
+      {"lexical_item":"rme,aa","definition":"tornar acre/picante, difamar, estigmatizar","notes":"derived form / compound","transliteration":"ayemr"},
+      {"lexical_item":",r sme,aa","definition":"difamado por, estigmatizado por","notes":"derived form / compound","transliteration":"ayemse"},
+      {"lexical_item":"arme,aa","definition":"ato de difamar, ato de estigmatizar","notes":"derived form / compound","transliteration":"ayemra"},
+      {"lexical_item":",arme,aa","definition":"ser picante, estar estigmatizado","notes":"derived form / compound","transliteration":"ayemrei"},
+      {"lexical_item":"ce,aa","definition":"escolha, decisão, dedicação, voto","notes":"root","transliteration":"ayek"},
+      {"lexical_item":"rce,aa","definition":"escolher, votar em, decidir","notes":"derived form / compound","transliteration":"ayekr"},
+      {"lexical_item":",r sce,aa","definition":"escolhido por, votado por, decidido por","notes":"derived form / compound","transliteration":"ayekse"},
+      {"lexical_item":"arce,aa","definition":"escolhendo, votando, decidindo","notes":"derived form / compound","transliteration":"ayekra"},
+      {"lexical_item":",arce,aa","definition":"sendo escolhido, sendo votado","notes":"derived form / compound","transliteration":"ayekrei"},
+      {"lexical_item":"ce,aa ,arcet","definition":"política, ciência política","notes":"derived form / compound","transliteration":"tekrei-ayek"},
+      {"lexical_item":"ce,aa ,arcear","definition":"política, político","notes":"derived form / compound","transliteration":"raekrei-ayek"},
+      {"lexical_item":"ce,aa ,aaP","definition":"cabine de votação","notes":"derived form / compound","transliteration":"pai-ayek"},
+      {"lexical_item":"da","definition":"demanda, pedido (objetos)","notes":"root","transliteration":"ad"},
+      {"lexical_item":"rda","definition":"pedir, solicitar, demandar","notes":"derived form / compound","transliteration":"adr"},
+      {"lexical_item":",r sda","definition":"pedido por, solicitado por","notes":"derived form / compound","transliteration":"adse"},
+      {"lexical_item":"arda","definition":"pedindo, solicitando, aplicando","notes":"derived form / compound","transliteration":"adra"},
+      {"lexical_item":",arda","definition":"sendo pedido, sendo solicitado","notes":"derived form / compound","transliteration":"adrei"},
+      {"lexical_item":"arda us","definition":"alguém que pede / solicitante","notes":"derived form / compound","transliteration":"su-adra"},
+      {"lexical_item":",arda us","definition":"coisa pedida, suspeito, assunto, pergunta","notes":"derived form / compound","transliteration":"su-adrei"},
+      {"lexical_item":"da ,aaP","definition":"questionário, local de perguntas","notes":"derived form / compound","transliteration":"pai-ad"},
+      {"lexical_item":"da ,armes","definition":"formulário de solicitação / aplicação","notes":"derived form / compound","transliteration":"semrei-ad"},
+      {"lexical_item":"Germr da","definition":"pedido (a uma pessoa)","notes":"expression","transliteration":"ad-rmreg"},
+      {"lexical_item":"rmr rda","definition":"pedir (a uma pessoa)","notes":"derived form / compound","transliteration":"adr-rmr"},
+      {"lexical_item":",r srmr ,r sda","definition":"pedido por (uma pessoa)","notes":"derived form / compound","transliteration":"adse-rmse"},
+      {"lexical_item":"Germr da rok","definition":"pedindo (a uma pessoa)","notes":"derived form / compound","transliteration":"kor ad-rmreg"},
+      {"lexical_item":"armr arda","definition":"pedindo (a uma pessoa)","notes":"derived form / compound","transliteration":"adra-rmra"},
+      {"lexical_item":"ca","definition":"troca, mudança, transferência, transação","notes":"root","transliteration":"ak"},
+      {"lexical_item":"rca","definition":"trocar, mudar, transferir, negociar","notes":"derived form / compound","transliteration":"akr"},
+      {"lexical_item":",r sca","definition":"trocado por, transferido por","notes":"derived form / compound","transliteration":"akse"},
+      {"lexical_item":"arca","definition":"trocando, transferindo, negociando","notes":"derived form / compound","transliteration":"akra"},
+      {"lexical_item":",arca","definition":"sendo mudado, sendo trocado","notes":"derived form / compound","transliteration":"akrei"},
+      {"lexical_item":"ca ,aaP","definition":"local de troca / comércio","notes":"derived form / compound","transliteration":"pai-ak"},
+      {"lexical_item":"ceua","definition":"nudez, vulnerabilidade, exposição","notes":"root","transliteration":"auwek"},
+      {"lexical_item":"rceua","definition":"expor","notes":"derived form / compound","transliteration":"auwekr"},
+      {"lexical_item":",r sceua","definition":"exposto por","notes":"derived form / compound","transliteration":"auwekse"},
+      {"lexical_item":"arceua","definition":"expondo","notes":"derived form / compound","transliteration":"auwekra"},
+      {"lexical_item":",arceua","definition":"estar exposto, estar nu/vulnerável","notes":"derived form / compound","transliteration":"auwekrei"},
+      {"lexical_item":"me,aua","definition":"parte superior do rosto (olhos, sobrancelhas)","notes":"root (no verb forms)","transliteration":"auweyem"},
+      {"lexical_item":"me,aua jed","definition":"sobrancelha","notes":"derived form / compound","transliteration":"dej-auweyem"},
+      {"lexical_item":"mera","definition":"ganho, mérito","notes":"root","transliteration":"arem"},
+      {"lexical_item":"rmera","definition":"merecer, ganhar, ser digno de","notes":"derived form / compound","transliteration":"arem"},
+      {"lexical_item":"cea","definition":"chance, confiança, esperança, fé, desejo","notes":"root","transliteration":"aek"},
+      {"lexical_item":"rcea","definition":"desejar, esperar por, confiar","notes":"derived form / compound","transliteration":"aekr"},
+      {"lexical_item":"arcea","definition":"desejando, confiando, ambicioso, confiante","notes":"derived form / compound","transliteration":"aekra"},
+      {"lexical_item":"fea","definition":"susto, medo, ansiedade","notes":"root","transliteration":"aef"},
+      {"lexical_item":"rfea","definition":"assustar, preocupar","notes":"derived form / compound","transliteration":"aefr"},
+      {"lexical_item":"jea","definition":"combustão, fogo","notes":"root","transliteration":"aej"},
+      {"lexical_item":"rjea","definition":"queimar","notes":"derived form / compound","transliteration":"aejr"},
+      {"lexical_item":"arjea us","definition":"isqueiro, fósforo","notes":"derived form / compound","transliteration":"su-aejra"},
+      {"lexical_item":"jea ,aaP","definition":"lareira, fogão, forno","notes":"derived form / compound","transliteration":"pai-aej"},
+      {"lexical_item":"mea","definition":"encontro, descoberta, conhecer (alguém)","notes":"root","transliteration":"aem"},
+      {"lexical_item":"rmea","definition":"encontrar, descobrir, conhecer","notes":"derived form / compound","transliteration":"aemr"},
+      {"lexical_item":",aa","definition":"idade","notes":"root","transliteration":"ai"},
+      {"lexical_item":",aa arN","definition":"juventude, ser jovem","notes":"derived form / compound","transliteration":"nra-ai"},
+      {"lexical_item":",aa umu","definition":"ancião, ser idoso","notes":"derived form / compound","transliteration":"umu-ai"},
+      {"lexical_item":",aara","definition":"pá, colher, esquilo","notes":"root","transliteration":"arai"},
+      {"lexical_item":"r,aara","definition":"escavar, cavar","notes":"derived form / compound","transliteration":"arayr"},
+      {"lexical_item":"aeara us","definition":"minerador, pá","notes":"derived form / compound","transliteration":"su-araya"},
+      {"lexical_item":"Tea","definition":"fermento, levedura","notes":"root","transliteration":"aet"},
+      {"lexical_item":"rTea","definition":"inflar, crescer, expandir","notes":"derived form / compound","transliteration":"aetr"},
+      {"lexical_item":"oaea","definition":"atuação, performance, peça, teatro","notes":"root","transliteration":"ayau"},
+      {"lexical_item":",aaP oaea","definition":"teatro, estádio, palco","notes":"derived form / compound","transliteration":"ayau-pai"},
+      {"lexical_item":",aav oaea","definition":"filme, vídeo","notes":"derived form / compound","transliteration":"ayau-vai"},
+      {"lexical_item":",aaea","definition":"vingança, retaliação, justiça","notes":"root","transliteration":"ayai"},
+      {"lexical_item":"Ga","definition":"importância, necessidade, tópico, dependência","notes":"root","transliteration":"ag"},
+      {"lexical_item":"rGa","definition":"dever, ter que, depender de","notes":"derived form / compound","transliteration":"agr"},
+      {"lexical_item":",arGa","definition":"ser necessário, ser útil","notes":"derived form / compound","transliteration":"agrei"},
+      {"lexical_item":"ja","definition":"sangue","notes":"root","transliteration":"aj"},
+      {"lexical_item":"rja","definition":"avermelhar, fazer sangrar","notes":"derived form / compound","transliteration":"ajr"},
+      {"lexical_item":",arja","definition":"sangramento","notes":"derived form / compound","transliteration":"ajrei"},
+      {"lexical_item":"ja aulk","definition":"vermelho, laranja","notes":"derived form / compound","transliteration":"kluwa-aj"},
+      {"lexical_item":"la","definition":"submissão, assinatura","notes":"root","transliteration":"al"},
+      {"lexical_item":"rla","definition":"seguir, obedecer, inscrever-se","notes":"derived form / compound","transliteration":"alr"},
+      {"lexical_item":"ma","definition":"amizade, doçura, açúcar, doce","notes":"root","transliteration":"am"},
+      {"lexical_item":"ma us","definition":"amigo","notes":"derived form / compound","transliteration":"su-am"},
+      {"lexical_item":"oa","definition":"sensor, órgão sensorial, visibilidade, visão","notes":"root","transliteration":"au"},
+      {"lexical_item":"roa","definition":"sentir, notar, ver, ouvir","notes":"derived form / compound","transliteration":"auwr"},
+      {"lexical_item":"oarl oa","definition":"óculos","notes":"derived form / compound","transliteration":"au-lrau"},
+      {"lexical_item":"Tek roa","definition":"entender, compreender","notes":"derived form / compound","transliteration":"auwr ket"},
+      {"lexical_item":",aaua","definition":"beleza, paraíso, formosura","notes":"root","transliteration":"auwai"},
+      {"lexical_item":",aaua od","definition":"perfume, fragrância","notes":"derived form / compound","transliteration":"do-auwai"},
+      {"lexical_item":"Teua","definition":"canção, canto, hino","notes":"root","transliteration":"auwet"},
+      {"lexical_item":"rTeua","definition":"cantar","notes":"derived form / compound","transliteration":"auwetr"},
+      {"lexical_item":"arTeua us","definition":"cantor(a)","notes":"derived form / compound","transliteration":"su-auwetra"},
+      {"lexical_item":"ara","definition":"clima, atmosfera, ar, tempo","notes":"root","transliteration":"ara"},
+      {"lexical_item":"m,et ara","definition":"noite, horário noturno","notes":"derived form / compound","transliteration":"ara-tim"},
+      {"lexical_item":",aav ara","definition":"dia, luz do sol","notes":"derived form / compound","transliteration":"ara-vai"},
+      {"lexical_item":"ara armrJ ","definition":"vento","notes":"derived form / compound","transliteration":"crmra-ara"},
+      {"lexical_item":",ara","definition":"diferença, estranheza, estrangeiro, outro","notes":"root","transliteration":"arei"},
+      {"lexical_item":",aera us","definition":"estrangeiro, aquele que é diferente","notes":"derived form / compound","transliteration":"su-areyei"},
+      {"lexical_item":"cera","definition":"estrutura, sistema","notes":"root","transliteration":"arek"},
+      {"lexical_item":"rcera","definition":"construir, edificar","notes":"derived form / compound","transliteration":"arekr"},
+      {"lexical_item":"cera med","definition":"gramática","notes":"derived form / compound","transliteration":"dem-arek"},
+      {"lexical_item":"dera","definition":"terra, solo, chão, latitude","notes":"root","transliteration":"ared"},
+      {"lexical_item":"dera umu","definition":"montanha","notes":"derived form / compound","transliteration":"umu-ared"},
+      {"lexical_item":"dera aulk","definition":"marrrom","notes":"derived form / compound","transliteration":"kluwa-ared"},
+      {"lexical_item":"dera ,aaM","definition":"Terra (planeta)","notes":"derived form / compound","transliteration":"mai-ared"},
+      {"lexical_item":"ura","definition":"gentileza, paz, respeito, boas maneiras","notes":"root","transliteration":"aru"},
+      {"lexical_item":"ura oM","definition":"elogio, cumprimento","notes":"expression","transliteration":"mo-aru"},
+      {"lexical_item":"oara","definition":"chapéu, capuz, cobertura","notes":"root","transliteration":"arau"},
+      {"lexical_item":"aul oara","definition":"guarda-chuva","notes":"derived form / compound","transliteration":"arau-luwa"},
+      {"lexical_item":",ab","definition":"bondade, gentileza, aprovação","notes":"root","transliteration":"bei"},
+      {"lexical_item": "r,ab","definition":"melhorar, aprovar","notes":"derived form / compound","transliteration":"beyr"},
+      {"lexical_item": "arad ,ab","definition":"melhor de todos, o melhor","notes":"derived form / compound","transliteration":"bei-dara"},
+      {"lexical_item": ",aab","definition":"vida","notes":"root","transliteration":"bai"},
+      {"lexical_item": "r,aab","definition":"dar vida, ligar (eletrônico), salvar","notes":"derived form / compound","transliteration":"bayr"},
+      {"lexical_item": ",aeab us","definition":"ser vivo","notes":"derived form / compound","transliteration":"su-bayei"},
+      {"lexical_item": "aeab us","definition":"salva-vidas, paramédico","notes":"derived form / compound","transliteration":"su-baya"},
+      {"lexical_item": "Ged ,aab","definition":"nascimento","notes":"derived form / compound","transliteration":"bai-deg"},
+      {"lexical_item": "me,ab","definition":"tinta, pintura","notes":"root","transliteration":"beyem"},
+      {"lexical_item": "rme,ab","definition":"pintar, imprimir","notes":"derived form / compound","transliteration":"beyemr"},
+      {"lexical_item": "mab","definition":"pão, pastelaria","notes":"root","transliteration":"bam"},
+      {"lexical_item": "oab","definition":"armário, baú, cofres, depósito","notes":"root","transliteration":"bau"},
+      {"lexical_item": "oab auj ","definition":"pasta (de arquivos)","notes":"derived form / compound","transliteration":". juwa-bau"},
+      {"lexical_item": "jeb","definition":"joia, pedra preciosa, favorito","notes":"root","transliteration":"bej"},
+      {"lexical_item": "jeb ,aaua","definition":"diamante","notes":"derived form / compound","transliteration":"auwai-bej"},
+      {"lexical_item": "meb","definition":"rede, teia, conexão","notes":"root","transliteration":"bem"},
+      {"lexical_item": "meb ,,aav","definition":"internet","notes":"derived form / compound","transliteration":"vai-bem"},
+      {"lexical_item": "unb","definition":"barco, flutuação","notes":"root","transliteration":"bnu"},
+      {"lexical_item": "unb ab","definition":"submarino","notes":"derived form / compound","transliteration":"ba-bnu"},
+      {"lexical_item": ",aarb","definition":"alvo, objetivo, meta","notes":"root","transliteration":"brai"},
+      {"lexical_item": "r,aarb","definition":"mirar, buscar, procurar","notes":"derived form / compound","transliteration":"brayr"},
+      {"lexical_item": "aearb us","definition":"buscador, motor de busca","notes":"derived form / compound","transliteration":"su-braya"},
+      {"lexical_item": "orb","definition":"escritório, laboratório, formalidade","notes":"root","transliteration":"bro"},
+      {"lexical_item": "aub","definition":"bolha, bola, orbe","notes":"root","transliteration":"buwa"},
+      {"lexical_item": "aub ara","definition":"balão, bolha de ar","notes":"derived form / compound","transliteration":"ara-buwa"},
+      {"lexical_item": "aub ,auaP","definition":"futebol","notes":"derived form / compound","transliteration":"pauwei-buwa"},
+      {"lexical_item": "ad","definition":"adição, mais, incremento","notes":"root","transliteration":"da"},
+      {"lexical_item": "rad","definition":"adicionar, aumentar","notes":"derived form / compound","transliteration":"dar"},
+      {"lexical_item": ",aad","definition":"preço, custo, risco, dívida","notes":"root","transliteration":"dai"},
+      {"lexical_item": ",aad ,aaau","definition":"grátis, sem custo","notes":"derived form / compound","transliteration":"uwaai-dai"},
+      {"lexical_item": "cad","definition":"costas, espinha","notes":"root","transliteration":"dak"},
+      {"lexical_item": "mad","definition":"estômago, abdômen, informação","notes":"root","transliteration":"dam"},
+      {"lexical_item": "rmad","definition":"digerir, informar","notes":"derived form / compound","transliteration":"damr"},
+      {"lexical_item": "mad mad","definition":"informação","notes":"derived form / compound","transliteration":"dam-dam"},
+      {"lexical_item": "oad","definition":"boca","notes":"root","transliteration":"dau"},
+      {"lexical_item": "road","definition":"comer, beber, consumir","notes":"derived form / compound","transliteration":"dauwr"},
+      {"lexical_item": ",auad us","definition":"comida, refeição, alimento","notes":"derived form / compound","transliteration":"su-dauwei"},
+      {"lexical_item": "oad ,aaP","definition":"restaurante, refeitório","notes":"derived form / compound","transliteration":"pai-dau"},
+      {"lexical_item": ",ad","definition":"nome","notes":"root","transliteration":"dei"},
+      {"lexical_item": "r,ad","definition":"nomear, dar nome","notes":"derived form / compound","transliteration":"deyr"},
+      {"lexical_item": "arad","definition":"o mais, o máximo (superlativo)","notes":"root (no verb forms)","transliteration":"dara"},
+      {"lexical_item": ",aaed","definition":"ovo, semente, possibilidade, potencial","notes":"root","transliteration":"deyai"},
+      {"lexical_item": "fed","definition":"parede, barreira, muro","notes":"root","transliteration":"def"},
+      {"lexical_item": "rfed","definition":"bloquear, impeder","notes":"derived form / compound","transliteration":"defr"},
+      {"lexical_item": "Ged","definition":"início, começo, estreia, nascimento","notes":"root","transliteration":"deg"},
+      {"lexical_item": "rGed","definition":"começar, iniciar, dar à luz","notes":"derived form / compound","transliteration":"degr"},
+      {"lexical_item":"jed","definition":"mercadoria, compra, cabelo, pelagem","notes":"root","transliteration":"dej"},
+      {"lexical_item":"rjed","definition":"comprar","notes":"derived form / compound","transliteration":"dejr"},
+      {"lexical_item":"led","definition":"poder, habilidade, capacidade","notes":"root","transliteration":"del"},
+      {"lexical_item":"arled us","definition":"rei, rainha, governante","notes":"derived form / compound","transliteration":"su-delra"},
+      {"lexical_item":"med","definition":"língua, idioma, fala","notes":"root","transliteration":"dem"},
+      {"lexical_item":"rmed","definition":"falar, conversar","notes":"derived form / compound","transliteration":"demr"},
+      {"lexical_item":"med oM","definition":"voz, sotaque","notes":"expression","transliteration":"mo-dem"},
+      {"lexical_item":"sed -jed","definition":"limpeza, pureza, inocência","notes":"root","transliteration":"des dez"},
+      {"lexical_item":"ared us","definition":"máquina de lavar","notes":"derived form / compound","transliteration":"su-dera"},
+      {"lexical_item":"anF","definition":"terra, país, continente","notes":"root (no verb forms)","transliteration":"fna"},
+      {"lexical_item":"ura ,aav anF","definition":"Arúsia (país)","notes":"derived form / compound","transliteration":"fna-vai-aru"},
+      {"lexical_item":"las arb anF","definition":"Brasil","notes":"derived form / compound","transliteration":"Fna-bra-sel"},
+      {"lexical_item":",ag","definition":"exibição, aparência, tela","notes":"root","transliteration":"gei"},
+      {"lexical_item":"r,ag","definition":"mostrar, exibir, revelar","notes":"derived form / compound","transliteration":"geyr"},
+      {"lexical_item":"aeg us","definition":"tela, monitor, televisão","notes":"derived form / compound","transliteration":"su-geya"},
+      {"lexical_item":",ag ,aaP","definition":"museu","notes":"derived form / compound","transliteration":"pai-gei"},
+      {"lexical_item":"jeg","definition":"quebra-cabeça, problema de matemática, enigma","notes":"root","transliteration":"gej"},
+      {"lexical_item":"rjeg","definition":"resolver, solucinar","notes":"derived form / compound","transliteration":"gejr"},
+      {"lexical_item":"Teg","definition":"robô, máquina","notes":"root","transliteration":"get"},
+      {"lexical_item":"arg","definition":"veia, tubo, cano, tráfego","notes":"root","transliteration":"gra"},
+      {"lexical_item":",aarg","definition":"osso, marfim","notes":"other","transliteration":"grai"},
+      {"lexical_item":"urg","definition":"mestre, especialista, professor, doutor","notes":"root","transliteration":"gru"},
+      {"lexical_item":",al urg","definition":"programador","notes":"derived form / compound","transliteration":"gru-lei"},
+      {"lexical_item":"urg ,aak","definition":"artista","notes":"derived form / compound","transliteration":"kai-gru"},
+      {"lexical_item":",aaj ","definition":"firmeza, certeza, cinto","notes":"root","transliteration":"jai"},
+      {"lexical_item":",aj ","definition":"jogo","notes":"root","transliteration":"jei"},
+      {"lexical_item":"r,aj ","definition":"jogar, brincar","notes":"derived form / compound","transliteration":"jeyr"},
+      {"lexical_item":"c,ej ","definition":"saúde, reparo","notes":"root","transliteration":"jik"},
+      {"lexical_item":"rc,ej ","definition":"curar, consertar","notes":"derived form / compound","transliteration":"jikr"},
+      {"lexical_item":"arc,ej us","definition":"médico, mecânico, curandeiro","notes":"derived form / compound","transliteration":"su-jikra"},
+      {"lexical_item":"uj ","definition":"felicidade, abelha","notes":"root","transliteration":"ju"},
+      {"lexical_item":",auuj ","definition":"estar feliz, ser divertido","notes":"derived form / compound","transliteration":"juuwei"},
+      {"lexical_item":"auj ","definition":"livro, documento, registro","notes":"root","transliteration":"juwa"},
+      {"lexical_item":",aaP auj ","definition":"biblioteca","notes":"derived form / compound","transliteration":"juwa-pai"},
+      {"lexical_item":",aak","definition":"arte, criação","notes":"root","transliteration":"kai"},
+      {"lexical_item":"r,aak","definition":"criar, construir","notes":"derived form / compound","transliteration":"kayr"},
+      {"lexical_item":",aaek","definition":"armadura, cobertura, proteção, abrigo","notes":"root","transliteration":"keyai"},
+      {"lexical_item":"r,aaek","definition":"proteger, cobrir","notes":"derived form / compound","transliteration":"keyayr"},
+      {"lexical_item":"aeaek us","definition":"polícia, guardião","notes":"derived form / compound","transliteration":"su-keyaya"},
+      {"lexical_item":"Tek","definition":"idéia, pensamento, mente, cérebro","notes":"root","transliteration":"ket"},
+      {"lexical_item":"rTek","definition":"pensar, imaginar","notes":"derived form / compound","transliteration":"ketr"}
+    ];
+
+    let currentFilter = 'all';
+
+    function renderGrid(data) {
+      const grid = document.getElementById('dictionaryGrid');
+      grid.innerHTML = '';
+
+      if (data.length === 0) {
+        grid.innerHTML = `
+          <div class="no-results" style="grid-column: 1 / -1;">
+            <h3>Nenhum termo encontrado</h3>
+            <p>Tente buscar por outras palavras em Aru ou Português.</p>
+          </div>`;
+        return;
+      }
+
+      data.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'word-card';
+        card.onclick = () => openModal(item);
+
+        card.innerHTML = `
+          <div>
+            <div class="aru-text">${escapeHtml(item.lexical_item)}</div>
+            <div class="transliteration">${escapeHtml(item.transliteration)}</div>
+            <div class="definition">${escapeHtml(item.definition)}</div>
+          </div>
+          <div>
+            <span class="notes-badge">${escapeHtml(item.notes)}</span>
+          </div>
+        `;
+
+        grid.appendChild(card);
+      });
+
+      document.getElementById('resultCount').textContent = `Exibindo ${data.length} de ${rawData.length} termos`;
+    }
+
+    function filterData() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+
+      const filtered = rawData.filter(item => {
+        // Filtro por tipo
+        let matchesType = true;
+        if (currentFilter === 'root') {
+          matchesType = item.notes.toLowerCase().includes('root');
+        } else if (currentFilter === 'derived') {
+          matchesType = item.notes.toLowerCase().includes('derived') || item.notes.toLowerCase().includes('compound');
+        }
+
+        // Filtro por texto
+        const matchesQuery = 
+          item.lexical_item.toLowerCase().includes(query) ||
+          item.transliteration.toLowerCase().includes(query) ||
+          item.definition.toLowerCase().includes(query) ||
+          item.notes.toLowerCase().includes(query);
+
+        return matchesType && matchesQuery;
+      });
+
+      renderGrid(filtered);
+    }
+
+    function setFilter(filter) {
+      currentFilter = filter;
+      document.querySelectorAll('.controls .btn').forEach(btn => btn.classList.remove('active'));
+      
+      if (filter === 'all') document.getElementById('btnAll').classList.add('active');
+      if (filter === 'root') document.getElementById('btnRoots').classList.add('active');
+      if (filter === 'derived') document.getElementById('btnDerived').classList.add('active');
+
+      filterData();
+    }
+
+    function openModal(item) {
+      document.getElementById('modalAru').textContent = item.lexical_item;
+      document.getElementById('modalTrans').textContent = item.transliteration;
+      document.getElementById('modalDef').textContent = item.definition;
+      document.getElementById('modalNotes').textContent = item.notes;
+
+      document.getElementById('modalBackdrop').classList.add('active');
+    }
+
+    function closeModal(event) {
+      if (!event || event.target.id === 'modalBackdrop' || event.target.className === 'modal-close') {
+        document.getElementById('modalBackdrop').classList.remove('active');
+      }
+    }
+
+    function escapeHtml(text) {
+      return text ? text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") : '';
+    }
+
+    // Event Listeners
+    document.getElementById('searchInput').addEventListener('input', filterData);
+
+    // Renderização inicial
+    renderGrid(rawData);
+  </script>
+</body>
+</html>
