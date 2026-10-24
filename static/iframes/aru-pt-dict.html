@@ -358,7 +358,7 @@
     // Função assíncrona para buscar o JSON do servidor
     async function fetchDictionaryData() {
       try {
-        const response = await fetch('http://thearusianlanguage.vercel.app/corpora/arusian_dictionary_pt.json');
+        const response = await fetch('https://thearusianlanguage.vercel.app/corpora/arusian_dictionary_pt.json');
         if (!response.ok) {
           throw new Error(`Erro de rede: ${response.status}`);
         }
