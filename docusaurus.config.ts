@@ -8,7 +8,7 @@ import * as realWebpack from 'webpack';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "Arusian Academy (BETA)",
+  title: "Arusian Academy",
   tagline: "The Language of Nature",
   favicon:
     "https://thearusianlanguage.vercel.app/img/aru_flag.png",
@@ -94,7 +94,7 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/aru_flag.png",
     navbar: {
-      title: "Arusian Academy (BETA)",
+      title: "Arusian Academy",
       logo: {
         alt: "Arusian Academy",
         src: "https://thearusianlanguage.vercel.app/img/aru_flag.png",
