@@ -1,6 +1,6 @@
 ---
-slug: arara-vek-u-payr-fna-aru
-title: Arara-Vek u Payr Fna-Aru
+slug: arara-vek-payr-fna-aru
+title: Arara-Vek Payr Fna-Aru
 authors: [andrewnation, juweya]
 tags: [arusian, logistics]
 ---
