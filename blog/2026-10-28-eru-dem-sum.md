@@ -1,6 +1,6 @@
 ---
 slug: eru-dem-sum
-title: Eru\: Su Trmr Dem-Sum
+title: Eru - Su Trmr Dem-Sum
 authors: [andrewnation]
 tags: [arusian, linguistics]
 ---
