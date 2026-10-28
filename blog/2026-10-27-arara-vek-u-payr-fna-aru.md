@@ -9,7 +9,7 @@ Fna-Aru kamr arara-vek u payr tara otras. Su-dewei delr su-pei deweis u remr ara
 
 **JUWAI SA ARARA-VEK U PAYR FNA-ARU:**
 
-![Juwai sa Arara-vek u payr Fna-Aru](http://thearusianlanguage.vercel.app/files/img/juwai-sa-arara-vek.png)
+![Juwai sa Arara-vek u payr Fna-Aru](http://thearusianlanguage.vercel.app/img/juwai-sa-arara-vek.png)
  
 Ara-lo tus u sa so-dewei-pei u remr arara-vek sa TGV Duplex. Tara sa umu-lo u trse arara-vek fus.
 

@@ -1,6 +1,6 @@
 ---
 slug: eru-dem-sum
-title: Arara-Vek Payr Fna-Aru
+title: Eru: Su Trmr Dem-Sum
 authors: [andrewnation]
 tags: [arusian, linguistics]
 ---
