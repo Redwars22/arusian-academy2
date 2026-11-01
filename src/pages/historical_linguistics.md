@@ -27,12 +27,6 @@ import {FontRenderer} from "../components/FontRenderer"
 />
 <br/>
 
-## Early Old Arusian/Late Eru/Old Arusian
-
-:::info
-Coming soon!
-:::
-
 ## Middle Arusian
 
 Middle Arusian is the stage of the Arusian language before the year of 2019. The language underwent few changes
