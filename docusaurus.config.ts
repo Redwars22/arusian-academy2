@@ -113,7 +113,12 @@ const config: Config = {
         },{
           href: "https://thearusianlanguage.vercel.app/iframes/ngrams/aru-grammar-tool.html",
           position: "left",
-          label: "Grammar and Spellchecker"
+          label: "Grammar Checkr"
+        },
+        {
+          href: "https://thearusianlanguage.vercel.app/iframes/aru-dictionary.html",
+          position: "left",
+          label: "Dictionary (BETA)"
         },
         { to: "/blog", label: "Blog", position: "left" },
         {
