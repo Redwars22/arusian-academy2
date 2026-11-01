@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="icon" href="https://thearusianlanguage.vercel.app/img/aru_flag.png">
+    <link rel="preload" as="image" href="https://thearusianlanguage.vercel.app/img/aru_flag.png">
+    <title>Arusian Academy – Dictionary</title>
+</head>
+
+<body>
+    <header>
+        <div class="hd"><a class="logo" href="#home"><img class="lg"
+                    src="https://thearusianlanguage.vercel.app/img/aru_flag.png"
+                    alt="" width="51" height="34">Arusian Academy</a>
+            <nav><a href="#home">Home</a><a href="#browse">Browse A–Z</a><a href="#notation">Notation</a></nav>
+            <div class="hs"><input type="search" id="hs" placeholder="Search Arusian or English…" autocomplete="off">
+            </div>
+            <button id="th" type="button" aria-label="Toggle light/dark theme"><svg viewBox="0 0 24 24" width="24"
+                    height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    aria-hidden="true">
+                    <circle cx="12" cy="12" r="4" />
+                    <path
+                        d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+                </svg></button>
+        </div>
+    </header>
+    <main id="app">
+        <div style="text-align:center;padding:60px 16px;color:var(--mu)">
+            <div style="font:normal 3rem/1 Buwagat;color:var(--ac);margin-bottom:16px">Bet auM</div>
+            <p>Loading dictionary…</p>
+        </div>
+    </main>
+    <div id="tp" hidden></div>
+    <footer>Arusian (Aru) · Standard Arusian dictionary — Muwa-Tep · example sentences and translations from the source
+        dictionary · grammar from <i>An Introduction to Arusian</i></footer>
+    <script>
+        const API_URL = 'https://api-arusian-dict-microservice.vercel.app/dictionary';
+
+        let D = [];
+
+        const T = {
+            root: 'Root',
+            'root*': 'Root · no verb forms',
+            'vt-a': 'Verb · transitive · AV',
+            'vt-p': 'Verb · transitive · PV',
+            'vi-a': 'Verb · intransitive · AV',
+            'vi-p': 'Verb · intransitive · PV',
+            form: 'Derived form',
+            compound: 'Compound',
+            discourse: 'Discourse marker',
+            linker: 'Linker'
+        };
+
+        const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+        const norm = t => t.toLowerCase().replace(/[^a-z\-' ]/g, '').replace(/^-+|-+$/g, '').trim();
+        const $ = s => document.querySelector(s), app = $('#app'), tp = $('#tp');
+
+        let IX, PH, FAM, USED;
+        let fcount;
+
+        // ---- adapt API entry to internal shape ----
+        function adapt(raw) {
+            return {
+                w: raw.word,
+                s: raw.script,
+                g: raw.meaning,
+                t: raw.type,
+                p: raw.page,
+                f: raw.root_id,
+                x: (raw.examples || []).map(ex => ({
+                    s: Array.isArray(ex.script) ? ex.script : [ex.script],
+                    r: ex.romanization || '',
+                    e: ex.translation || ''
+                })),
+                alt: (raw.word || '').includes(' OR '),
+                n: norm((raw.word || '').replace(' OR ', ' ')),
+                gl: (raw.meaning || '').toLowerCase()
+            };
+        }
+
+        const add = (m, k, v) => {(m.get(k) || m.set(k, []).get(k)).push(v)};
+
+        function buildIndexes() {
+            IX = new Map(); PH = new Map(); FAM = new Map(); USED = new Map();
+            D.forEach((e, i) => {
+                add(IX, e.n, i);
+                if (e.n.includes(' ')) add(PH, e.n.split(' ')[0], i);
+                if (e.alt) add(PH, e.n.split(' ')[1], i);
+                add(FAM, e.f, i);
+            });
+        }
+
+        const one = x => IX.get(x) || (x.endsWith('s') && IX.get(x.slice(0, -1))) || PH.get(x) || null;
+
+        function look(t) {
+            const n = norm(t); if (!n) return []; const r = one(n); if (r) return [{l: n, ids: r.slice(0, 4)}];
+            if (n.includes('-')) {const g = n.split('-').map(p => ({l: p, ids: (one(p) || []).slice(0, 3)})); if (g.some(x => x.ids.length)) return g} return []
+        }
+
+        function buildUsedIndex() {
+            USED = new Map();
+            D.forEach((e, i) => (e.x || []).forEach((x, k) => {
+                const s = new Set();
+                x.r.split(/\s+/).forEach(t => look(t).forEach(g => g.ids.slice(0, 2).forEach(j => s.add(j))));
+                s.forEach(j => {if (j !== i) add(USED, j, [i, k])})
+            }));
+        }
+
+        function buildFcount() {
+            fcount = new Map();
+            D.forEach(e => fcount.set(e.f, (fcount.get(e.f) || 0) + (e.x ? e.x.length : 0)));
+        }
+
+        const sp = g => {const o = []; let d = 0, c = ''; for (const ch of g) {if (ch == '(') d++; if (ch == ')') d--; if (ch == ',' && !d) {o.push(c.trim()); c = ''} else c += ch} o.push(c.trim()); return o.filter(Boolean)};
+        const sent = x => `<div class="sn"><div class="sc2">${x.s.map(l => `<div>${esc(l)}</div>`).join('')}</div>${x.r ? `<div class="sr">${x.r.split(/\s+/).map(t => `<button class="tk" data-t="${esc(t)}">${esc(t)}</button>`).join(' ')}</div>` : ''}<div class="se">${esc(x.e)}</div></div>`;
+        const kc = e => 'k-' + ({root: 'r', 'root*': 'b', linker: 'g', discourse: 'p'}[e.t] || 'k');
+        const sc = s => esc(s).replace(' OR ', '<span class="or">OR</span>');
+        const bd = e => `<span class="bd">${T[e.t] || e.t}</span>`;
+        const row = i => {const e = D[i]; return `<a class="rr ${kc(e)}" href="#w${i}"><span class="rs">${sc(e.s)}</span><span><span class="rw">${esc(e.w)}</span>${bd(e)}<span class="rg">${esc(e.g)}</span></span></a>`};
+        const letters = () => [...new Set(D.map(e => e.n[0]).filter(c => c && /[a-z]/.test(c)))].sort();
+        const azbar = c => `<div class="az">${letters().map(l => `<a href="#letter-${l}" class="${l == c ? 'on' : ''}">${l.toUpperCase()}</a>`).join('')}</div>`;
+
+        function home() {
+            document.body.className = 'home';
+            const nr = D.filter(e => e.t == 'root' || e.t == 'root*').length;
+            const ns = D.reduce((a, e) => a + (e.x ? e.x.length : 0), 0);
+            const top = D.filter(e => e.t == 'root').sort((a, b) => fcount.get(b.f) - fcount.get(a.f)).slice(0, 12);
+            app.innerHTML = `<section class="hero"><div class="hscript">Bet auM</div><h1>Arusian Dictionary</h1><p>Every word in the standard Arusian lexicon, written in the Sem-Lek script, with real example sentences. Search in Arusian or English.</p><input type="search" id="hq" placeholder="Search Arusian or English…" autocomplete="off"><div class="st"><div><b>${D.length.toLocaleString()}</b><span>Words</span></div><div><b>${nr}</b><span>Roots</span></div><div><b>${ns}</b><span>Example sentences</span></div></div></section>
+ <div id="hm"><h2>A better way to read Arusian</h2><div class="ft"><div><b>Sem-Lek script</b><span>Every entry is shown in its native script and romanization.</span></div><div><b>Click any word</b><span>Tap a word in an example sentence to see its English translation.</span></div><div><b>Roots &amp; word families</b><span>See every verb form and compound built from a root.</span></div></div>
+ <h2>Popular dictionary entries</h2><div class="pop">${top.map(e => `<a class="pc ${kc(e)}" href="#w${D.indexOf(e)}"><span class="sc">${sc(e.s)}</span><b>${esc(e.w)}</b><small>${esc(e.g)}</small></a>`).join('')}</div>
+ <h2>Browse by letter</h2>${azbar('')}</div><div id="rs" hidden></div>`
+        }
+
+        function entry(i) {
+            const e = D[i]; if (!e) return home(); const m = sp(e.g), r = D[e.f], fam = FAM.get(e.f) || [i];
+            let own = (e.x || []).map(sent).join(''), lab = 'Example sentences';
+            const used = (USED.get(i) || []).slice(0, 5).map(([a, k]) => sent(D[a].x[k])).join('');
+            let ex = own + (used ? `<div class="lab">Also used in</div>${used}` : '');
+            if (!ex) {const f = fam.filter(j => j != i && D[j].x).slice(0, 3).flatMap(j => D[j].x.slice(0, 1).map(sent)).join(''); ex = f ? `<div class="lab">From the same word family</div>${f}` : '<p class="mu">No example sentence has been written for this word yet.</p>'}
+            app.innerHTML = `<a class="crumb" href="#browse">‹ Dictionary</a><div class="eh ${kc(e)}"><div class="scr">${sc(e.s)}</div><h1>${esc(e.w)}${bd(e)}</h1><div class="gl">${esc(e.g)}</div>${e.f != i && r ? `<div class="meta"><span>Root: <a href="#w${e.f}">${esc(r.w)}</a></span></div>` : ''}</div>
+ <h2>${lab}</h2>${ex}<h2>Word family${fam.length > 1 ? ` · ${fam.length} entries` : ''}</h2><div class="fam">${fam.map(j => `<a href="#w${j}" class="${kc(D[j])} ${j == i ? 'cur' : ''}"><b>${esc(D[j].w)}</b> <span class="bd">${T[D[j].t] || D[j].t}</span><small>${esc(D[j].g)}</small></a>`).join('')}</div>`
+        }
+
+        function browse(c) {
+            const ids = D.map((e, i) => i).filter(i => D[i].n[0] == c).sort((a, b) => D[a].n < D[b].n ? -1 : 1);
+            app.innerHTML = `<h2 style="margin-top:0">Browse A–Z</h2>${azbar(c)}<p class="mu">${ids.length} words starting with “${c.toUpperCase()}”</p>${ids.map(row).join('')}`
+        }
+
+        function notation() {
+            const k = [['#c00000', 'Roots'], ['#000', 'Root forms — verb forms and compounds'], ['#4472c4', 'Roots with no verb forms'], ['#70ad47', 'Linkers'], ['#cf9c02', 'Sentences and clauses'], ['#a6a6a6', 'English translations'], ['#7030a0', 'Discourse markers']];
+            app.innerHTML = `<h2 style="margin-top:0">About this dictionary</h2><p>This dictionary contains all official Standard Arusian words. It does not include foreign borrowed words written in the Sem-Ej script. There are around 600 roots in the standard language, which can be compounded together and verbalized to create new words, for a total of around 5,000 words. English translations are approximate, since it is impossible to translate every word form exactly.</p><div class="lab">Colour key in the printed dictionary</div><div class="card kv">${k.map(([c, t]) => `<span class="sw" style="background:${c}"></span><span>${t}</span>`).join('')}</div><div class="lab">Verb form labels</div><p class="mu">AV and PV mark the active and passive forms of a verb, each in a transitive and an intransitive version. Sentences are shown in Sem-Lek script with a romanization underneath. Click any romanized word to see its translation.</p>`
+        }
+
+        let more = 60;
+
+        function search(v) {
+            const q = norm(v), hq = $('#hq'); if (!q) {if (hq) {$('#hm').hidden = false; $('#rs').hidden = true} else route(); return } const R = [];
+            D.forEach((e, i) => {
+                let s = 0; if (e.n == q) s = 100; else if (e.n.startsWith(q)) s = 80; else if (e.n.split(/[ \-]/).some(p => p.startsWith(q))) s = 60; else if (e.n.includes(q)) s = 40;
+                const g = sp(e.gl).map(x => x.replace(/^(to|a|an|the) /, '')); let gs = 0; if (g.includes(q)) gs = 90; else if (/^[a-z ]+$/.test(q) && new RegExp('\\b' + q + '\\b').test(e.gl)) gs = 50; else if (e.gl.includes(q)) gs = 25;
+                s = Math.max(s, gs); if (s) R.push([s - e.n.length / 100, i])
+            });
+            R.sort((a, b) => b[0] - a[0]); const sh = R.slice(0, more);
+            const H = `<h2 style="margin-top:0">${R.length} result${R.length == 1 ? '' : 's'} for “${esc(v)}”</h2>${sh.map(r => row(r[1])).join('') || '<p class="mu">No matching words. Try another spelling or an English word.</p>'}${R.length > more ? '<button class="more" id="mb">Show more</button>' : ''}`;
+            if (hq) {$('#hm').hidden = true; $('#rs').hidden = false; $('#rs').innerHTML = H} else app.innerHTML = H;
+            $('#mb') && ($('#mb').onclick = () => {more += 100; search(v)})
+        }
+
+        function route() {
+            document.body.className = ''; tp.hidden = true; const h = location.hash.slice(1); more = 60; const hs = $('#hs'); if (hs) hs.value = '';
+            if (/^w\d+$/.test(h)) entry(+h.slice(1)); else if (h == 'browse') browse('a'); else if (h.startsWith('letter-')) browse(h.slice(7)); else if (h == 'notation') notation(); else home();
+            window.scrollTo(0, 0)
+        }
+
+        document.addEventListener('input', e => {const t = e.target; if (t.id != 'hs' && t.id != 'hq') return; const v = t.value; more = 60; if (t.id == 'hq') $('#hs').value = v; else if ($('#hq')) $('#hq').value = v; search(v)});
+
+        document.addEventListener('click', e => {
+            const j = e.target.closest('[data-j]'); if (j) {const el = document.getElementById(j.dataset.j); if (el) el.scrollIntoView({behavior: 'smooth'}); return }
+            const a = e.target.closest('a[href^="#w"]'); if (a && a.getAttribute('href') == location.hash) setTimeout(route);
+            const b = e.target.closest('.tk');
+            document.querySelectorAll('.tk.on').forEach(x => x.classList.remove('on'));
+            if (!b) {if (!e.target.closest('#tp')) tp.hidden = true; return }
+            b.classList.add('on'); const g = look(b.dataset.t); let h = `<b>${esc(b.textContent.replace(/^[\[(]+|[\])\.?!,]+$/g, ''))}</b>`;
+            if (!g.length) h += '<div class="mu" style="margin-top:6px">No separate dictionary entry for this form.</div>';
+            g.forEach(x => {if (g.length > 1) h += `<div class="pl">${esc(x.l)}</div>`; x.ids.forEach(i => {const d = D[i]; h += `<a class="pe ${kc(d)}" href="#w${i}"><span class="pw">${esc(d.w)}</span> ${bd(d)}<br>${esc(d.g)}</a>`})});
+            tp.innerHTML = h; tp.hidden = false; const r = b.getBoundingClientRect(); tp.style.top = (r.bottom + scrollY + 8) + 'px'; tp.style.left = Math.max(10, Math.min(r.left + scrollX, document.documentElement.clientWidth - tp.offsetWidth - 10)) + 'px'
+        });
+
+        document.addEventListener('keydown', e => {if (e.key == 'Escape') tp.hidden = true});
+
+        addEventListener('hashchange', route);
+
+        // ---- boot: fetch data from API, then build indexes and render ----
+        async function boot() {
+            try {
+                const res = await fetch(API_URL);
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                const raw = await res.json();
+                D = raw.map(adapt);
+                buildIndexes();
+                buildUsedIndex();
+                buildFcount();
+                route();
+            } catch (err) {
+                console.error(err);
+                app.innerHTML = `<div style="text-align:center;padding:60px 16px;color:var(--mu)">
+                    <div style="font:normal 3rem/1 Buwagat;color:var(--ac);margin-bottom:16px">Bet auM</div>
+                    <p>Could not load the dictionary.</p>
+                    <p style="font-size:.85rem">${esc(err.message)}</p>
+                    <button class="more" onclick="location.reload()">Retry</button>
+                </div>`;
+            }
+        }
+
+        boot();
+
+        // ---- theme toggle ----
+        (function () {
+            const r = document.documentElement, b = document.getElementById('th'); try {const t = localStorage.getItem('theme'); if (t) r.dataset.theme = t} catch (e) { }
+            b.addEventListener('click', () => {const dark = r.dataset.theme ? r.dataset.theme == 'dark' : matchMedia('(prefers-color-scheme:dark)').matches, n = dark ? 'light' : 'dark'; r.dataset.theme = n; try {localStorage.setItem('theme', n)} catch (e) { } })
+        })();
+    </script>
+    
+    <style>
+      @font-face {
+        font-family: Buwagat;
+        src: url('https://thearusianlanguage.vercel.app/fonts/Buwagat2.ttf') format('truetype');
+        font-display: swap;
+    }
+
+    :root {
+        --bg: #f6eedf;
+        --bg2: #ece0ca;
+        --ink: #3b2a1e;
+        --mu: #7a6552;
+        --ln: #d9c8ab;
+        --ac: #5c3a21;
+        --ac2: #e9d9be;
+        --hi: #f5e2a3;
+        --sh: 0 2px 10px rgba(59, 42, 30, .14);
+        --cr: #c00000;
+        --cb: #4472c4;
+        --cg: #70ad47;
+        --cp: #7030a0;
+        --cy: #cf9c02;
+        --cgr: #a6a6a6;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px)
+    }
+
+    @media(prefers-color-scheme:dark) {
+        :root:not([data-theme=light]) {
+            --bg: #1f1610;
+            --bg2: #2b1f16;
+            --ink: #f1e4cf;
+            --mu: #bfa98e;
+            --ln: #4a3727;
+            --ac: #e0b98a;
+            --ac2: #3a2a1d;
+            --hi: #4a3b17;
+            --sh: none;
+            --cr: #ff7070;
+            --cb: #7fa2ea;
+            --cg: #8fd16a;
+            --cp: #b98be6;
+            color-scheme: dark
+        }
+    }
+
+    :root[data-theme=dark] {
+        --bg: #1f1610;
+        --bg2: #2b1f16;
+        --ink: #f1e4cf;
+        --mu: #bfa98e;
+        --ln: #4a3727;
+        --ac: #e0b98a;
+        --ac2: #3a2a1d;
+        --hi: #4a3b17;
+        --sh: none;
+        --cr: #ff7070;
+        --cb: #7fa2ea;
+        --cg: #8fd16a;
+        --cp: #b98be6;
+        color-scheme: dark
+    }
+
+    html {
+        scroll-padding-top: env(safe-area-inset-top, 0px)
+    }
+
+    * {
+        box-sizing: border-box
+    }
+
+    body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0 0 auto;
+        height: env(safe-area-inset-top, 0px);
+        z-index: 40;
+        background: var(--bg)
+    }
+
+    a {
+        color: var(--ac);
+        text-decoration: none
+    }
+
+    a:hover {
+        text-decoration: underline
+    }
+
+    header {
+        position: sticky;
+        top: env(safe-area-inset-top, 0px);
+        z-index: 41;
+        background: var(--bg);
+        border-bottom: 1px solid var(--ln)
+    }
+
+    .hd {
+        max-width: 1000px;
+        margin: auto;
+        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap
+    }
+
+    .logo {
+        font-weight: 800;
+        font-size: 1.15rem;
+        color: var(--ink);
+        display: flex;
+        align-items: center;
+        gap: 8px
+    }
+
+    .logo:hover {
+        text-decoration: none
+    }
+
+    .logo i {
+        font: normal 1.7rem/1 Buwagat;
+        color: var(--ac)
+    }
+
+    .lg {
+        flex: none;
+        height: 34px;
+        width: auto;
+        border-radius: 3px;
+        display: block
+    }
+
+    nav {
+        display: flex;
+        gap: 14px;
+        margin-left: auto;
+        font-weight: 600;
+        font-size: .92rem
+    }
+
+    nav a {
+        color: var(--mu)
+    }
+
+    .hs {
+        flex: 1 1 220px;
+        max-width: 340px
+    }
+
+    input[type=search] {
+        width: 100%;
+        padding: 9px 14px;
+        border: 1px solid var(--ln);
+        border-radius: 99px;
+        background: var(--bg2);
+        color: var(--ink);
+        font: inherit;
+        outline: none
+    }
+
+    input[type=search]:focus {
+        border-color: var(--ac)
+    }
+
+    main {
+        max-width: 1000px;
+        margin: auto;
+        padding: 20px 16px 56px
+    }
+
+    .hero {
+        background: linear-gradient(135deg, var(--ac2), var(--bg2));
+        border: 1px solid var(--ln);
+        border-radius: 18px;
+        padding: 36px 22px;
+        text-align: center
+    }
+
+    .hero h1 {
+        margin: 0 0 8px;
+        font-size: clamp(1.7rem, 5vw, 2.5rem);
+        line-height: 1.15
+    }
+
+    .hero p {
+        margin: 0 auto 20px;
+        max-width: 560px;
+        color: var(--mu)
+    }
+
+    .hero input {
+        max-width: 560px;
+        padding: 15px 22px;
+        font-size: 1.1rem;
+        box-shadow: var(--sh)
+    }
+
+    .st {
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        margin-top: 22px;
+        flex-wrap: wrap
+    }
+
+    .st b {
+        display: block;
+        font-size: 1.6rem;
+        color: var(--ac)
+    }
+
+    .st span {
+        font-size: .8rem;
+        color: var(--mu);
+        text-transform: uppercase;
+        letter-spacing: .06em
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        margin: 34px 0 12px
+    }
+
+    .ft {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 14px
+    }
+
+    .card,
+    .ft div {
+        border: 1px solid var(--ln);
+        border-radius: 14px;
+        padding: 16px;
+        background: var(--bg)
+    }
+
+    .ft b {
+        display: block;
+        margin-bottom: 4px
+    }
+
+    .ft span {
+        color: var(--mu);
+        font-size: .92rem
+    }
+
+    .pop {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px
+    }
+
+    .pc {
+        display: block;
+        border: 1px solid var(--ln);
+        border-radius: 14px;
+        padding: 12px 14px;
+        color: var(--ink)
+    }
+
+    .pc:hover {
+        border-color: var(--ac);
+        text-decoration: none;
+        box-shadow: var(--sh)
+    }
+
+    .pc .sc {
+        display: block;
+        font: 1.9rem/1.2 Buwagat;
+        color: var(--c, var(--ink))
+    }
+
+    .pc b {
+        font-size: 1.05rem;
+        color: var(--c, var(--ink))
+    }
+
+    .pc small {
+        display: block;
+        color: var(--cgr)
+    }
+
+    .k-r {
+        --c: var(--cr)
+    }
+
+    .k-b {
+        --c: var(--cb)
+    }
+
+    .k-g {
+        --c: var(--cg)
+    }
+
+    .k-p {
+        --c: var(--cp)
+    }
+
+    .k-k {
+        --c: var(--ink)
+    }
+
+    .az {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px
+    }
+
+    .az a {
+        min-width: 36px;
+        text-align: center;
+        padding: 6px 10px;
+        border: 1px solid var(--ln);
+        border-radius: 8px;
+        font-weight: 700
+    }
+
+    .az a.on {
+        background: var(--ac);
+        border-color: var(--ac);
+        color: #fff
+    }
+
+    .rr {
+        display: grid;
+        grid-template-columns: minmax(70px, 150px) 1fr;
+        gap: 4px 14px;
+        padding: 12px 4px;
+        border-bottom: 1px solid var(--ln);
+        color: var(--ink);
+        align-items: center
+    }
+
+    .rr:hover {
+        background: var(--bg2);
+        text-decoration: none
+    }
+
+    .rs {
+        font: 1.5rem/1.2 Buwagat;
+        color: var(--c, var(--ink));
+        overflow-wrap: anywhere
+    }
+
+    .rw {
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: var(--c, var(--ink))
+    }
+
+    .rg {
+        color: var(--cgr);
+        display: block
+    }
+
+    .bd {
+        display: inline-block;
+        margin-left: 8px;
+        padding: 1px 9px;
+        border-radius: 99px;
+        background: color-mix(in srgb, var(--c, var(--ac)) 14%, transparent);
+        color: var(--c, var(--ac));
+        font-size: .72rem;
+        font-weight: 700;
+        vertical-align: middle;
+        white-space: nowrap
+    }
+
+    .crumb {
+        font-size: .9rem;
+        display: inline-block;
+        margin-bottom: 12px
+    }
+
+    .eh {
+        border: 1px solid var(--ln);
+        border-radius: 18px;
+        padding: 22px;
+        background: var(--bg2)
+    }
+
+    .scr {
+        font: clamp(2.4rem, 9vw, 3.6rem)/1.2 Buwagat;
+        color: var(--c, var(--ink));
+        overflow-wrap: anywhere
+    }
+
+    .eh h1 {
+        margin: 2px 0 8px;
+        font-size: 2rem;
+        color: var(--c, var(--ink))
+    }
+
+    .gl {
+        margin: 6px 0 0;
+        font-size: 1.1rem;
+        color: var(--cgr)
+    }
+
+    .meta {
+        margin-top: 14px;
+        font-size: .9rem;
+        color: var(--mu);
+        display: flex;
+        gap: 6px 22px;
+        flex-wrap: wrap
+    }
+
+    .sn {
+        border: 1px solid var(--ln);
+        border-radius: 14px;
+        padding: 14px 16px;
+        margin-bottom: 12px
+    }
+
+    .sc2 {
+        font: 1.8rem/1.35 Buwagat;
+        color: var(--cy);
+        overflow-wrap: anywhere
+    }
+
+    .sr {
+        margin: 8px 0 4px;
+        font-size: 1.12rem;
+        font-style: italic;
+        color: var(--cy)
+    }
+
+    .tk {
+        font: inherit;
+        color: inherit;
+        background: none;
+        border: 0;
+        border-bottom: 2px dotted var(--ac);
+        padding: 0 1px;
+        margin: 0 1px;
+        cursor: pointer;
+        border-radius: 3px
+    }
+
+    .tk:hover,
+    .tk.on {
+        background: var(--hi)
+    }
+
+    .se {
+        color: var(--cgr)
+    }
+
+    .lab {
+        font-size: .78rem;
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        color: var(--mu);
+        margin: 16px 0 8px;
+        font-weight: 700
+    }
+
+    .fam {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 8px;
+        max-height: 560px;
+        overflow: auto
+    }
+
+    .fam a {
+        display: block;
+        border: 1px solid var(--ln);
+        border-radius: 10px;
+        padding: 8px 12px;
+        color: var(--ink)
+    }
+
+    .fam a.cur {
+        border-color: var(--ac);
+        background: var(--ac2)
+    }
+
+    .fam a:hover {
+        text-decoration: none;
+        border-color: var(--ac)
+    }
+
+    .fam small {
+        display: block;
+        color: var(--cgr)
+    }
+
+    .fam b {
+        color: var(--c, var(--ink))
+    }
+
+    #tp {
+        position: absolute;
+        z-index: 60;
+        width: min(320px, calc(100vw - 20px));
+        background: var(--bg);
+        border: 1px solid var(--ac);
+        border-radius: 12px;
+        padding: 12px 14px;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, .22)
+    }
+
+    #tp[hidden] {
+        display: none
+    }
+
+    #tp>b {
+        font-size: 1.1rem
+    }
+
+    #tp .pe {
+        display: block;
+        margin-top: 8px;
+        padding-top: 8px;
+        border-top: 1px solid var(--ln);
+        color: var(--ink)
+    }
+
+    #tp .pe:hover {
+        text-decoration: none
+    }
+
+    #tp .pw {
+        font-weight: 700;
+        color: var(--c, var(--ac))
+    }
+
+    #tp .pl {
+        margin-top: 8px;
+        font-size: .78rem;
+        color: var(--mu);
+        text-transform: uppercase
+    }
+
+    .mu {
+        color: var(--mu)
+    }
+
+    .kv {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10px 14px;
+        align-items: center
+    }
+
+    .sw {
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+        display: inline-block
+    }
+
+    footer {
+        border-top: 1px solid var(--ln);
+        padding: 22px 16px;
+        text-align: center;
+        color: var(--mu);
+        font-size: .85rem
+    }
+
+    button.more {
+        margin: 16px auto;
+        display: block;
+        padding: 10px 22px;
+        border-radius: 99px;
+        border: 1px solid var(--ac);
+        background: none;
+        color: var(--ac);
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer
+    }
+
+    #th {
+        background: none;
+        border: 0;
+        color: var(--ink);
+        cursor: pointer;
+        padding: 6px;
+        border-radius: 8px;
+        display: flex
+    }
+
+    #th:hover {
+        background: var(--bg2)
+    }
+
+    body.home {
+        background: var(--hero, var(--ac));
+        color: #fff
+    }
+
+    body.home .hero {
+        background: none;
+        border: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .4);
+        border-radius: 0;
+        padding: 64px 16px 44px;
+        color: #fff
+    }
+
+    .hscript {
+        font: clamp(3.4rem, 11vw, 5.6rem)/1.15 Buwagat;
+        font-variant-ligatures: common-ligatures;
+        color: #fff;
+        white-space: pre-wrap
+    }
+
+    body.home .hero h1 {
+        font-size: clamp(2.2rem, 7vw, 3.4rem);
+        font-weight: 700;
+        margin: 14px 0 10px;
+        color: #fff
+    }
+
+    body.home .hero p {
+        color: #fff;
+        font-size: 1.35rem;
+        font-weight: 300;
+        margin: 0 auto 24px
+    }
+
+    body.home .hero input {
+        display: block;
+        margin: 0 auto;
+        background: #fff;
+        color: #1a1a1a;
+        border: 0;
+        box-shadow: none
+    }
+
+    .btn {
+        display: table;
+        margin: 22px auto 0;
+        padding: 15px 40px;
+        border-radius: 8px;
+        background: #e9ecef;
+        color: #1a1a1a;
+        font-weight: 700;
+        font-size: 1.15rem
+    }
+
+    .btn:hover {
+        background: #fff;
+        text-decoration: none
+    }
+
+    body.home .st b {
+        color: #fff
+    }
+
+    body.home .st span {
+        color: rgba(255, 255, 255, .75)
+    }
+
+    body.home h2 {
+        color: #fff;
+        text-align: center;
+        font-size: 1.6rem
+    }
+
+    body.home .ft div {
+        background: rgba(255, 255, 255, .08);
+        border-color: rgba(255, 255, 255, .3);
+        color: #fff
+    }
+
+    body.home .ft span {
+        color: rgba(255, 255, 255, .85)
+    }
+
+    body.home .ft a {
+        color: #fff;
+        text-decoration: underline
+    }
+
+    body.home .pc {
+        background: var(--bg)
+    }
+
+    body.home .az {
+        justify-content: center
+    }
+
+    body.home .az a {
+        color: #fff;
+        border-color: rgba(255, 255, 255, .45)
+    }
+
+    body.home .az a:hover {
+        background: rgba(255, 255, 255, .15);
+        text-decoration: none
+    }
+
+    body.home #rs {
+        background: var(--bg);
+        color: var(--ink);
+        border-radius: 14px;
+        padding: 6px 14px;
+        margin-top: 22px
+    }
+
+    body.home footer {
+        border-color: rgba(255, 255, 255, .35);
+        color: rgba(255, 255, 255, .8)
+    }
+
+    .or {
+        font: 700 .42em system-ui, sans-serif;
+        letter-spacing: .08em;
+        color: var(--mu);
+        margin: 0 .9em;
+        vertical-align: middle
+    }
+</style>
+</body>
+
+</html>
